@@ -1,0 +1,15 @@
+{
+    "title": "小莫的wiki库",
+    "author": "小莫",
+    "description": "小莫的wiki库，记录一些有用的合集",
+    "language": "zh-hans",
+    "plugins": [
+        "chapter-fold",
+        "highlight","search","sharing"
+    ],
+    "links": {
+        "sidebar": {
+            "加入Mod组": "https://mod.3dmgame.com/read/12"
+        }
+    }
+}
