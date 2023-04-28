@@ -11,8 +11,8 @@ hero:
       text: BepInEx
       link: /BepInEx/BepInEx的说明与介绍.md
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Aria2 
+      link: /aria2/README.html
 
 features:
   - title: Feature A
