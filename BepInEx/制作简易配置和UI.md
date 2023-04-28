@@ -1,4 +1,4 @@
-## 使用BepInEx.ConfigurationManager来制作简易配置和UI
+# 使用BepInEx.ConfigurationManager来制作简易配置和UI
 
 ### 下载和安装BepInEx.ConfigurationManager：
 GitHub下载：https://github.com/BepInEx/BepInEx.ConfigurationManager/releases  

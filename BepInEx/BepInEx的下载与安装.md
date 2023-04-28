@@ -1,4 +1,4 @@
-## BepInEx的下载与安装
+# BepInEx的下载与安装
 
 ### 下载BepInEx
 从GitHub中下载最新版本：https://github.com/BepInEx/BepInEx/releases  

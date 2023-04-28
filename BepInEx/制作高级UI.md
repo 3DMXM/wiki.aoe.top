@@ -1,4 +1,4 @@
-## 使用GUILayout来定制化高级UI
+# 使用GUILayout来定制化高级UI
 ### 介绍
 GUI和GUILayout都是unity的UI布局类，且都寄托在UnityEngine.IMGUIModule中，所以，我们在使用时，需要从游戏目录中将 UnityEngine.IMGUIModule.dll 引用到我们的项目中来。  
 其中，  
