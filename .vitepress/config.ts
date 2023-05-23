@@ -4,6 +4,19 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: "小莫的维基库",
     description: "小莫的wiki库,记录一些有用的合集",
+    ignoreDeadLinks: true,
+    markdown: {
+        theme: 'material-theme-palenight',
+        lineNumbers: true,
+
+        // adjust how header anchors are generated,
+        // useful for integrating with tools that use different conventions
+        anchor: {
+            slugify(str) {
+                return encodeURIComponent(str)
+            }
+        }
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
@@ -84,6 +97,102 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'REFramework中文维基', link: 'REFramework/README.md',
+                items: [
+                    {
+                        text: 'Introduction',
+                        link: 'REFramework/README.md'
+                    },
+                    {
+                        text: 'Troubleshooting',
+                        link: 'REFramework/troubleshooting/VR-Troubleshooting.md'
+                    },
+                    {
+                        text: 'Examples',
+                        items:
+                            [
+                                {
+                                    text: 'Example Scripts',
+                                    link: 'REFramework/examples/Example-Scripts.md'
+                                },
+                                {
+                                    text: 'Example Snippets',
+                                    link: 'REFramework/examples/Example-Snippets.md'
+                                }
+                            ]
+                    },
+
+                    {
+                        text: 'Tools',
+                        items:
+                            [
+                                {
+                                    text: 'Object Explorer',
+                                    link: 'REFramework/object_explorer/object_explorer.md'
+                                },
+                                {
+                                    text: 'Chain Viewer',
+                                    link: 'REFramework/chain_viewer/chain_viewer.md'
+                                },
+                                {
+                                    text: 'Behavior Tree/FSM Editor',
+                                    link: 'REFramework/bhvt_editor/bhvt_editor.md'
+                                }
+                            ]
+                    },
+
+                    {
+                        text: 'Scripting Reference',
+                        items: [
+                            {
+                                text: 'General',
+                                items: [
+                                    { text: 'Notes on Return Types', link: 'REFramework/api/general/Notes-on-Return-Types.md' },
+                                    { text: 'Notes on Method Arguments', link: 'REFramework/api/general/Notes-on-Method-Arguments.md' },
+                                    { text: 'Best Practices', link: 'REFramework/api/general/best-practices.md' }
+                                ]
+                            },
+
+                            {
+                                text: 'APIs',
+                                items: [
+                                    { text: 'draw', link: 'REFramework/api/draw.md' },
+                                    { text: 'fs', link: 'REFramework/api/fs.md' },
+                                    { text: 'imgui', link: 'REFramework/api/imgui.md' },
+                                    { text: 'imnodes', link: 'REFramework/api/imnodes.md' },
+                                    { text: 'imguizmo', link: 'REFramework/api/imguizmo.md' },
+                                    { text: 'json', link: 'REFramework/api/json.md' },
+                                    { text: 'log', link: 'REFramework/api/log.md' },
+                                    { text: 're (Callbacks)', link: 'REFramework/api/re.md' },
+                                    { text: 'reframework', link: 'REFramework/api/reframework.md' },
+                                    { text: 'sdk', link: 'REFramework/api/sdk.md' },
+                                    { text: 'vrmod', link: 'REFramework/api/vrmod.md' },
+                                    { text: 'object_explorer', link: 'REFramework/api/object_explorer.md' }
+                                ]
+                            },
+
+                            {
+                                text: 'Types',
+                                items: [
+                                    { text: 'VectorXf', link: 'REFramework/api/types/VectorXf.md' },
+                                    { text: 'Matrix4x4f', link: 'REFramework/api/types/Matrix4x4f.md' },
+                                    { text: 'Quaternion', link: 'REFramework/api/types/Quaternion.md' },
+                                    { text: 'REComponent', link: 'REFramework/api/types/REComponent.md' },
+                                    { text: 'REField', link: 'REFramework/api/types/REField.md' },
+                                    { text: 'REManagedObject', link: 'REFramework/api/types/REManagedObject.md' },
+                                    { text: 'REMethodDefinition', link: 'REFramework/api/types/REMethodDefinition.md' },
+                                    { text: 'RETypeDefinition', link: 'REFramework/api/types/RETypeDefinition.md' },
+                                    { text: 'RETransform', link: 'REFramework/api/types/RETransform.md' },
+                                    { text: 'REResource', link: 'REFramework/api/types/REResource.md' },
+                                    { text: 'SystemArray', link: 'REFramework/api/types/SystemArray.md' },
+                                    { text: 'ValueType', link: 'REFramework/api/types/ValueType.md' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 text: '小故事', link: '/story/README.md',
                 items: [
                     { text: '囚徒困境', link: '/story/Prisoner_Dilemma.md' },
@@ -91,7 +200,7 @@ export default defineConfig({
                     { text: '花鸟的演讲', link: '/story/花鸟的演讲.md' },
                     { text: '梦 2022.7.17', link: '/story/2022-7-17.md' }
                 ]
-            }
+            },
         ],
 
         socialLinks: [
