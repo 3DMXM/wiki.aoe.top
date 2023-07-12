@@ -1,7 +1,7 @@
 # 使用 VS code + CMake 编译C++
 这是面向Visual Studio Code的CMake工具文档，CMake Tools是一个旨在方便处理基于CMake的项目的扩展。
 
-官方英文文档：https://github.com/microsoft/vscode-cmake-tools/blob/main/README.md
+官方英文文档：https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/README.md
 
 如果您是新手，请尝试[CMake Tools快速入门](https://code.visualstudio.com/docs/cpp/CMake-linux)并查看[常见问题](faq.md)。
 
