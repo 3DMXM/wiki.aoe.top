@@ -10,10 +10,15 @@ hero:
     - theme: brand
       text: BepInEx
       link: /BepInEx/BepInEx的说明与介绍.md
+   
+    - theme: alt
+      text: CMake
+      link: /CMake/README.md
     - theme: alt
       text: Aria2 
       link: /aria2/README.html
     - theme: alt
       text: REFramework
       link: /REFramework/README.md
+    
 

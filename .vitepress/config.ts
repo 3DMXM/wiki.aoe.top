@@ -32,6 +32,7 @@ export default defineConfig({
             {
                 text: 'GTA3三部曲 秘籍代码',
                 link: '/GTA3-Cheat-List/README.md',
+                collapsed: true,
                 items: [
                     { text: 'GTA SA', link: '/GTA3-Cheat-List/GTASA.md' },
                     { text: 'GTA VC', link: '/GTA3-Cheat-List/GTAVC.md' },
@@ -41,6 +42,7 @@ export default defineConfig({
             {
                 text: 'BepInEx Mod制作教程',
                 link: 'BepInEx/README.md',
+                collapsed: true,
                 items: [
                     { text: 'BepInEx的说明与介绍', link: '/BepInEx/BepInEx的说明与介绍.md' },
                     { text: 'BepInEx的下载与安装', link: '/BepInEx/BepInEx的下载与安装.md' },
@@ -55,6 +57,7 @@ export default defineConfig({
             {
                 text: '怪物猎人崛起 Mod教程',
                 link: 'MonsterHunterRise/README.md',
+                collapsed: true,
                 items: [
                     {
                         text: "一般教程(Switch)",
@@ -82,15 +85,18 @@ export default defineConfig({
             },
             {
                 text: 'Vue教程',
+                collapsed: true,
                 items: [
                     { text: 'Vue2教程', link: 'vue/README.md' },
                 ]
             },
             {
-                text: 'aria2教程', link: 'aria2/README.md'
+                text: 'aria2教程', link: 'aria2/README.md',
+                collapsed: true,
             },
             {
                 text: 'XMDS大神语录', link: 'XMDS/README.md',
+                collapsed: true,
                 items: [
                     { text: 'Hook介绍', link: 'XMDS/Hook.md' },
                     { text: '怎么写hook', link: 'XMDS/Hook-How-To-Write.md' },
@@ -98,6 +104,7 @@ export default defineConfig({
             },
             {
                 text: 'REFramework中文维基', link: 'REFramework/README.md',
+                collapsed: true,
                 items: [
                     {
                         text: 'Introduction',
@@ -193,13 +200,31 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'CMake',
+                link: '/CMake/README.md',
+                collapsed: true,
+                items: [
+                    { text: '入门', link: '/CMake/how-to.md' },
+                    { text: '工具包', link: '/CMake/kits.md' },
+                    { text: '配置', link: '/CMake/configure.md' },
+                    { text: '变量', link: '/CMake/variants.md' },
+                    { text: '构建', link: '/CMake/build.md' },
+                    { text: '调试和启动', link: '/CMake/debug-launch.md' },
+                    { text: '配置和设置', link: '/CMake/cmake-settings.md' },
+                    { text: '使用CMakePresets', link: '/CMake/cmake-presets.md' },
+                    { text: 'CMake工具故障排除', link: '/CMake/troubleshoot.md' },
+                    { text: '常见问题', link: '/CMake/faq.md' },
+                ]
+            },
+            {
                 text: '小故事', link: '/story/README.md',
+                collapsed: true,
                 items: [
                     { text: '囚徒困境', link: '/story/Prisoner_Dilemma.md' },
                     { text: '糟心的一天', link: '/story/2022-2-15.md' },
                     { text: '花鸟的演讲', link: '/story/花鸟的演讲.md' },
                     { text: '梦 2022.7.17', link: '/story/2022-7-17.md' }
-                ]
+                ],
             },
         ],
 
