@@ -4,17 +4,17 @@
 
 ## 创建新项目
 
-* 在没有 `CMakeLists.txt` 文件的目录中，从 VS Code 的命令面板中运行 **CMake：快速开始** 命令。
+* 在没有 `CMakeLists.txt` 文件的目录中，从 VS Code 的命令面板中运行 `CMake: Quick Start` 命令。
 * 参考[CMake 工具在 Linux 上的教程](https://code.visualstudio.com/docs/cpp/cmake-linux#_create-a-cmake-hello-world-project)
 
 ## 配置项目
 
-* 在 VS Code 的命令面板中运行 **CMake：配置** 命令。
+* 在 VS Code 的命令面板中运行 **CMake: Configure** 命令。
 * 参考[CMake 工具在 Linux 上的教程中的 “配置 Hello World” 部分](https://code.visualstudio.com/docs/cpp/cmake-linux#_configure-hello-world)或更详细的[CMake Tools 配置步骤文档](configure.md#the-cmake-tools-configure-step)。
 
 ## 构建项目
 
-* 在 VS Code 的命令面板中运行 **CMake：构建** 命令，按下键盘快捷键 **F7**，或在状态栏中选择 **构建** 按钮。
+* 在 VS Code 的命令面板中运行 **CMake: build** 命令，按下键盘快捷键 **F7**，或在状态栏中选择 **build** 按钮。
 * 参考[CMake 工具在 Linux 上的教程中的 “Build hello world” 部分](https://code.visualstudio.com/docs/cpp/cmake-linux#_build-hello-world)，或更详细的[CMake Tools 构建文档](build.md)。
 
 ## 调试项目
