@@ -231,5 +231,19 @@ export default defineConfig({
         socialLinks: [
             { icon: 'github', link: 'https://github.com/3DMXM/wiki.aoe.top' },
         ]
-    }
+    },
+    head: [
+        [
+            'script',
+            {
+                async: "true",
+                src: 'https://www.googletagmanager.com/gtag/js?id=G-L04H04RSS7',
+            },
+        ],
+        [
+            'script',
+            {},
+            "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-L04H04RSS7');",
+        ],
+    ]
 })
