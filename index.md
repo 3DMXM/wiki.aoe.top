@@ -8,9 +8,11 @@ hero:
   tagline: 可能想起来了会更新一些东西
   actions:
     - theme: brand
+      text: Gloss Mod Manager
+      link: /GMM/README.md
+    - theme: alt
       text: BepInEx
       link: /BepInEx/BepInEx的说明与介绍.md
-   
     - theme: alt
       text: CMake
       link: /CMake/README.md

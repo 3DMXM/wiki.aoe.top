@@ -21,6 +21,7 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: '首页', link: '/' },
+            { text: 'GMM', link: '/GMM/README.md' },
             { text: 'BepInEx', link: '/BepInEx/README.md' },
             { text: '博客', link: 'https://blog.aoe.top/' },
             { text: '网盘', link: 'https://pan.aoe.top/' },
@@ -29,16 +30,6 @@ export default defineConfig({
         ],
 
         sidebar: [
-            {
-                text: 'GTA3三部曲 秘籍代码',
-                link: '/GTA3-Cheat-List/README.md',
-                collapsed: true,
-                items: [
-                    { text: 'GTA SA', link: '/GTA3-Cheat-List/GTASA.md' },
-                    { text: 'GTA VC', link: '/GTA3-Cheat-List/GTAVC.md' },
-                    { text: 'GTA 3', link: '/GTA3-Cheat-List/GTA3.md' },
-                ]
-            },
             {
                 text: 'BepInEx Mod制作教程',
                 link: 'BepInEx/README.md',
@@ -52,6 +43,44 @@ export default defineConfig({
                     { text: '制作简易配置和UI', link: '/BepInEx/制作简易配置和UI.md' },
                     { text: '制作高级UI', link: '/BepInEx/制作高级UI.md' },
                     { text: '结语', link: '/BepInEx/结语.md' },
+                ]
+            },
+            {
+                text: 'Gloss Mod Manager',
+                collapsed: true,
+                items: [
+                    { text: "介绍、下载与安装", link: '/GMM/README.md' },
+                    { text: "运行和使用", link: "/GMM/Use.md" },
+                    { text: "安装与卸载Mod", link: "/GMM/Install.md" },
+                    { text: "翻译软件 | Translate GMM", link: "/GMM/Translate.md" },
+                    {
+                        text: "常见问题",
+                        collapsed: true,
+                        items: [
+                            { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
+                            { text: 'Mod安装后没有效果', link: "/GMM/FQA/NotWork.md" },
+                            { text: '启动游戏没反应或报错', link: "/GMM/FQA/NotStart.md" },
+                            { text: "如何打开GMM文件", link: "/GMM/FQA/OpenGMM.md" }
+                        ]
+                    },
+                    {
+                        text: "GMM文件",
+                        collapsed: true,
+                        items: [
+                            { text: "制作GMM文件", link: "/GMM/GMMFile/Make.md" },
+                            { text: "打开GMM文件", link: "/GMM/GMMFile/Open.md" },
+                        ]
+                    }
+                ]
+            },
+            {
+                text: 'GTA3三部曲 秘籍代码',
+                link: '/GTA3-Cheat-List/README.md',
+                collapsed: true,
+                items: [
+                    { text: 'GTA SA', link: '/GTA3-Cheat-List/GTASA.md' },
+                    { text: 'GTA VC', link: '/GTA3-Cheat-List/GTAVC.md' },
+                    { text: 'GTA 3', link: '/GTA3-Cheat-List/GTA3.md' },
                 ]
             },
             {
@@ -82,17 +111,6 @@ export default defineConfig({
                         ]
                     }
                 ]
-            },
-            {
-                text: 'Vue教程',
-                collapsed: true,
-                items: [
-                    { text: 'Vue2教程', link: 'vue/README.md' },
-                ]
-            },
-            {
-                text: 'aria2教程', link: 'aria2/README.md',
-                collapsed: true,
             },
             {
                 text: 'XMDS大神语录', link: 'XMDS/README.md',
