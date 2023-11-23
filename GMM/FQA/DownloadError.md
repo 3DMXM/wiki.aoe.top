@@ -11,3 +11,10 @@
 可能是卡了，点击 下载=》打开文件夹，将这个目录中的所有文件全部删掉，然后在管理器中按`Ctrl+R`，再重新下载
 ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655eb5c58e590.png@webp)
 ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655eb633945e0.png@webp)
+
+### 问题3：储存目录存在中文
+
+虽然管理器兼容中文，但有时候中文的兼容总是有问题，你可以尝试将 设置=》储存位置 换一个 英文路径试试.
+
+
+![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655ec63d66daf.png@webp)

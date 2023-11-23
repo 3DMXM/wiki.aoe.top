@@ -62,6 +62,7 @@ export default defineConfig({
                             { text: '启动游戏没反应或报错', link: "/GMM/FQA/NotStart.md" },
                             { text: "Mod类型未知", link: "/GMM/FQA/TypeUnknown.md" },
                             { text: "下载错误", link: "/GMM/FQA/DownloadError.md" },
+                            { text: "迁移储存位置", link: "/GMM/FQA/MoveFolder.md" }
                         ]
                     },
                     {
