@@ -72,7 +72,10 @@ export default defineConfig({
                             { text: "制作GMM文件", link: "/GMM/GMMFile/Make.md" },
                             { text: "打开GMM文件", link: "/GMM/GMMFile/Open.md" },
                         ]
-                    }
+                    },
+                    { text: "合作", link: "/GMM/Cooperation.md" },
+                    { text: "反馈", link: "/GMM/Feedback.md" },
+                    { text: "赞助", link: "https://aoe.top/donate" }
                 ]
             },
             {

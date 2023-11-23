@@ -10,7 +10,7 @@
   
 ### 启动游戏报错
 这种情况，一般是游戏版本与Mod版本不符合导致的，管理器自动下的前置均为适配正版,学习版可能会出现兼容问题，比如说：
-- 生化危机系列的 REFramework 框架，不兼容会导致Mod无效 或 游戏闪退
+- 生化危机系列的 [REFramework](https://github.com/praydog/REFramework/releases) 框架，不兼容会导致Mod无效 或 游戏闪退
 - 怪物猎人世界的 [Stracker's Loader](https://www.nexusmods.com/monsterhunterworld/mods/1982)
 - 荒野大镖客的 [LML](https://www.rdr2mods.com/downloads/rdr2/tools/76-lennys-mod-loader-rdr/)
 

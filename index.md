@@ -17,9 +17,6 @@ hero:
       text: CMake
       link: /CMake/README.md
     - theme: alt
-      text: Aria2 
-      link: /aria2/README.html
-    - theme: alt
       text: REFramework
       link: /REFramework/README.md
     
