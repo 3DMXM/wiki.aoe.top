@@ -60,7 +60,8 @@ export default defineConfig({
                             { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
                             { text: 'Mod安装后没有效果', link: "/GMM/FQA/NotWork.md" },
                             { text: '启动游戏没反应或报错', link: "/GMM/FQA/NotStart.md" },
-                            { text: "Mod类型未知", link: "/GMM/FQA/TypeUnknown.md" }
+                            { text: "Mod类型未知", link: "/GMM/FQA/TypeUnknown.md" },
+                            { text: "下载错误", link: "/GMM/FQA/DownloadError.md" },
                         ]
                     },
                     {
