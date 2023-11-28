@@ -22,11 +22,17 @@ export default defineConfig({
         nav: [
             { text: '首页', link: '/' },
             { text: 'GMM', link: '/GMM/README.md' },
-            { text: 'BepInEx', link: '/BepInEx/README.md' },
-            { text: '博客', link: 'https://blog.aoe.top/' },
-            { text: '网盘', link: 'https://pan.aoe.top/' },
-            { text: '游戏', link: 'https://game.aoe.top/' },
-            { text: 'Mod', link: 'https://mod.3dmgame.com/' },
+            {
+                text: "小莫全家桶", items: [
+                    { text: '首页', link: 'https://www.aoe.top/' },
+                    { text: '博客', link: 'https://blog.aoe.top/' },
+                    { text: '网盘', link: 'https://pan.aoe.top/' },
+                    { text: '游戏', link: 'https://game.aoe.top/' },
+                    { text: '投食', link: 'https://www.aoe.top/donate' },
+                    { text: 'Mod', link: 'https://mod.3dmgame.com/u/9688990/Home' },
+                    { text: '买下我', link: 'https://wanwang.aliyun.com/nametrade/detail/online.html?domainName=aoe.top' },
+                ]
+            },
         ],
 
         sidebar: [
@@ -57,6 +63,7 @@ export default defineConfig({
                         text: "常见问题",
                         collapsed: true,
                         items: [
+                            { text: "无法启动软件", link: "/GMM/FQA/CantStart.md" },
                             { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
                             { text: 'Mod安装后没有效果', link: "/GMM/FQA/NotWork.md" },
                             { text: '启动游戏没反应或报错', link: "/GMM/FQA/NotStart.md" },
