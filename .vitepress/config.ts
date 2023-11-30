@@ -82,7 +82,6 @@ export default defineConfig({
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
                     { text: "反馈", link: "/GMM/Feedback.md" },
-                    { text: "投喂小莫", link: "https://www.aoe.top/donate" }
                 ]
             },
             {
