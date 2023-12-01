@@ -12,7 +12,7 @@ hero:
       link: /GMM/README.md
     - theme: alt
       text: BepInEx
-      link: /BepInEx/BepInEx的说明与介绍.md
+      link: /BepInEx/README.md
     - theme: alt
       text: CMake
       link: /CMake/README.md

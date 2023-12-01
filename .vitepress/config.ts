@@ -38,13 +38,12 @@ export default defineConfig({
         sidebar: [
             {
                 text: 'BepInEx Mod制作教程',
-                link: 'BepInEx/README.md',
                 collapsed: true,
                 items: [
-                    { text: 'BepInEx的说明与介绍', link: '/BepInEx/BepInEx的说明与介绍.md' },
-                    { text: 'BepInEx的下载与安装', link: '/BepInEx/BepInEx的下载与安装.md' },
-                    { text: '搭建开发环境', link: '/BepInEx/搭建开发环境.md' },
-                    { text: '创建插件', link: '/BepInEx/创建插件.md' },
+                    { text: 'BepInEx的说明与介绍', link: '/BepInEx/README.md' },
+                    { text: 'BepInEx的下载与安装', link: '/BepInEx/Install.md' },
+                    { text: '搭建开发环境', link: '/BepInEx/Development.md' },
+                    { text: '创建插件', link: '/BepInEx/plugin_start.md' },
                     { text: '拦截/注入 游戏函数', link: '/BepInEx/拦截-注入-游戏函数.md' },
                     { text: '制作简易配置和UI', link: '/BepInEx/制作简易配置和UI.md' },
                     { text: '制作高级UI', link: '/BepInEx/制作高级UI.md' },
