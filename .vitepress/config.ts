@@ -60,7 +60,7 @@ export default defineConfig({
                     { text: "翻译软件 | Translate GMM", link: "/GMM/Translate.md" },
                     {
                         text: "常见问题",
-                        collapsed: true,
+                        collapsed: false,
                         items: [
                             { text: "无法启动软件", link: "/GMM/FQA/CantStart.md" },
                             { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
@@ -273,5 +273,16 @@ export default defineConfig({
             {},
             "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-L04H04RSS7');",
         ],
+        [
+            'script',
+            {},
+            `var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?0fba1f3013c5565107a4b39759647150";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();`
+        ]
     ]
 })
