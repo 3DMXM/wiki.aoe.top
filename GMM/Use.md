@@ -21,6 +21,10 @@
 
 ![图片](https://mod.3dmgame.com/static/upload/mod/202308/MOD64d5da46ef8af.png@webp)
 
+如果你的游戏是从Xbox 商店下载的, 那么请在`设置`中打开`通过目录选择游戏`，然后通过选择文件夹来选择游戏，否则会提示没有权限.
+
+![](https://mod.3dmgame.com/static/upload/mod/202401/MOD659bbfb0c959b.png@webp)
+
 ## 将Mod添加到管理器
 
 你需要将Mod导入到管理器里面, 才能开始安装Mod, 可以通过以下几种方式添加
