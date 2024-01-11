@@ -1,3 +1,7 @@
+---
+title: Gloss Mod Manager (GMM) 打不开怎么办？
+---
+
 ## 无法启动软件
 
 首先，GMM 是不兼容win7系统的，如果你使用的是win7，那么请[升级Win10](https://www.microsoft.com/zh-cn/software-download/windows10)

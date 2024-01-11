@@ -1,3 +1,8 @@
+---
+title: 反馈问题
+titleTemplate: Gloss Mod Manager
+---
+
 # Gloss Mod Manager
 ## 反馈渠道
 

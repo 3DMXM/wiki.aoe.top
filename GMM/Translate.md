@@ -1,3 +1,7 @@
+---
+title: 翻译 Gloss Mod Manager
+---
+
 # Gloss Mod Manager
 
 ### 翻译软件

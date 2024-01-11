@@ -1,3 +1,6 @@
+---
+title: Gloss Mod Manager 怎么使用？
+---
 # Gloss Mod Manager
 
 ## 什么是GMM？

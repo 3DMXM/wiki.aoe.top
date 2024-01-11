@@ -1,5 +1,4 @@
-# Gloss Mod Manager
-## 如何打开 *.GMM 文件
+# 如何打开 *.GMM 文件
 
 
 `*.GMM` 文件是由 Gloss Mod Manager 所打包的一种 `一键安装包` 格式.

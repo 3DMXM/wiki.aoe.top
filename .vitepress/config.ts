@@ -284,5 +284,8 @@ export default defineConfig({
               s.parentNode.insertBefore(hm, s);
             })();`
         ]
-    ]
+    ],
+    sitemap: {
+        hostname: "https://wiki.aoe.top"
+    }
 })

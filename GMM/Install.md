@@ -1,4 +1,8 @@
-# Gloss Mod Manager
+---
+title: 使用 GMM 安装和卸载Mod
+---
+
+# 安装和卸载
 
 ## 安装和卸载Mod
 
@@ -17,7 +21,7 @@
 
 ![图片](https://mod.3dmgame.com/static/upload/mod/202308/MOD64d5e252a3cab.png@webp)
 
-有些游戏, 在安装的时候, 会弹出框要求你需要下载前置, 这种情况一般点 `OK`即可, 我测试发现好像会多弹一次, 但问题不大, 都点`OK` 即可
+有些游戏, 在安装的时候, 会弹出框要求你需要下载前置, 这种情况一般点 `OK`即可, 
 
 ![图片](https://mod.3dmgame.com/static/upload/mod/202308/MOD64d5e18b7f33d.png@webp)
 ![图片](https://mod.3dmgame.com/static/upload/mod/202308/MOD64d5e1eae2512.png@webp)

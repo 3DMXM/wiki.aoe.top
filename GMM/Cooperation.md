@@ -1,3 +1,7 @@
+---
+title: 与 Gloss Mod Manager 合作
+---
+
 # Gloss Mod Manager
 
 ## 合作

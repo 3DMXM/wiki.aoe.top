@@ -1,4 +1,8 @@
-# Gloss Mod Manager
+---
+title: 如何使用 Gloss Mod Manager
+---
+
+# 运行和使用
 
 ## 如何运行
 在你安装完之后，能在桌面上, 和 win菜单中找到 GMM 程序的运行图标
