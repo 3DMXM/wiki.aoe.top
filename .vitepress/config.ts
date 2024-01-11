@@ -79,6 +79,13 @@ export default defineConfig({
                             { text: "打开GMM文件", link: "/GMM/GMMFile/Open.md" },
                         ]
                     },
+                    {
+                        text: "一些游戏的使用方法",
+                        collapsed: true,
+                        items: [
+                            { text: "GTA5", link: "/GMM/Use/GTA5.md" },
+                        ]
+                    },
                     { text: "合作", link: "/GMM/Cooperation.md" },
                     { text: "反馈", link: "/GMM/Feedback.md" },
                 ]
@@ -258,7 +265,32 @@ export default defineConfig({
 
         socialLinks: [
             { icon: 'github', link: 'https://github.com/3DMXM/wiki.aoe.top' },
-        ]
+        ],
+        search: {
+            provider: 'local'
+        },
+        editLink: {
+            text: "在GitHub上编辑此页面",
+            pattern: 'https://github.com/3DMXM/wiki.aoe.top/edit/master/:path'
+        },
+        lastUpdated: {
+            text: '最后更新于',
+            formatOptions: {
+                dateStyle: 'short',
+                timeStyle: 'medium'
+            }
+        },
+        footer: {
+            message: '基于 MIT 许可发布',
+            copyright: `版权所有 © 2022-${new Date().getFullYear()} 小莫`
+        },
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
+        outline: {
+            label: '页面导航'
+        },
     },
     head: [
         [
@@ -287,5 +319,6 @@ export default defineConfig({
     ],
     sitemap: {
         hostname: "https://wiki.aoe.top"
-    }
+    },
+    lastUpdated: true,
 })
