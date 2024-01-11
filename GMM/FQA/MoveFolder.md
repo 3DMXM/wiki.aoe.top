@@ -1,4 +1,7 @@
-## 迁移储存位置
+---
+titleTemplate: Gloss Mod Manager
+---
+# 迁移储存位置
 
 如果你觉得现在储存Mod的位置不太好，那么你可以尝试将它换一个位置.
 
