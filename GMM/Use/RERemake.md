@@ -65,5 +65,6 @@ titleTemplate: Gloss Mod Manager
 6. 确保Mod的版本和你的游戏版本匹配，光追和非光追版本的Mod与游戏不互相兼容，你需要自行判断是更换游戏版本还是Mod版本。
 7. 使用 [FLUFFY MANAGER 5000](https://fluffyquack.com/tools/modmanager.zip) 进行安装Mod. (这款管理器是英文的, 没有汉化)
 
+以上方法均试过了，都没有解决，那么就是Mod的问题，换一个的Mod吧
 
 
