@@ -65,3 +65,21 @@ titleTemplate: Gloss Mod Manager
 
 ![](https://mod.3dmgame.com/static/upload/mod/202401/MOD659fa1fa873e8.png@webp)
 ![](https://mod.3dmgame.com/static/upload/mod/202401/MOD659fa1ca22e91.png@webp)
+
+
+## 一些报错处理  
+
+- Script Hook V Critical Error
+    > 这个报错大概长这个样子:
+    ![](https://mod.3dmgame.com/static/upload/mod/202401/MOD65a0a5d8ab169.jpg@webp)
+
+    > 原因是有麻瓜把过期的 Script Hook V 打包到Mod里面去了，辨别方法是 名称不是 “Script Hook V ” 但类型 却被GMM识别为了 “ScriptHookV” .
+
+    > 解决方法为 将前置里面的 "Script Hook V" 重新安装(即 将状态改为"未安装", 然后再重新改为"已安装") 即可解决此问题
+
+- 游戏内存不足, 请重启电脑并重启游戏
+    > 原因是因为你Mod装的太多了，到达了游戏可容纳的上限，这和你电脑内存的关系并不大， 
+
+    > 解决方法为 安装 上限补丁: [HeapAdjuster](https://www.gta5-mods.com/tools/heapadjuster) | [Packfile Limit Adjuster](https://www.gta5-mods.com/tools/packfile-limit-adjuster) 
+
+
