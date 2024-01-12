@@ -9,13 +9,13 @@ export default defineConfig({
         theme: 'material-theme-palenight',
         lineNumbers: true,
 
-        // adjust how header anchors are generated,
-        // useful for integrating with tools that use different conventions
-        anchor: {
-            slugify(str) {
-                return encodeURIComponent(str)
-            }
-        }
+        // // adjust how header anchors are generated,
+        // // useful for integrating with tools that use different conventions
+        // anchor: {
+        //     slugify(str) {
+        //         return encodeURIComponent(str)
+        //     }
+        // }
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
@@ -84,6 +84,7 @@ export default defineConfig({
                         collapsed: true,
                         items: [
                             { text: "GTA5", link: "/GMM/Use/GTA5.md" },
+                            { text: "赛博朋克2077", link: "GMM/Use/Cyberpunk2077.md" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },

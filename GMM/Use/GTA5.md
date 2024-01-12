@@ -7,7 +7,7 @@ titleTemplate: Gloss Mod Manager
 ## 前置工作
 
 1. 下载并安装 [Gloss Mod Manager](https://mod.3dmgame.com/mod/197445)
-2. 下载 前置包 [GTA5 Mod前置包](https://cloud.aoe.top/s/)
+2. 下载 前置包 [GTA5 Mod前置包](https://cloud.aoe.top/s/KrRfO)
 3. (可选) 下载内置修改器: [Menyoo](https://github.com/MAFINS/MenyooSP/releases) | [汉化补丁](https://mod.3dmgame.com/mod/205488)
 
 ## 选择游戏
@@ -37,7 +37,7 @@ titleTemplate: Gloss Mod Manager
 
 然后进入游戏, 按2下 F8,  打开 Menyoo 修改器.
 
-#### 获取载具
+### 获取载具
 
 定位到 "Vehicle Option (载具选项)" -> "Vehicel Spawner(生成载具)" -> "Input Model (输入模型) (在最下面)"
 
@@ -45,7 +45,7 @@ titleTemplate: Gloss Mod Manager
 > 载具代码是什么？  
 > 正常情况下, 一般作者会告诉你代码是什么，但也有部分转载的人， 以为那串代码是乱码，从而没有 转载过来， 如果作者并没有告诉你代码，那么你可以在 [这篇文章](https://mod.3dmgame.com/wiki/GTA5Mod_Tutorial/s3o4wvaky8#:~:text=%E5%88%B7%E8%BD%A6%E4%BB%A3%E7%A0%81-,%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%88%B7%E8%BD%A6%E4%BB%A3%E7%A0%81,-%E4%B8%80%E8%88%AC%EF%BC%8CMod%E4%BD%9C%E8%80%85) 中查看如何获取 刷车代码
 
-#### 获取角色
+### 获取角色
 
 定位到 "Player Options (玩家选项)" -> "Model Changer (修改模型)" -> "Input Model (输入模型) (在最下面)"
 
@@ -54,7 +54,7 @@ titleTemplate: Gloss Mod Manager
 > 你可以使用OpenIV, 定位到 `mods\update\x64\dlcpacks\gmm\dlc.rpf\x64\peds.rpf`, 然后这些文件的名称就是角色代码:
 > ![](https://mod.3dmgame.com/static/upload/mod/202401/MOD659fa01b5b779.png@webp)
 
-
+ 
 ## 关于组合式人物
 
 如果你安装的人物没有效果，那么可能是因为它是组合式的人物, 你可能需要手动修改一下高级配置.
