@@ -35,7 +35,7 @@ titleTemplate: Gloss Mod Manager
 
 ## 安装Mod
 
-你可以去任意地方下载你想要的Mod, 下面给出几个下载GTA Mod的网站:
+你可以去任意地方下载你想要的Mod, 下面给出几个下载赛博朋克2077 Mod的网站:
 
 - 3DM Mods: https://mod.3dmgame.com/Cyberpunk2077
 - Nexus Mods: https://www.nexusmods.com/cyberpunk2077/mods/

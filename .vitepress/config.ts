@@ -85,6 +85,7 @@ export default defineConfig({
                         items: [
                             { text: "GTA5", link: "/GMM/Use/GTA5.md" },
                             { text: "赛博朋克2077", link: "/GMM/Use/Cyberpunk2077.md" },
+                            { text: "生化危机", link: "/GMM/Use/RERemake.md" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
@@ -283,7 +284,8 @@ export default defineConfig({
         },
         footer: {
             message: '基于 MIT 许可发布',
-            copyright: `版权所有 © 2022-${new Date().getFullYear()} 小莫`
+            copyright: `版权所有 © 2022-${new Date().getFullYear()} 小莫 <br/> 
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nopener norefoerrer" data-v-a41d4df4="">湘ICP备2021011453号-1</a>`,
         },
         docFooter: {
             prev: '上一页',
