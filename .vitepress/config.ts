@@ -84,7 +84,7 @@ export default defineConfig({
                         collapsed: true,
                         items: [
                             { text: "GTA5", link: "/GMM/Use/GTA5.md" },
-                            { text: "赛博朋克2077", link: "GMM/Use/Cyberpunk2077.md" },
+                            { text: "赛博朋克2077", link: "/GMM/Use/Cyberpunk2077.md" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
