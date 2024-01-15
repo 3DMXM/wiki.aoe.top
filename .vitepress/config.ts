@@ -87,7 +87,8 @@ export default defineConfig({
                             { text: "赛博朋克2077", link: "/GMM/Use/Cyberpunk2077.md" },
                             { text: "生化危机", link: "/GMM/Use/RERemake.md" },
                             { text: "怪物猎人世界", link: "/GMM/Use/MonsterHunterWorld.md" },
-                            { text: "怪物猎人崛起", link: "/GMM/Use/MonsterHunterRise.md" }
+                            { text: "怪物猎人崛起", link: "/GMM/Use/MonsterHunterRise.md" },
+                            { text: "艾尔登法环", link: "/GMM/Use/EldenRing.md" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
