@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "小莫的维基库",
@@ -89,6 +90,7 @@ export default defineConfig({
                             { text: "怪物猎人世界", link: "/GMM/Use/MonsterHunterWorld.md" },
                             { text: "怪物猎人崛起", link: "/GMM/Use/MonsterHunterRise.md" },
                             { text: "艾尔登法环", link: "/GMM/Use/EldenRing.md" },
+                            { text: "博德之门3", link: "/GMM/Use/BaldursGate3" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
@@ -321,7 +323,11 @@ export default defineConfig({
               var s = document.getElementsByTagName("script")[0]; 
               s.parentNode.insertBefore(hm, s);
             })();`
-        ]
+        ],
+        ['meta', { name: 'og:site_name', content: '小莫的维基库' }],
+        ['meta', { name: 'og:locale', content: 'zh' }],
+        ['meta', { name: 'og:type', content: 'website' }],
+        ['meta', { name: 'theme-color', content: '#5f67ee' }],
     ],
     sitemap: {
         hostname: "https://wiki.aoe.top"
