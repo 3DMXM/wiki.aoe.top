@@ -61,7 +61,7 @@ export default defineConfig({
                     { text: "翻译软件 | Translate GMM", link: "/GMM/Translate.md" },
                     {
                         text: "常见问题",
-                        collapsed: false,
+                        collapsed: true,
                         items: [
                             { text: "无法启动软件", link: "/GMM/FQA/CantStart.md" },
                             { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
@@ -78,6 +78,13 @@ export default defineConfig({
                         items: [
                             { text: "制作GMM文件", link: "/GMM/GMMFile/Make.md" },
                             { text: "打开GMM文件", link: "/GMM/GMMFile/Open.md" },
+                        ]
+                    },
+                    {
+                        text: "游戏适配",
+                        collapsed: true,
+                        items: [
+                            { text: "介绍", link: "/GMM/Expands/README.md" },
                         ]
                     },
                     {
