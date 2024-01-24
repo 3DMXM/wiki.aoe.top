@@ -6,6 +6,10 @@
 
 部分游戏适配参考: https://github.com/GlossMod/gmm-expands
 
+测试用的一个示例项目: [Github](https://github.com/GlossMod/gmm-api/blob/master/test/src/index.ts)
+
+两个可能有用的参考文件: [Manager.ts](https://github.com/GlossMod/gmm-api/blob/master/test/src/Manager.ts) | [FileHandler.ts](https://github.com/GlossMod/gmm-api/blob/master/test/src/FileHandler.ts) (你可以直接将其引入到你的项目中)
+
 ## 前置工具
 
 - [VS Code](https://code.visualstudio.com/)
@@ -53,44 +57,27 @@ export const supportedGames: ISupportedGames = {
 将会自动不全缺少的属性:
 ![](https://mod.3dmgame.com/static/upload/mod/202401/MOD65af2b1994ac1.png@webp)
 
-## 属性介绍
+## 编译/生成
 
-### GlossGameId (必须)
-- 类型: `number`
-- Mod站的游戏ID
-- 用于 在`游览`页面获取`3DM Mod`的数据, 如果Mod无该游戏, 可填 `0`
-
-你可以在Mod站的游戏页面，按 F12 打开`开发者菜单`，你可在 `GetGameData` 接口中找到 游戏ID:
-
-![](https://mod.3dmgame.com/static/upload/mod/202401/MOD65af2f06e8716.png@webp)
-
-### steamAppID
-- 类型: `number`
-- 游戏在Steam中的AppId, 
-- 主要用于定位游戏所在目录.
-
-你可以直接在游戏商店找到游戏的 AppId 
-
-### installdir
-- 类型: `string`
-- 游戏安装目录
-- 主要用于定位 游戏 主程序所在目录.
-
-eg:
-比如说, 赛博朋克2077 的游戏主程序在 `F:\steam\steamapps\common\Cyberpunk 2077\bin\x64\Cyberpunk2077.exe`, 那么这就可以填:
-```ts
-installdir: join("Cyberpunk 2077", 'bin', 'x64')
-// 或
-installdir: "Cyberpunk 2077\\bin\\x64"
+当你完成代码的编写后, 可以使用 `build` 进行编译
+```sh
+yarn run build 
 ```
 
-### gameName
-- 类型: `string`
-- 游戏名称
-- 这个将是GMM定位游戏的唯一标识符, 请尽量使用游戏的英文名称, 且不要包含特殊字符
+这回将你的 `index.ts` 编译为 `index.js`，并输出到 `dist`目录, 
 
-### gameExe
-### startExe
-### gameCoverImg
-### modType
-### checkModType
+## 安装
+
+最新版本的 GMM ，将会创建一个 `我的文档/Gloss Mod Manager/Expands` 的空文件夹, ， 你需要在里面新建一个文件夹(随你自定义)，然后你需要将最终的 `index.js` 文件放入你的文件夹里面  
+例如：  
+```sh
+Expands  
+└── Cyberpunk2077  
+    └── index.js  
+```
+
+GMM 会读取 index.js 文件, 并自动引入和解析，如何你有其他的依赖文件, 请一起放进去，除非你已经将所有需要的依赖打包到同一个文件中了. 
+
+> 但我不会将多个 ts 打包到一个 js 中, 如果你会的话可以点击下方的编辑按钮直接在这里写
+
+

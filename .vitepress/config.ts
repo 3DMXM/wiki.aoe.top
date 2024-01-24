@@ -84,7 +84,10 @@ export default defineConfig({
                         text: "游戏适配",
                         collapsed: true,
                         items: [
-                            { text: "介绍", link: "/GMM/Expands/README.md" },
+                            { text: "概览", link: "/GMM/Expands/README.md" },
+                            { text: "属性", link: "/GMM/Expands/Property.md" },
+                            { text: "类型", link: "/GMM/Expands/Type.md" },
+                            { text: "开发者模式", link: "/GMM/Expands/Dev.md" },
                         ]
                     },
                     {
