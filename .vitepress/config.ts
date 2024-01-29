@@ -342,6 +342,7 @@ export default defineConfig({
         [
             'script',
             {
+                "async": "true",
                 'src': 'https://share.fastgpt.in/js/iframe.js',
                 'id': 'chatbot-iframe',
                 'data-bot-src': 'https://share.fastgpt.in/chat/share?shareId=c99i67m7szjulf0mwz9ia2nc',
