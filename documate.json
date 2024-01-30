@@ -1,7 +1,0 @@
-{
-    "root": ".",
-    "include": [
-        "**/*.md"
-    ],
-    "backend": "https://es1fryngs7.us.aircode.run/upload"
-}

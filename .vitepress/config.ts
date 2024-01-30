@@ -101,7 +101,8 @@ export default defineConfig({
                             { text: "怪物猎人崛起", link: "/GMM/Use/MonsterHunterRise.md" },
                             { text: "艾尔登法环", link: "/GMM/Use/EldenRing.md" },
                             { text: "博德之门3", link: "/GMM/Use/BaldursGate3" },
-                            { text: "荒野大镖客2", link: "/GMM/Use/RedDeadRedemption2.md" }
+                            { text: "荒野大镖客2", link: "/GMM/Use/RedDeadRedemption2.md" },
+                            { text: "幻兽帕鲁", link: "/GMM/Use/Palworld.md" },
                         ]
                     },
                     { text: "合作", link: "/GMM/Cooperation.md" },
