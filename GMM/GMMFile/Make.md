@@ -13,25 +13,20 @@
 ## 开始制作
 
 > 前提: 
-> 1. 将作品发布到  [3DM Mod站](https://mod.3dmgame.com/Workshop/PublishMod) (目前仅支持Mod站)
-> 2. GMM 支持你的游戏 ([游戏支持列表](https://github.com/GlossMod/Gloss-Mod-Manager-info/blob/main/README_zh_CN.md#%E6%94%AF%E6%8C%81%E7%9A%84%E6%B8%B8%E6%88%8F))
+> GMM 支持你的游戏 ([游戏支持列表](https://github.com/GlossMod/Gloss-Mod-Manager-info/blob/main/README_zh_CN.md#%E6%94%AF%E6%8C%81%E7%9A%84%E6%B8%B8%E6%88%8F))
 
-1. 你需要将你的作品发布到3DM Mod站 并通过审核.
-2. 在Mod站打开你的作品，能看到下载按钮旁边一个 `一键安装` 按钮
-    ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db5b559496.png@webp)
-3. 点击并将它添加到管理器中，然后选择打包
+1. 将Mod添加到GMM里面去，然后选择打包
     ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db65ba3e44.png@webp)
-4. 填写相关的Mod描述, 点击下一步
+2. 填写相关的Mod描述, 点击下一步
     ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db6d459be7.png@webp)
-5. 选上你的Mod作品和相关的前置, 然后点击打包 (若想要前置自动更新, 那么前置也应该是通过`一键安装`导入的才行)
+3. 选上你的Mod作品和相关的前置, 然后点击打包 (若想要前置自动更新, 那么前置也应该是通过`一键安装`导入的才行)
     ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db71d49281.png@webp)
-6. 选择保存的位置, 也可以根据需要修改文件名, 最后点击保存即可
+4. 选择保存的位置, 也可以根据需要修改文件名, 最后点击保存即可
     ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db7add2d5b.png@webp)
-7. 稍等片刻，即可完成打包. (具体时间根据你电脑的性能和Mod的大小决定)
+5. 稍等片刻，即可完成打包. (具体时间根据你电脑的性能和Mod的大小决定)
     ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db82588589.png@webp)
 
-8. 最后，你可以选择将这个 `*.gmm` 分享到任意你想要发布的平台.
-    - 甚至可以使用这个文件来替换最开始你在Mod站上传的附件, (不过更新会比较麻烦)
+6. 最后，你可以选择将这个 `*.gmm` 分享到任意你想要发布的平台.
 
 
 ## 会打包进去的数据
