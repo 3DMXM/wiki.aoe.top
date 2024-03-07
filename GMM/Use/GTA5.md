@@ -83,3 +83,8 @@ titleTemplate: Gloss Mod Manager
     > 解决方法为 安装 上限补丁: [HeapAdjuster](https://www.gta5-mods.com/tools/heapadjuster) | [Packfile Limit Adjuster](https://www.gta5-mods.com/tools/packfile-limit-adjuster) 
 
 
+- ERR_FIL_PACK_1 游戏错误, 请重启电脑并重启游戏
+  - 这个问题可能出现在 `RPF 文件编辑工具` 上，点击 "操作"->"更新", 然后将所有 "添加式"、"替换式"、"人物" 类型的Mod全部重新安装一遍
+    ![](https://mod.3dmgame.com/static/upload/mod/202403/MOD65e979a07ac8f.png@webp)
+  - 也有可能是 "dlclist.xml" 文件在安装Mod的时候出现了损坏, 那么这种情况你可以需要用到 [OpenIV](https://mod.3dmgame.com/mod/31262) 来进行修复， 打开 `mods/update/update.rpf/common/data/dlclist.xml`,  然后看这个文件是否有出现 损坏，翻到最底下,可能能看到缺少 `</Item>` `</Paths>` `</SMandatoryPacksData>` 这种结尾符,  正常的应该长这个样子
+    ![](https://mod.3dmgame.com/static/upload/mod/202212/MOD6392b1a226e40.jpg@webp)

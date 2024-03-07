@@ -8,7 +8,7 @@ titleTemplate: Gloss Mod Manager
 ## 前置工作
 
 1. 下载并安装 [Gloss Mod Manager](https://mod.3dmgame.com/mod/197445)
-2. 下载并安装 RE-UE4SS [GitHub](https://github.com/UE4SS-RE/RE-UE4SS/releases) | [Mod站](https://mod.3dmgame.com/mod/205892) | [前置包](https://cloud.aoe.top/s/KrRfO)
+2. 下载并安装 UE4SS [GitHub](https://github.com/UE4SS-RE/RE-UE4SS/releases) | [Mod站](https://mod.3dmgame.com/mod/205892) | [前置包](https://cloud.aoe.top/s/KrRfO)
 
 
 ## 选择游戏
@@ -37,6 +37,8 @@ Mod无效？
 
 游戏崩溃？
 - 使用Mod是有导致游戏崩溃的风险，再加上当前游戏Bug多，导致更加容易崩溃, 放宽心态，可先对Mod进行排查，可能是Mod冲突导致的游戏崩溃，也可能是Mod太旧没有维护已经不适配当前版本的游戏. 
-
+- 如果你是使用过 UE4SS 的 2.5.2 版本，然后升级到 3.0.1 版本，导致游戏打不开，这是因为UE4SS 的版本兼容问题导致的, 有2个解决方法：
+  - 将UE4SS 的版本降级到 2.5.2 版本
+  - 到 `Palworld\Pal\Binaries\Win64` 目录 将里面的所有内容删除, 然后验证游戏完整,再将所有Mod全部重新安装. 
 
 
