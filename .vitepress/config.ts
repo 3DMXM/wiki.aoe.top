@@ -85,6 +85,14 @@ export default defineConfig({
                         collapsed: true,
                         items: [
                             { text: "概览", link: "/GMM/Expands/README.md" },
+                            {
+                                text: "TS适配 (1.29.0版本",
+                                items: [
+                                    { text: "概览", link: "/GMM/Expands/TS/README.md" },
+
+                                ],
+                                collapsed: true,
+                            },
                             { text: "属性", link: "/GMM/Expands/Property.md" },
                             { text: "类型", link: "/GMM/Expands/Type.md" },
                             { text: "开发者模式", link: "/GMM/Expands/Dev.md" },

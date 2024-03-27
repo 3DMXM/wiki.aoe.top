@@ -1,83 +1,223 @@
 # 为 Gloss Mod Manager 添加游戏适配
 
-在 v1.29.0 版本, 我们将 游戏适配部分进行了开源, 这将允许所有玩家和开发者来制作自己想要适配的游戏. 
-
-如果你有一定的开发基础，那么可以来试试自己制作GMM的游戏适配.
-
-部分游戏适配参考: https://github.com/GlossMod/gmm-expands
-
-测试用的一个示例项目: [Github](https://github.com/GlossMod/gmm-api/blob/master/test/src/index.ts)
-
-两个可能有用的参考文件: [Manager.ts](https://github.com/GlossMod/gmm-api/blob/master/test/src/Manager.ts) | [FileHandler.ts](https://github.com/GlossMod/gmm-api/blob/master/test/src/FileHandler.ts) (你可以直接将其引入到你的项目中)
-
-## 前置工具
-
-- [VS Code](https://code.visualstudio.com/)
-- [Node.js](https://nodejs.org/en)
-- [yarn](https://yarnpkg.com/) (可选)
-
-## 安装 Yarn 和 TypeScript (已安装则跳过)
-
-终端输入
-```sh
-npm install -g typescript yarn
-```
+~~在 v1.29.0 版本, 我们将 游戏适配部分进行了开源, 这将允许所有玩家和开发者来制作自己想要适配的游戏.~~
 
 
-## 初始化项目
+在 v1.36.0 版本, 我对自定义拓展进行了简化，改用`json`格式来适配, 1.29.0版本的适配方式由于难度太高, 这次更新将适配的门槛进行了大量的降低, 但缺点是没有使用`TS`的扩展性高, 你可以根据自己的能力来选择
 
-新建一个文件夹, 用 VS Code 打开, 在终端输入
-```sh
-yarn init -y
-yarn add @types/node typescript gmm-api -D
-npx tsc --init
-```
+[使用 TS 来制作游戏适配](TS/README.md) 
 
-打开 `package.json` 文件，在里面添加:
+## JSON参数解释
+
+[更详细的属性](Property.md)
+
 ```json
-"scripts": {
-    "build": "tsc --outDir dist"
+{
+    "GlossGameId": 0,           // Mod站的游戏ID, number 类型
+    "steamAppID": 0 ,           // 游戏在Steam中的AppId, number 类型
+    "installdir": "",           // 游戏安装目录, string 类型
+    "gameName": "",             // 游戏名称, string 类型, 尽量英文
+    "gameExe":  "",             // 游戏主程序， string | IGameExe[] 类型
+    "startExe": "",             // 游戏启动程序, string | IStartExe[] 类型
+    "gameCoverImg": "",         // 游戏封面, string 类型
+    "modType": [
+        {
+            "id": 1,            // 类型的唯一标识符, number 类型
+            "name": "",         // 在管理界面显示的名称
+            "installPath": "",  // 安装路径
+            "install": {
+                // UseFunction 参考 https://github.com/GlossMod/gmm-api/blob/master/test/src/Manager.ts
+                // "generalInstall" | "generalUninstall" | "installByFolder" | "installByFile" | "installByFileSibling" | "installByFolderParent" | "Unknown"
+                // 其他参数是传递到 UseFunction 里面的值, 只需要填 UseFunction 需要的即可, 均有注释.
+                "UseFunction": "",
+                "folderName": "",
+                "isInstall":true | false,   // 是安装还是卸载
+                "fileName": "",             // 文件名称 或 拓展名(.*)
+                "include": true | false,    
+                "spare": true | false,
+                "keepPath": true | false,
+                "isExtname": true | false,
+                "inGameStorage": true | false,
+                "pass": [],
+            },
+            "uninstall": {
+                // 同上 install
+                ...
+            }
+        }
+    ],
+    "checkModType": [
+        {
+            // "extname"    通过拓展名判断 
+            // "basename"   通过文件名判断
+            // "inPath"     通过路径判断
+            "UseFunction": "",
+            "Keyword": [],      // 文件名 或 拓展名 或 路径包含
+            "TypeId": 1,        // 如果包含则返此ID
+        }
+    ]
 }
 ```
 
-## 入口文件
 
-新建一个 `src/index.ts` 文件, 添加
+## 接口结构
+
+这是TS 解析的时候的接口
+
 ```ts
-import { ISupportedGames } from "gmm-api";
+export type InstallUseFunction = "generalInstall" | "generalUninstall" | "installByFolder" | "installByFile" | "installByFileSibling" | "installByFolderParent" | "Unknown"
 
-export const supportedGames: ISupportedGames = {
+export interface IGameExe {
+    name: string
+    rootPath: string
+}
+export interface IStartExe {
+    name: string
+    exePath: string
+}
 
+export interface IGameInfo {
+    GlossGameId: number
+    steamAppID: number
+    installdir?: string
+    gameName: string
+    gameExe: string | IGameExe[]
+    startExe?: string | IStartExe[]
+    gamePath?: string
+    gameVersion?: string
+    gameCoverImg?: string
+    NexusMods?: {
+        game_id: number
+        game_domain_name: string
+    },
+    Thunderstore?: {
+        community_identifier: string
+    },
+    mod_io?: {
+        game_id: number
+    }
+}
+
+export interface IState {
+    file: string,
+    state: boolean
+}
+
+interface IAdvancedItem {
+    type: "input" | "selects" | "switch"
+    label: string
+    key: string
+    selectItem?: { name: string, value: string }[]
+    defaultValue?: string | boolean
+}
+
+export interface ITypeInstall {
+    UseFunction: InstallUseFunction
+    folderName?: string
+    isInstall?: boolean
+    fileName?: string
+    include?: boolean
+    spare?: boolean
+    keepPath?: boolean
+    isExtname?: boolean
+    inGameStorage: boolean
+    pass?: string[]
+}
+
+export interface ICheckModType {
+    UseFunction: "extname" | "basename" | "inPath"
+    Keyword: string | []
+    TypeId: number
+}
+
+export interface IType {
+    id: number
+    name: string
+    installPath?: string
+    advanced?: {
+        name: string
+        icon: string
+        item: IAdvancedItem[]
+    }
+    install: ((mod: IModInfo) => Promise<IState[] | boolean>) | ITypeInstall
+    uninstall: (mod: IModInfo) => Promise<IState[] | boolean> | ITypeInstall
+    checkPlugin?: (plugin: IModInfo) => boolean
+}
+
+export interface ISupportedGames extends IGameInfo {
+    modType: IType[]
+    checkModType: (mod: IModInfo) => number | ICheckModType[]
+    sortMod?: (list: IModInfo[]) => boolean
 }
 ```
 
-如果你安装了vs code 的ts 插件，那么你应该能看到报错信息，选择快速修复 "添加缺少的属性"
-![](https://mod.3dmgame.com/static/upload/mod/202401/MOD65af29b613442.png@webp)
 
-将会自动不全缺少的属性:
-![](https://mod.3dmgame.com/static/upload/mod/202401/MOD65af2b1994ac1.png@webp)
 
-## 编译/生成
+## 示例
 
-当你完成代码的编写后, 可以使用 `build` 进行编译
-```sh
-yarn run build 
+直接通过一个示例来解释 `json` 适配的方式吧：
+```json
+
+{
+    "GlossGameId": 344,
+    "steamAppID": 2420110,
+    "installdir": "Horizon Forbidden West Complete Edition",
+    "gameName": "Horizon Forbidden West",
+    "gameExe": "HorizonForbiddenWest.exe",
+    "startExe": [
+        {
+            "name": "Steam 启动",
+            "exePath": "steam://rungameid/2420110"
+        },
+        {
+            "name": "直接启动",
+            "exePath": "HorizonForbiddenWest.exe"
+        }
+    ],
+    "gameCoverImg": "https://mod.3dmgame.com/static/upload/game/65fd1629ab1c6.webp",
+    "modType": [
+        {
+            "id": 1,
+            "name": "packages",
+            "installPath": "LocalCacheWinGame\\package",
+            "install": {
+                "UseFunction": "installByFileSibling",
+                "fileName": ".stream",
+                "isInstall": true,
+                "isExtname": true,
+                "inGameStorage": true,
+                "pass": []
+            },
+            "uninstall": {
+                "UseFunction": "installByFileSibling",
+                "fileName": ".stream",
+                "isInstall": false,
+                "isExtname": true,
+                "inGameStorage": true,
+                "pass": []
+            }
+        },
+        {
+            "id": 99,
+            "name": "未知",
+            "installPath": "\\",
+            "install": {
+                "UseFunction": "Unknown"
+            },
+            "uninstall": {
+                "UseFunction": "Unknown"
+            }
+        }
+    ],
+    "checkModType": [
+        {
+            "UseFunction": "extname",
+            "Keyword": [
+                ".stream"
+            ],
+            "TypeId": 1
+        }
+    ]
+}
+
 ```
-
-这回将你的 `index.ts` 编译为 `index.js`，并输出到 `dist`目录, 
-
-## 安装
-
-最新版本的 GMM ，将会创建一个 `我的文档/Gloss Mod Manager/Expands` 的空文件夹, ， 你需要在里面新建一个文件夹(随你自定义)，然后你需要将最终的 `index.js` 文件放入你的文件夹里面  
-例如：  
-```sh
-Expands  
-└── Cyberpunk2077  
-    └── index.js  
-```
-
-GMM 会读取 index.js 文件, 并自动引入和解析，如何你有其他的依赖文件, 请一起放进去，除非你已经将所有需要的依赖打包到同一个文件中了. 
-
-> 但我不会将多个 ts 打包到一个 js 中, 如果你会的话可以点击下方的编辑按钮直接在这里写
-
-
