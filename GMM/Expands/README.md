@@ -7,6 +7,10 @@
 
 [使用 TS 来制作游戏适配](TS/README.md) 
 
+## 前置工具
+- [vs code](https://code.visualstudio.com/)
+
+
 ## JSON参数解释
 
 [更详细的属性](Property.md)
@@ -26,7 +30,7 @@
             "name": "",         // 在管理界面显示的名称
             "installPath": "",  // 安装路径
             "install": {
-                // UseFunction 参考 https://github.com/GlossMod/gmm-api/blob/master/test/src/Manager.ts
+                // UseFunction 参考 https://gist.github.com/3DMXM/ed15e18a1442d69bfafcb05534561fc4
                 // "generalInstall" | "generalUninstall" | "installByFolder" | "installByFile" | "installByFileSibling" | "installByFolderParent" | "Unknown"
                 // 其他参数是传递到 UseFunction 里面的值, 只需要填 UseFunction 需要的即可, 均有注释.
                 "UseFunction": "",
@@ -157,7 +161,6 @@ export interface ISupportedGames extends IGameInfo {
 
 直接通过一个示例来解释 `json` 适配的方式吧：
 ```json
-
 {
     "GlossGameId": 344,
     "steamAppID": 2420110,
@@ -178,8 +181,8 @@ export interface ISupportedGames extends IGameInfo {
     "modType": [
         {
             "id": 1,
-            "name": "packages",
-            "installPath": "LocalCacheWinGame\\package",
+            "name": "stream",
+            "installPath": "LocalCacheWinGame\\package\\mods",
             "install": {
                 "UseFunction": "installByFileSibling",
                 "fileName": ".stream",
@@ -191,6 +194,27 @@ export interface ISupportedGames extends IGameInfo {
             "uninstall": {
                 "UseFunction": "installByFileSibling",
                 "fileName": ".stream",
+                "isInstall": false,
+                "isExtname": true,
+                "inGameStorage": true,
+                "pass": []
+            }
+        },
+        {
+            "id": 2,
+            "name": "core",
+            "installPath": "LocalCacheWinGame\\package\\mods",
+            "install": {
+                "UseFunction": "installByFileSibling",
+                "fileName": ".core",
+                "isInstall": true,
+                "isExtname": true,
+                "inGameStorage": true,
+                "pass": []
+            },
+            "uninstall": {
+                "UseFunction": "installByFileSibling",
+                "fileName": ".core",
                 "isInstall": false,
                 "isExtname": true,
                 "inGameStorage": true,
@@ -216,6 +240,13 @@ export interface ISupportedGames extends IGameInfo {
                 ".stream"
             ],
             "TypeId": 1
+        },
+        {
+            "UseFunction": "extname",
+            "Keyword": [
+                ".core"
+            ],
+            "TypeId": 2
         }
     ]
 }
