@@ -20,3 +20,15 @@
 当检测到新版本的Mod时，将会有个小提示, 告诉你有新版本可用，
 你可以直接点击这里的更新按钮来获取新版本的Mod或插件.
 ![](https://mod.3dmgame.com/static/upload/mod/202311/MOD655db3179190e.png@webp)
+
+## 导入标签
+
+如果作者分享了 `tags.json` 文件, 那么你可以从这里`打开文件夹`, 然后将`tags.json`文件替换掉你之前的文件，即可完成标签的导入.
+![](https://mod.3dmgame.com/static/upload/mod/202404/MOD6618a127144ff.png@webp)
+
+
+如果你想让包的标签和你的标签共存, 可以手动编辑 `tags.json` 文件, 将两个文件内容进行合并.
+
+直接在GMM 里面按 `Ctrl+R` 即可预览修改后的效果. 
+
+> 注意： 在修改的时候，请确保文件符合`json`格式规范
