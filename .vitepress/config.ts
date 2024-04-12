@@ -285,7 +285,8 @@ export default defineConfig({
                     { text: '囚徒困境', link: '/story/Prisoner_Dilemma.md' },
                     { text: '糟心的一天', link: '/story/2022-2-15.md' },
                     { text: '花鸟的演讲', link: '/story/花鸟的演讲.md' },
-                    { text: '梦 2022.7.17', link: '/story/2022-7-17.md' }
+                    { text: '梦 2022.7.17', link: '/story/2022-7-17.md' },
+                    { text: '悔 2024.4.6', link: '/story/2024-4-6.md' },
                 ],
             },
         ],
