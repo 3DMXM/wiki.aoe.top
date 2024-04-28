@@ -252,3 +252,6 @@ export interface ISupportedGames extends IGameInfo {
 }
 
 ```
+## 安装
+
+将`json`文件放到 `我的文档\Gloss Mod Manager\Expands` 目录， 然后在管理器里面按 `Ctrl+R` 刷新, 即可在`选择游戏`里面的最后面找到你自己新增的游戏了。
