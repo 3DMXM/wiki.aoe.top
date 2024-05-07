@@ -301,6 +301,7 @@ export default defineConfig({
                     { text: '花鸟的演讲', link: '/story/花鸟的演讲.md' },
                     { text: '梦 2022.7.17', link: '/story/2022-7-17.md' },
                     { text: '悔 2024.4.6', link: '/story/2024-4-6.md' },
+                    { text: '妹 2024.5.1', link: '/story/2024-5-1.md' },
                 ],
             },
         ],
