@@ -19,7 +19,23 @@ hero:
     - theme: alt
       text: REFramework
       link: /REFramework/README.md
-    
+  image:
+    src: "https://mod.3dmgame.com/static/upload/mod/202307/MOD64a7767d0409f.png@webp"
+    alt: 'logo'
+
+# features:
+#   - icon: ⚡️
+#     title: Vite, The DX that can't be beat
+#     details: Lorem ipsum...
+#   - icon: 🖖
+#     title: Power of Vue meets Markdown
+#     details: Lorem ipsum...
+#   - icon: 🛠️
+#     title: Simple and minimal, always
+#     details: Lorem ipsum...
+
+
+
 
 ---
 

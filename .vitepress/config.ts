@@ -19,6 +19,7 @@ export default defineConfig({
         // }
     },
     themeConfig: {
+        logo: 'https://mod.3dmgame.com/static/upload/mod/202307/MOD64a7767d0409f.png@webp',
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: '首页', link: '/' },
