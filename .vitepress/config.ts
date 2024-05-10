@@ -383,6 +383,13 @@ export default defineConfig({
                 "async": "true",
                 'src': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5978423097771370',
             }
+        ],
+        [
+            'link',
+            {
+                "rel": "icon",
+                "href": "https://mod.3dmgame.com/static/upload/mod/202307/MOD64a7767d0409f.png@webp",
+            }
         ]
     ],
     sitemap: {
