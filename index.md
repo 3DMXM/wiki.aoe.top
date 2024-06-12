@@ -7,12 +7,13 @@ hero:
   text: "记录一些有用的合集"
   tagline: 可能想起来了会更新一些东西
   actions:
+    
     - theme: brand
-      text: Gloss Mod Manager
-      link: /GMM/README.md
-    - theme: alt
       text: BepInEx
       link: /BepInEx/README.md
+    - theme: alt
+      text: Gloss Mod Manager
+      link: https://gmm.aoe.top
     - theme: alt
       text: CMake
       link: /CMake/README.md

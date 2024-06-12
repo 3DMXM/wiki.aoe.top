@@ -56,65 +56,7 @@ export default defineConfig({
                 text: 'Gloss Mod Manager',
                 collapsed: true,
                 items: [
-                    { text: "介绍、下载与安装", link: '/GMM/README.md' },
-                    { text: "运行和使用", link: "/GMM/Use.md" },
-                    { text: "安装与卸载Mod", link: "/GMM/Install.md" },
-                    { text: "翻译软件 | Translate GMM", link: "/GMM/Translate.md" },
-                    {
-                        text: "常见问题",
-                        collapsed: true,
-                        items: [
-                            { text: "无法启动软件", link: "/GMM/FQA/CantStart.md" },
-                            { text: '没有找到程序的EXE程序', link: "/GMM/FQA/NotExe.md" },
-                            { text: 'Mod安装后没有效果', link: "/GMM/FQA/NotWork.md" },
-                            { text: '启动游戏没反应或报错', link: "/GMM/FQA/NotStart.md" },
-                            { text: "Mod类型未知", link: "/GMM/FQA/TypeUnknown.md" },
-                            { text: "下载错误", link: "/GMM/FQA/DownloadError.md" },
-                            { text: "迁移储存位置", link: "/GMM/FQA/MoveFolder.md" }
-                        ]
-                    },
-                    {
-                        text: "GMM文件",
-                        collapsed: true,
-                        items: [
-                            { text: "制作GMM文件", link: "/GMM/GMMFile/Make.md" },
-                            { text: "打开GMM文件", link: "/GMM/GMMFile/Open.md" },
-                        ]
-                    },
-                    {
-                        text: "游戏适配",
-                        collapsed: true,
-                        items: [
-                            { text: "概览", link: "/GMM/Expands/README.md" },
-                            {
-                                text: "TS适配 (1.29.0版本",
-                                items: [
-                                    { text: "概览", link: "/GMM/Expands/TS/README.md" },
-                                    { text: "属性", link: "/GMM/Expands/Property.md" },
-                                    { text: "类型", link: "/GMM/Expands/Type.md" },
-                                ],
-                                collapsed: true,
-                            },
-                            { text: "开发者模式", link: "/GMM/Expands/Dev.md" },
-                        ]
-                    },
-                    {
-                        text: "一些游戏的使用方法",
-                        collapsed: true,
-                        items: [
-                            { text: "GTA5", link: "/GMM/Use/GTA5.md" },
-                            { text: "赛博朋克2077", link: "/GMM/Use/Cyberpunk2077.md" },
-                            { text: "生化危机", link: "/GMM/Use/RERemake.md" },
-                            { text: "怪物猎人世界", link: "/GMM/Use/MonsterHunterWorld.md" },
-                            { text: "怪物猎人崛起", link: "/GMM/Use/MonsterHunterRise.md" },
-                            { text: "艾尔登法环", link: "/GMM/Use/EldenRing.md" },
-                            { text: "博德之门3", link: "/GMM/Use/BaldursGate3" },
-                            { text: "荒野大镖客2", link: "/GMM/Use/RedDeadRedemption2.md" },
-                            { text: "幻兽帕鲁", link: "/GMM/Use/Palworld.md" },
-                        ]
-                    },
-                    { text: "合作", link: "/GMM/Cooperation.md" },
-                    { text: "反馈", link: "/GMM/Feedback.md" },
+                    { text: "文档已迁移", link: '/GMM/README.md' },
                 ]
             },
             {
