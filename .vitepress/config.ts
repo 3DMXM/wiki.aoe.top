@@ -221,20 +221,6 @@ export default defineConfig({
                 ]
             },
             {
-                text: "Xmake",
-                link: "/Xmake/README.md",
-                collapsed: true,
-                items: [
-                    { text: "安装 Xmake", link: "/Xmake/install.md" },
-                    { text: "创建项目", link: "/Xmake/CreateProject.md" },
-                    { text: "编译构造", link: "/Xmake/CompileConstruct.md" },
-                    { text: "配置文件", link: "/Xmake/ConfigurationFile.md" },
-                    { text: "插件扩展", link: "/Xmake/Extension.md" },
-                    { text: "调试测试", link: "/Xmake/DebuggingTest.md" },
-                    { text: "发布部署", link: "/Xmake/Release.md" },
-                ]
-            },
-            {
                 text: '小故事', link: '/story/README.md',
                 collapsed: true,
                 items: [
