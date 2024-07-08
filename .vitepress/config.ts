@@ -49,6 +49,7 @@ export default defineConfig({
                     { text: '拦截/注入 游戏函数', link: '/BepInEx/拦截-注入-游戏函数.md' },
                     { text: '制作简易配置和UI', link: '/BepInEx/制作简易配置和UI.md' },
                     { text: '制作高级UI', link: '/BepInEx/制作高级UI.md' },
+                    { text: '使用 UnityGameUI 构建UI', link: '/BepInEx/UnityGameUI.md' },
                     { text: '结语', link: '/BepInEx/结语.md' },
                 ]
             },
