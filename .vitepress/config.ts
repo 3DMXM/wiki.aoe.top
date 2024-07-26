@@ -231,6 +231,8 @@ export default defineConfig({
                     { text: '梦 2022.7.17', link: '/story/2022-7-17.md' },
                     { text: '悔 2024.4.6', link: '/story/2024-4-6.md' },
                     { text: '妹 2024.5.1', link: '/story/2024-5-1.md' },
+                    { text: '妹2 2024.5.17', link: '/story/2024-5-17.md' },
+                    { text: '妹3 2024.7.14', link: '/story/2024-7-14.md' },
                 ],
             },
         ],
