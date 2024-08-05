@@ -233,6 +233,7 @@ export default defineConfig({
                     { text: '妹 2024.5.1', link: '/story/2024-5-1.md' },
                     { text: '妹2 2024.5.17', link: '/story/2024-5-17.md' },
                     { text: '妹3 2024.7.14', link: '/story/2024-7-14.md' },
+                    { text: '怒 2024.8.5', link: '/story/2024-8-5.md' },
                 ],
             },
         ],
@@ -295,13 +296,13 @@ export default defineConfig({
         ['meta', { name: 'og:locale', content: 'zh' }],
         ['meta', { name: 'og:type', content: 'website' }],
         ['meta', { name: 'theme-color', content: '#5f67ee' }],
-        [
-            'script',
-            {
-                "async": "true",
-                'src': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5978423097771370',
-            }
-        ],
+        // [
+        //     'script',
+        //     {
+        //         "async": "true",
+        //         'src': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5978423097771370',
+        //     }
+        // ],
         [
             'link',
             {
