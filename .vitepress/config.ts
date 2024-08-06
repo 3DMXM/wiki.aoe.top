@@ -23,7 +23,7 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: '首页', link: '/' },
-            { text: 'GMM', link: '/GMM/README.md' },
+            { text: 'GMM', link: 'https://gmm.aoe.top/' },
             {
                 text: "小莫全家桶", items: [
                     { text: '首页', link: 'https://www.aoe.top/' },
