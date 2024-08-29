@@ -233,7 +233,7 @@ export default defineConfig({
                     { text: '妹 2024.5.1', link: '/story/2024-5-1.md' },
                     { text: '妹2 2024.5.17', link: '/story/2024-5-17.md' },
                     { text: '妹3 2024.7.14', link: '/story/2024-7-14.md' },
-                    { text: '怒 2024.8.5', link: '/story/2024-8-5.md' },
+                    // { text: '怒 2024.8.5', link: '/story/2024-8-5.md' },
                 ],
             },
         ],
