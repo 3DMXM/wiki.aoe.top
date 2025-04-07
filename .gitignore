@@ -3,3 +3,5 @@ dist
 
 .vercel
 cache
+yarn.lock
+package-lock.json
