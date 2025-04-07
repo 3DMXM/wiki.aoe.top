@@ -38,6 +38,7 @@ export default withMermaid({
         sidebar: generateSidebar({
             useTitleFromFileHeading: true,
             collapsed: true,
+            documentRootPath: '/docs',
         }),
 
         // [
