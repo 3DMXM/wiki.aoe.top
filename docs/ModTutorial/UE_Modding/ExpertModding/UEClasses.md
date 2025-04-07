@@ -1,107 +1,107 @@
-# Creating Classes based on UHT Headers
-Once we have UHT headers, we can use them to construct relevant classes in our UE project and then use those classes, variables, methods and data objects in our blueprint mods.
+# 基于UHT头文件创建类
+一旦我们有了UHT头文件，我们可以使用它们在UE项目中构建相关类，然后在蓝图模组中使用这些类、变量、方法和数据对象。
 
 > [!NOTE]
-> This guide won't cover all cases, only a basic example of a single class, variable and method.
+> 本指南不会涵盖所有情况，仅提供单个类、变量和方法的基本示例。
 
-For this example, I will be making a mod for [Trepang2](https://store.steampowered.com/app/1164940/Trepang2/) where player regenerates 25% health on enemy execution.<br>
-Similar to Doom, where the player regenerates health on enemy execution.
+在这个例子中，我将为[Trepang2](https://store.steampowered.com/app/1164940/Trepang2/)制作一个模组，让玩家在处决敌人时恢复25%的生命值。<br>
+类似于《毁灭战士》中玩家处决敌人后恢复生命值的机制。
 
 
-## Research
-First thing we need to do is identify the used class and the methods and/or variables that we will use for our mod.
+## 研究
+我们首先需要确定将用于模组的类以及我们将使用的方法和/或变量。
 
 ![](/Media/Headers/1.png)
 
-Looking at the player BP, the health is being called from the parent class, `BaseCharacter`.
+查看玩家蓝图，可以看到生命值是从父类`BaseCharacter`中调用的。
 
 ![](/Media/Headers/2.png)
 
-Assuming we already have the UHT headers, look for the class header, in this case it's `BaseCharacter.h`.
+假设我们已经有了UHT头文件，查找类头文件，在这种情况下是`BaseCharacter.h`。
 
 > [!IMPORTANT]
-> If you don't have UHT headers, go to [Dumping UHT](/ExpertModding/GeneratingUHT.md) guide.
+> 如果你没有UHT头文件，请参考[导出UHT](/ExpertModding/GeneratingUHT.md)指南。
 
-Scrolling down, we can find the health methods, for max health getter and health setter method.
+向下滚动，我们可以找到健康相关的方法，包括最大生命值获取器和生命值设置方法。
 
 ![](/Media/Headers/3.png)
 
-## Unreal Engine - Creating the Class
+## 虚幻引擎 - 创建类
 > [!NOTE]
-> If you can't see or add C++ classes, you will have to recreate the project with C++ setting enabled.
+> 如果你看不到或无法添加C++类，你需要重新创建项目并启用C++设置。
 
-1. Launch the UE project and create a new C++ class by File -> New C++ Class.
-2. For the Parent class, set it to `Character` class.
-- - You can see the base class in the header class declaration line.
-- - If it's not in the list, go down the class hierarchy until you reach a native UE class. 
+1. 启动UE项目并通过文件 -> 新建C++类创建一个新的C++类。
+2. 对于父类，将其设置为`Character`类。
+- - 你可以在头文件类声明行中看到基类。
+- - 如果列表中没有该类，沿着类层次结构向下查找，直到找到原生UE类。
 
 > [!TIP]
-> Depending on the scale of the project, you can either recreate the whole/full hierechy structure or directly the base class.
-> Meaing that if you have ClassA -> ClassB -> Character, with "directly" it means ClassA -> Character (skipping any in-between).
-> And full meaning all of it, all three, one by one. 
+> 根据项目的规模，你可以重新创建完整的层次结构或直接使用基类。
+> 这意味着如果你有ClassA -> ClassB -> Character，"直接"意味着ClassA -> Character（跳过中间类）。
+> 而"完整"意味着全部都要一个接一个地创建。
 
-3. Click next, and name it **EXACTLY** as the header file.
-4. Set it to `Public` and click Create Class.
+3. 点击下一步，并将其命名为**与头文件完全相同**的名称。
+4. 将其设为`Public`并点击创建类。
 
 ![](/Media/Headers/4.png)
 
 ## Visual Studio
-1. Once a class is created, Visual Studio will be launched, with 2 new objects; `.cpp` and `.h` with the given class name (`BaseCharacter.cpp` and `BaseCharacter.h`).
-2. In the `BaseCharacter.cpp` file, remove everything besides the `#include "BasePlayer.h"`.
-3. In the `BaseCharacter.h`, remove any methods and variables that were auto added on creation (we don't care about them).
+1. 创建类后，Visual Studio将被启动，并带有两个新对象；带有给定类名的`.cpp`和`.h`文件（`BaseCharacter.cpp`和`BaseCharacter.h`）。
+2. 在`BaseCharacter.cpp`文件中，删除除了`#include "BasePlayer.h"`之外的所有内容。
+3. 在`BaseCharacter.h`中，删除在创建时自动添加的任何方法和变量（我们不需要它们）。
 
 ![](/Media/Headers/5.png)
 
-4. Add the same class tags as in the dumped header file.
+4. 添加与导出的头文件中相同的类标签。
 
 ![](/Media/Headers/6.png)
 
 > [!TIP]
-> Pay attention to the declaration fields/tags of each item.
+> 注意每个项目的声明字段/标签。
 
-5. Now add the methods and variables you're interested.
+5. 现在添加你感兴趣的方法和变量。
 
 ![](/Media/Headers/7.png)
 
 
-#### About Methods/Functions
-Each method in the header needs to return its type of a default value. <br>
-A few examples:
-- For boolean, add `{return false;};` 
-- for floats or integers, add `{return 0;};`
-- for voids, add `{};`
+#### 关于方法/函数
+头文件中的每个方法都需要返回其类型的默认值。<br>
+几个例子:
+- 对于布尔值，添加`{return false;};`
+- 对于浮点数或整数，添加`{return 0;};`
+- 对于void，添加`{};`
 
 > [!NOTE]
-> If it's a custom type then you will need to recreate it, and only then use it.
+> 如果是自定义类型，则需要先重新创建它，然后才能使用。
 
-### Compile
-To compile the project, right-click on the project name in the Solution Explorer and then "Build Solution".
+### 编译
+要编译项目，右键点击解决方案资源管理器中的项目名称，然后选择"生成解决方案"。
 
 ![](/Media/Headers/8.png)
 
-If everything was done correctly, the build will be successful.
+如果一切操作正确，构建将成功完成。
 
 ![](/Media/Headers/9.png)
 
 > [!NOTE]  
-> It's quite common for the build to fail which can be caused by countless of reasons, and I'm afraid I can't cover them in this guide.
+> 构建失败是很常见的，可能由无数原因导致，恐怕我无法在本指南中一一介绍。
 
-## Back to UnrealEngine
-Go back to UnrealEngine editor, into the mod Blueprint.<br>
-You should now be able to access those variables and methods within their corresponding classes.
+## 回到虚幻引擎
+返回到虚幻引擎编辑器中的模组蓝图。<br>
+现在你应该能够访问这些类中对应的变量和方法了。
 
-In this case, it was the player character which I can cast to and access all of its C++ stuff.
+在这个例子中，它是玩家角色，我可以将其转换并访问其所有C++内容。
 
 ![](/Media/Headers/10.png)
 
 
-Now we can properly use methods and variables from C++ classes in our bp mods.<br>
-And for this example, the player health is set on an enemy execution by a configurable percentage.
+现在我们可以在蓝图模组中正确使用C++类中的方法和变量。<br>
+在这个例子中，玩家的生命值会在处决敌人时通过一个可配置的百分比进行设置。
 
 ![](/Media/Headers/11.png)
 
 
 
-## Results
-The final mod can be found here:<br>
-[Trepang2 - Health Regen on Enemy Execution](https://www.nexusmods.com/trepang2/mods/92)
+## 结果
+最终的模组可以在这里找到：<br>
+[Trepang2 - 处决敌人时恢复生命值](https://www.nexusmods.com/trepang2/mods/92)

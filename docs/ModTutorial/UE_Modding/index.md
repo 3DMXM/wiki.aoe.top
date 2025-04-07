@@ -48,7 +48,7 @@ UE4（和UE5）Mod制作指南合集。</br>
 - [创建UE4/5项目](./IntermediateModding/CreatingProject.md)
 - [在UE4和UE5中烘焙/编译带有区块的内容](./IntermediateModding/CookingContent.md)
 - [替换纹理](./IntermediateModding/ChangingTextures.md)
-- [更改静态网格](./IntermediateModding/ChangingSM.md)
+- [更改游戏模型](./IntermediateModding/ChangingSM.md)
 - [更改骨骼网格](./IntermediateModding/ChangingSK.md)
 - [合并骨骼网格](./IntermediateModding/MergingSK.md)
 - [替换字体](./IntermediateModding/ReplacingFonts.md)

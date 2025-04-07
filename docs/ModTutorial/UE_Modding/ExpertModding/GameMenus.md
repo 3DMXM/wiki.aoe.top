@@ -1,99 +1,99 @@
-# Adding custom game buttons into existing menus
-The purpose of this guide/mod is to add a custom button that looks and behaves like one of the game's buttons, to an existing menu.<br>
+# 在现有菜单中添加自定义游戏按钮
+本指南/模组的目的是添加一个外观和行为与游戏原有按钮相似的自定义按钮到现有菜单中。<br>
 
 > [!NOTE]  
-> This guide assumes you already know how to create blueprint mods.
+> 本指南假设你已经知道如何创建蓝图模组。
 
-In Ghostrunner 2, there's a menu button "Extras" with 2 sub-buttons.<br>
-And our goal is to add the same-looking button into its stack but with our own text and logic.
+在《幽灵行者2》中，有一个"附加内容"菜单按钮，其中有2个子按钮。<br>
+我们的目标是在其堆栈中添加一个外观相同的按钮，但具有我们自己的文本和逻辑。
 
 ![](/Media/GameMenus/1.png)
 
 > [!NOTE]  
-> Every game will be different but this is the generic approach to this type of mod.
+> 每个游戏都会有所不同，但这是这类模组的通用方法。
 
-## Finding the components
-In this particular example, the main menu panel is called `BP_PanelStartMenu`, <br>
-which we can look into and find the Credits sub-button, as shown in the image.
+## 寻找组件
+在这个特定的例子中，主菜单面板被称为`BP_PanelStartMenu`，<br>
+我们可以查看并找到如图所示的"制作人员"子按钮。
 
 ![](/Media/GameMenus/2.png)
 
-In the image, we can see a few useful things:
-- The type of the component, `BP_PanelStartMenuSubButton_C` which we will need to dummy it.
-- The base properties like the TitleText.
-- The parent object holding this item, which is `VerBoxExtrasButtons`.
+在图片中，我们可以看到一些有用的信息：
+- 组件的类型，`BP_PanelStartMenuSubButton_C`，我们需要复制它。
+- 基本属性如TitleText。
+- 持有这个项目的父对象，即`VerBoxExtrasButtons`。
 
 > [!IMPORTANT]  
-> In UE4 it won't matter if the component has IsVariable set to false, you can still access it directly.
-> In UE5 it's different, only IsVariable components can be accessed, so you will have to find and navigate through the widget hierarchy.
+> 在UE4中，组件的IsVariable设置为false并不重要，你仍然可以直接访问它。
+> 在UE5中则不同，只有IsVariable组件可以被访问，所以你必须找到并通过widget层次结构导航。
 
 
-## Dummying/replicating it
-1. Create both widget blueprints in their original folders and name exactly how it's in-game files.
+## 复制/重现它
+1. 在其原始文件夹中创建两个widget蓝图，并完全按照游戏内文件的命名方式命名。
 
 ![](/Media/GameMenus/3.png)
 
 > [!TIP]  
-> In some rare cases, it's worth to fully replicate the entire button design for more control.
+> 在一些罕见的情况下，值得完全复制整个按钮设计以获得更多控制。
 
-2. Open the menu button widget, and dummy the necessary fields/methods/delegates.
+2. 打开菜单按钮widget，并复制必要的字段/方法/委托。
 
 ![](/Media/GameMenus/4.png)
 
-3. For a button, we need to handle the text and a way to detect the click.
+3. 对于一个按钮，我们需要处理文本和一种检测点击的方式。
 
-- The text is stored in a variable of type Text named `TitleText`.
-- The click detection is done via an event dispatcher/delegate named `OnClickDelegate`.
+- 文本存储在一个名为`TitleText`的Text类型变量中。
+- 点击检测通过一个名为`OnClickDelegate`的事件调度器/委托完成。
 
 ![](/Media/GameMenus/4-1.png)
 
 > [!TIP]  
-> Different games will need different approaches to it. 
-> The delegate/dispatcher will be different in every game, and if the button widget has any component of type Button (the default UE type), you can bind to it.
+> 不同的游戏需要不同的方法。
+> 委托/调度器在每个游戏中都会不同，如果按钮widget有任何Button类型的组件（UE默认类型），你可以绑定到它。
 
 
-4. Navigate to the dummy widget for the menu panel.
-5. Create the menu button widget in the canvas panel (doesn't matter where).
-6. Name it with the correct name, exactly how it's named in FModel, and set it as a variable (right of the name).
+4. 导航到菜单面板的复制widget。
+5. 在画布面板中创建菜单按钮widget（位置不重要）。
+6. 使用正确的名称，与FModel中显示的名称完全相同，并将其设置为变量（名称右侧）。
 
 ![](/Media/GameMenus/5.png)
 
 
-## Hooking into the menu
-In the ModActor, we first want to check if it's the current map and destroy the mod if it isn't the correct level name.
+## 挂钩到菜单
+在ModActor中，我们首先要检查当前是否是正确的地图，如果不是正确的关卡名称则销毁该模组。
 
 > [!NOTE]  
-> Relevant for main menu level or a menu which is persistent in a specific level.
-> If it's a pause menu, you need a different logic to detect it.
+> 这与主菜单级别或特定级别中持久存在的菜单相关。
+> 如果是暂停菜单，你需要不同的逻辑来检测它。
 
 ![](/Media/GameMenus/6.png)
 
-Now we need to detect if the menu is loaded which may be delayed and not persistent on level begin.<br>
-That's why I've used a loop timer to constantly look for it.
+现在我们需要检测菜单是否已加载，这可能会延迟且不在关卡开始时持久存在。<br>
+这就是为什么我使用循环计时器来不断寻找它的原因。
 
 ![](/Media/GameMenus/7.png)
 
-Once the panel was detected, the next thing is: 
-- Create the button widget.
-- Set default variables like the title text.
-- Bind/handle the OnClick of the button.
+一旦检测到面板，接下来要做的是：
+- 创建按钮widget。
+- 设置默认变量，如标题文本。
+- 绑定/处理按钮的OnClick事件。
 
-And then attach the button to the original button's parent.
+然后将按钮附加到原始按钮的父对象上。
 
 ![](/Media/GameMenus/8.png)
 
-## Results
-The button is created at the bottom of the stack/list and works as intended.
+## 结果
+按钮被创建在堆栈/列表的底部，并按预期工作。
 ![](/Media/GameMenus/9.png)
 
 > [!TIP]  
-> Different games might require additional logic to work properly in an existing menu/system.
+> 不同的游戏可能需要额外的逻辑才能在现有菜单/系统中正常工作。
 
 
 <hr>
 
-### Examples
-Few examples where this technique was used:
-- The [FOV slider](https://www.nexusmods.com/highonlife/mods/5) mod for HighOnLife, where the slider looks exactly as the rest of the settings.
-- The [Full Codex](https://www.nexusmods.com/ghostrunner2/mods/22) mod for Ghostrunner 2, where the additional codex categories and panels look and behave exactly like the first codex category.
-- The [Ghostrunner Trainer](https://github.com/Dmgvol/Ghostrunner-Mods/blob/main/LogicMods/Trainer/trainer.md) mod for Ghostrunner 1, where all settings for the mod were using the same buttons and layout as the original game settings.
+### 示例
+使用此技术的几个例子：
+- 为《嗨啊！人生》(HighOnLife)制作的[FOV滑块](https://www.nexusmods.com/highonlife/mods/5)模组，其中滑块外观与其他设置完全一致。
+- 为《幽灵行者2》制作的[完整法典](https://www.nexusmods.com/ghostrunner2/mods/22)模组，其中额外的法典类别和面板看起来并表现得与第一个法典类别完全一样。
+- 为《幽灵行者1》制作的[幽灵行者训练器](https://github.com/Dmgvol/Ghostrunner-Mods/blob/main/LogicMods/Trainer/trainer.md)模组，其中模组的所有设置都使用与原始游戏设置相同的按钮和布局。
