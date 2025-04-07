@@ -1,4 +1,4 @@
-# UE4/5 Mod制作指南 
+# UE4/5 Mod制作教程
 
 > 此文档翻译自 https://github.com/Dmgvol/UE_Modding
 
@@ -95,7 +95,7 @@ UE4（和UE5）Mod制作指南合集。</br>
 
 <hr>
 
-# 实用链接/工具
+## 实用链接/工具
 
 ### 浏览和编辑UAssets
 - [FModel](https://fmodel.app/)
@@ -125,6 +125,47 @@ UE4（和UE5）Mod制作指南合集。</br>
 
 ### Discord社区
 [UE Modding](https://discord.gg/unreal-engine-modding-876613187204685934)
+
+
+## 其他游戏相关教程链接
+
+### Robocop: Rogue City
+- [Robocop: 模组制作指南](https://www.abbiedoobie.com/2023/10/13/modding-robocop-rogue-city-and-other-ue-5-games/)
+
+### Hogwarts Legacy (霍格沃茨遗产)
+- [入门指南 - 创建虚幻项目](https://modding.wiki/en/hogwartslegacy/developers/getting-started)
+- [资源替换指南](https://modding.wiki/en/hogwartslegacy/developers/asset-replacement)
+- [打包模组指南](https://modding.wiki/en/hogwartslegacy/developers/packaging)
+
+### Palworld (幻兽帕鲁)
+- [3D资源导出与修改指南](https://pwmodding.wiki/docs/asset-swapping/ExportingModifying3DAssets)
+- [UE5中打包模组指南](https://pwmodding.wiki/docs/asset-swapping/PackagingInUE5)
+- [高级资源创建指南](https://pwmodding.wiki/docs/category/advanced-asset-creation)
+
+### inZOI (被遗忘的岛屿)
+- [修改版UModel查看器](https://drive.google.com/file/d/14ymGu_TxstIivOiFBAc9mXncE1NN3cGR/view)
+- [inZOI照片工具 (需要订阅)](https://www.patreon.com/user?u=37343853) - 使用Universal Unreal Engine 5 Unlocker工具，无法与UE4SS一起使用
+
+
+### 模组开发指南
+- [UE5模组开发指南](https://github.com/Dmgvol/UE_Modding?tab=readme-ov-file#intermediate-modding)
+- [UE4和UE5模组工具集](https://github.com/Buckminsterfullerene02/UE-Modding-Tools)
+
+### 游戏文件处理工具
+- [Bitfix](https://github.com/trumank/bitfix) - 为UE4和UE5游戏提供简单的Lua脚本支持，用于sig绕过
+- [retoc](https://github.com/trumank/retoc) - 用于解压inZOI的文件(转换后的.paks、.utocs和.ucas)，需要通过Cargo构建或从UE Modding Discord获取预构建版本
+- [UnrealPak解包教程](https://www.youtube.com/watch?v=AElxgCRXF64) - 使用UE目录中的UnrealPak.exe解包inZOI文件
+- [UAssetGUI](https://github.com/atenfyr/UAssetGUI) - 查看和编辑原始资产数据，需要Visual Studio 2022构建
+- [UE4和UE5游戏AES密钥集合](https://cs.rin.ru/forum/viewtopic.php?f=10&t=100672&p=3110720&hilit=inzoi#p3110720) - 需要账号
+- [QuickBMS](https://aluigi.altervista.org/quickbms.htm) - 用于转换inZOI的自定义格式.pak文件
+
+### Blender插件
+- [io-scene-psk-psa - 更新的Blender插件](https://extensions.blender.org/add-ons/io-scene-psk-psa/?utm_source=blender-4.3.0)
+- [Send2UE - Blender到虚幻引擎的工作流插件](https://github.com/poly-hammer/BlenderTools/releases/tag/20250310000557)
+
+### 修改版虚幻引擎
+- [修改版虚幻引擎5.4.4](https://github.com/FrancisLouiss/UnrealEngine/releases/tag/5.4.4-release)
+
 
 ---
 
