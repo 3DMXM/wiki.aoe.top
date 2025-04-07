@@ -1,7 +1,11 @@
 # 使用 UAssetGUI
 UAssetGUI 是一个用户界面工具，本质上是进行十六进制编辑，但无需查看任何十六进制代码。
 
-你可以在[这里](https://github.com/atenfyr/UAssetGUI/releases)下载最新版本的 UAssetGUI。
+你可以下载最新版本的 UAssetGUI: 
+
+[Github](https://github.com/atenfyr/UAssetGUI/releases) | [汉化版](https://github.com/3DMXM/UAssetGUI_cn/releases)
+
+
 
 ## 示例 - 修改 Trepang2 的弹匣容量
 在这个示例中，我们将修改 SMG 武器的弹匣容量，该武器位于名为 `BP_SMG` 的武器蓝图中。

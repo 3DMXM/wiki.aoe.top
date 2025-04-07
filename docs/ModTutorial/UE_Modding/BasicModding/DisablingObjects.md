@@ -34,7 +34,7 @@
 ![](/Media/RemovingObjects/spider4.png)
 
 ## 打包和测试
-使用UnrealPak打包模组文件夹（教程：[如何打包](/BasicModding/UnrealPak.md)）。
+使用UnrealPak打包模组文件夹（教程：[如何打包](./UnrealPak.md)）。
 
 
 这个模组可以在这里下载：[No More Spiders for GR1](https://www.nexusmods.com/ghostrunner/mods/28)

@@ -1,215 +1,210 @@
-# Changing SkeletalMesh(SK)
-The process is similar to StaticMesh swap but with a few additions of weight-paint and a few additional replications in UE.
+# 更换骨骼网格体(SkeletalMesh)
+这个过程与更换静态网格体(StaticMesh)类似，但需要额外进行权重绘制和在虚幻引擎中进行一些额外的复制工作。
 
-We will need Blender, and a Blender PSK-plugin to be able to import the `.psk` files which are exported from FModel/UModel.<br>
-Blender is free and available on [Blender website](https://www.blender.org/) or on [Steam page (Blender)](https://store.steampowered.com/app/365670/Blender/).
+我们需要使用Blender和一个Blender PSK插件来导入从FModel/UModel导出的`.psk`文件。<br>
+Blender是免费的，可以在[Blender官网](https://www.blender.org/)或[Steam页面(Blender)](https://store.steampowered.com/app/365670/Blender/)下载。
 
-The plugin link: [io_scene_psk_psa](https://github.com/DarklightGames/io_scene_psk_psa).<br>
-_(download the correct version, and follow the instructions in that repo readme)_
+插件链接：[io_scene_psk_psa](https://github.com/DarklightGames/io_scene_psk_psa)。<br>
+_(下载正确的版本，并按照该仓库readme中的说明进行操作)_
 
-Note: I'm still using the [older version](https://github.com/Befzz/blender3d_import_psk_psa) for Blender v3, so it might look different a bit.
+注意：我仍在使用适用于Blender v3的[旧版本](https://github.com/Befzz/blender3d_import_psk_psa)，所以界面可能略有不同。
 
 ## Blender
-For this example, I will be changing the SkeletalMesh(SK) of one of the enemies in Ghostrunner 2.<br>
-Start by locating your model in FModel, then export the model into a `.psk` file.
+在这个例子中，我将更换《幽灵行者2》(Ghostrunner 2)中一个敌人的骨骼网格体(SK)。<br>
+首先在FModel中找到你的模型，然后将模型导出为`.psk`文件。
 
 ![](/Media/SKSwap/fmodel1.png)
 
-Using the installed Blender `.psk` plugin, load the file into Blender **without scaling it down**.
+使用已安装的Blender `.psk`插件，将文件加载到Blender中，**不要缩小比例**。
 
 ![](/Media/SKSwap/1.png)
 
-The SK mesh will be loaded inside an Armature object, shown in the top-right corner.
+骨骼网格体将在骨架(Armature)对象内加载，如右上角所示。
 
-### Preparing the new model
-I've picked this simple model of a [medieval knight](https://sketchfab.com/3d-models/medieval-knight-sculpture-game-ready-6cdd055b4afa41eb9360dbbfe75c7f10) to be used in the SK swap.
+### 准备新模型
+我选择了这个简单的[中世纪骑士](https://sketchfab.com/3d-models/medieval-knight-sculpture-game-ready-6cdd055b4afa41eb9360dbbfe75c7f10)模型用于SK替换。
 
-#### Scale and Rotation
-Load the new model into the Blender project along with the original SK.<br>
-Scale and rotate the new mesh so the mesh is as close as possible to the original one, scale and rotation-wise.
+#### 缩放和旋转
+将新模型加载到与原始SK相同的Blender项目中。<br>
+缩放和旋转新网格体，使其在比例和旋转方面尽可能接近原始网格体。
 
 ![](/Media/SKSwap/2.png)
 
-#### Aligning
-Align the new mesh as close as possible to the original mesh.<br>
-This ensures the animations will be played properly without weird bone morphing.
+#### 对齐
+将新网格体尽可能地与原始网格体对齐。<br>
+这样可以确保动画播放正常，避免出现奇怪的骨骼变形。
 
-If your mesh is rigged like the model I'm using, then simply switch to Pose mode and move the bones to align as closely as possible.
+如果你的网格体已经绑定了骨架（就像我使用的模型那样），只需切换到姿态模式(Pose mode)并移动骨骼以尽可能地接近对齐。
 
-Note:
-If your mesh is not rigged, either quickly rig it with automatic weights(look it up on Youtube), use Mixamo to auto-rig or manually move the vertices in Edit mode.
+注意：
+如果你的网格体没有绑定骨架，可以使用自动权重快速绑定它（可在YouTube上查找教程），使用Mixamo进行自动绑定，或在编辑模式下手动移动顶点。
 
 ![](/Media/SKSwap/3.png)
 
-#### Applying armature changes
-If your model is rigged, and you've aligned the model to the original model, then make sure you apply those changes to the Armature.
+#### 应用骨架变更
+如果你的模型已经绑定了骨架，并且你已经将模型与原始模型对齐，那么请确保将这些更改应用到骨架上。
 
 ![](/Media/SKSwap/4.png)
 
-This will set the current pose as the default pose.
+这将把当前姿态设置为默认姿态。
 
-
-#### Unparenting
-We no longer need the armature of the new mesh.<br>
-Select the mesh, right-click, Parent -> Clear and Keep Transformation.
+#### 解除父子关系
+我们不再需要新网格体的骨架了。<br>
+选择网格体，右键点击，Parent -> Clear and Keep Transformation（父级 -> 清除并保持变换）。
 
 ![](/Media/SKSwap/5.png)
 
-Once the mesh is separated from its armature, remove the armature (of the new mesh).
+一旦网格体与其骨架分离，删除该骨架（新网格体的骨架）。
 
 ![](/Media/SKSwap/6.png)
 
-#### Removing Vertex Groups
-Before we parent our mesh to the original Armature, we want to get rid of all the existing bones, also known as Vertex Groups.<br>
-This will prevent overlapping and irrelevant bones from being listed in our original Armature.
+#### 删除顶点组
+在我们将网格体与原始骨架建立父子关系之前，我们需要删除所有现有的骨骼，也称为顶点组。<br>
+这将防止在原始骨架中出现重叠和不相关的骨骼。
 
 ![](/Media/SKSwap/7.png)
 
-#### UV Map names
-This is optional for a complete mesh swap where the new mesh completely takes over the old mesh,<br>
-but it's crucial for merging a new mesh into an existing mesh!
+#### UV贴图名称
+对于完全替换原始网格体的网格体交换来说，这一步是可选的，<br>
+但对于将新网格体合并到现有网格体中来说，这一步是至关重要的！
 
-With the mesh I'm using, there are 3 UV Maps - we only need one to match the original mesh UV Map name.
+对于我正在使用的网格体，它有3个UV贴图 - 我们只需要一个与原始网格体UV贴图名称匹配的贴图。
 
 ![](/Media/SKSwap/8.png)
 
-Navigate to the original mesh, and copy the name of the UV Map, usually it's `UV_SINGLE`.<br>
-Go back to the new mesh UV Maps, remove all besides the first one, and name it exactly how the original UV map is named.<br>
-In this example, it's `UV_SINGLE`.
+导航到原始网格体，复制UV贴图的名称，通常是`UV_SINGLE`。<br>
+回到新网格体的UV贴图，除了第一个之外全部删除，并将其命名为与原始UV贴图完全相同的名称。<br>
+在这个例子中，是`UV_SINGLE`。
 
 ![](/Media/SKSwap/9.png)
 
+### 权重绘制
+我们已经到了具有挑战性的部分，权重绘制。<br>
+如果你在Blender中没有权重绘制的经验，我强烈建议观看一些YouTube教程视频，因为这是一个相当大的主题，我不会在本指南中详细介绍。
 
-### Weight-Paint
-We've reached the challenging part, weight-paint.<br>
-If you don't have any experience with weight-painting in Blender, I would highly suggest watching a few YouTube tutorial videos on it as it's quite a big subject that I won't be covering in this guide.
-
-#### Parenting back
-Select your mesh, then select the armature of the original mesh, right-click -> Parent -> With Empty Groups.<br>
-The mesh will be parented into the original armature object, inheriting all the vertex groups(bones) of the original one.
+#### 重新建立父子关系
+选择你的网格体，然后选择原始网格体的骨架，右键点击 -> Parent -> With Empty Groups（父级 -> 使用空组）。<br>
+网格体将被设为原始骨架对象的子对象，继承原始骨架对象的所有顶点组（骨骼）。
 
 ![](/Media/SKSwap/10.png)
 
-**Important!**
-Always rename the armature of the mesh, to `Armature`! Do not skip this!!!<br>
-Without it, the skeleton structure will be altered when imported into UnrealEngine, creating an incorrect/unmatching skeleton structure with the original one, which will break all animations.
+**重要！**
+始终将网格体的骨架重命名为`Armature`！不要跳过这一步！！！<br>
+如果不这样做，导入到虚幻引擎时，骨架结构将被更改，创建与原始骨架结构不匹配的错误结构，这将破坏所有动画。
 
 ![](/Media/SKSwap/11.png)
 
-#### Painting time!
-This part is the most time-consuming part, as you have to weight-paint **every** single bone of the mesh to be as close as possible to how it looks on the original mesh.<br>
+#### 开始绘制！
+这部分是最耗时的部分，因为你必须对网格体的**每一个**骨骼进行权重绘制，使其尽可能接近原始网格体的外观。<br>
 
-Switch to Weight-Paint mode, and start weight-painting every single bone, by going one by one in the Vertex Group list.<br>
+切换到权重绘制模式，通过逐一访问顶点组列表，开始为每个骨骼进行权重绘制。<br>
 
-Tip: I always open another Blender window with the original model in weight-paint mode with the same selected bone.<br>
-This helps in getting the proportions and strengths of the target weight-paint result.
+提示：我总是打开另一个Blender窗口，其中显示原始模型在权重绘制模式下选择了相同骨骼。<br>
+这有助于获得目标权重绘制结果的比例和强度。
 
 ![](/Media/SKSwap/12.png)
 
-Once you're done weight-paint, you can check your results by going to Pose mode and moving the individual bones to see if they morph/move as expected.
+完成权重绘制后，你可以通过进入姿态模式并移动各个骨骼来检查结果，看看它们是否按预期变形/移动。
 
-### Dummy Materials
-Dummy materials are done in order to prevent the game from changing the mesh materials at runtime, and to ensure our custom model stays with its original materials throughout the game session.
+### 虚拟材质
+创建虚拟材质的目的是防止游戏在运行时更改网格体材质，并确保我们的自定义模型在整个游戏会话中保持其原始材质。
 
-_Note: You can skip this part ONLY if you're 100% sure the materials are not changed in runtime._
+_注意：只有当你100%确定材质不会在运行时更改时，才可以跳过这部分。_
 
-Using FModel, we can see there are 3 materials the original mesh is using.<br>
-So create 3 new materials and place them at the top of the list, so they're the first ones followed by your custom model materials.
+使用FModel，我们可以看到原始网格体使用了3种材质。<br>
+所以创建3个新材质并将它们放在列表的顶部，使它们排在你的自定义模型材质之前。
 
 ![](/Media/SKSwap/13.png)
 
-Every material needs to have at least one face assigned to it, otherwise they will be ignored in UnrealEngine.<br>
-To do so, the easiest trick is to zoom into the inside of the mesh and extrude a random line multiple times.<br>
-Then select the first extructed face, click on dummy material and then Assign (repeat for the number of dummy materials you have). 
+每种材质需要至少分配一个面，否则它们在虚幻引擎中将被忽略。<br>
+要做到这一点，最简单的方法是放大到网格体内部，并多次挤出一条随机线。<br>
+然后选择第一个挤出的面，点击虚拟材质，然后点击Assign（分配）（对你拥有的每个虚拟材质重复此操作）。
 
 ![](/Media/SKSwap/14.png)
 
-### Important notes
-Here are some important notes to consider while working with SK in Blender:
-- Never adjust or move the original skeleton.
-- Always have the armature object named `Armature`.
-- Align the new mesh as closely as possible to the original mesh, to ensure seamless animations.
-- Material names don't matter, it's their order in the list that matters.
-- Test your weight-paint results in Pose mode before exporting to save time.
+### 重要注意事项
+在使用Blender处理SK时，以下是一些需要考虑的重要注意事项：
+- 永远不要调整或移动原始骨架。
+- 始终将骨架对象命名为`Armature`。
+- 尽可能地将新网格体与原始网格体对齐，以确保动画无缝衔接。
+- 材质名称无关紧要，重要的是它们在列表中的顺序。
+- 在导出前在姿态模式下测试你的权重绘制结果，以节省时间。
 
-### Exporting!
-Well done reaching the exporting part, you've made it through the hardest section of the mod!<br>
-Before you export, double-check the materials are correct, the UV maps are correct, the weight-paint is functional, and the root object is named `Armature`.
+### 导出！
+很好，你已经到达了导出部分，你已经完成了模组中最困难的部分！<br>
+在导出之前，再次检查材质是否正确，UV贴图是否正确，权重绘制是否有效，以及根对象是否命名为`Armature`。
 
 ![](/Media/SKSwap/15.png)
 
-When Exporting, make sure to scale it down to `0.01`.<br>
-Here are my settings for exporting:
+导出时，确保将比例缩小到`0.01`。<br>
+以下是我的导出设置：
 
 ![](/Media/SKSwap/16.png)
 
-
-
-## UnrealEngine
-Open your UE project, and create the same folder structure to match the original folder where the SK is located.<br>
-Then drag and drop the exported `.fbx` file and click "Import All".
+## 虚幻引擎
+打开你的UE项目，创建与SK所在的原始文件夹相匹配的相同文件夹结构。<br>
+然后拖放导出的`.fbx`文件并点击"Import All"（导入全部）。
 
 ![](/Media/SKSwap/ue1.png)
 
-Name the SkeletalMesh(the character model) to match with how it's named in the game files (important!).
+将骨骼网格体（角色模型）命名为与游戏文件中的命名相匹配（这很重要！）。
 
-### Assigning ShadowPhysics (if any)
-Some games have ShadowPhyiscs in their characters so if your SK doesn't have it - skip this step.<br>
+### 分配阴影物理（如果有）
+某些游戏在角色中有ShadowPhyiscs（阴影物理），如果你的SK没有 - 跳过此步骤。<br>
 
-ShadowPhysics in modding is the same as the original PhysicsAssets, so simply duplicate it and name it exactly how it's named in the game files.<br>
-_(You can double-check it using FModel, opening the SK asset and scrolling down a bit)_
+在模组中，ShadowPhysics与原始PhysicsAssets相同，所以只需复制它并将其命名为与游戏文件中的名称完全一致。<br>
+_（你可以使用FModel打开SK资产并向下滚动一点来进行双重检查）_
 
-Once the PA is duplicated and named to match the SP, double-click on the SkeletalMesh(SK), scroll down and drag the SP into its slot.
+一旦PA被复制并命名为与SP匹配，双击骨骼网格体(SK)，向下滚动并将SP拖入其插槽。
 
 ![](/Media/SKSwap/ue2.png)
 
-### Replicating Skeleton and PhysicsAsset
-When you import your mesh into UE, it auto-generates the Skeleton and PhysicsAsset which have to match with the game files.<br>
+### 复制骨架和物理资产
+当你将网格体导入UE时，它会自动生成必须与游戏文件匹配的骨架和物理资产。<br>
 
-Using FModel, we can see the name and location of the used Skeleton.<br>
-Rename the skeleton to match it, and move it to the same folder as shown in FModel (create the folder structure). 
+使用FModel，我们可以看到所使用骨架的名称和位置。<br>
+重命名骨架以与之匹配，并将其移动到FModel中显示的相同文件夹（创建文件夹结构）。
 
-In my case, the skeleton is named `SK_Enemy_Shinobi` and is located in `/Visual/Character/Shinobi`, so I've created the same folders, named the skeleton, and moved it to that folder.
+在我的例子中，骨架名为`SK_Enemy_Shinobi`，位于`/Visual/Character/Shinobi`，所以我创建了相同的文件夹，命名了骨架，并将其移动到该文件夹。
 
 ![](/Media/SKSwap/ue3.png)
 
-**Don't forget:** Do the same with the PhysicsAsset and ShadowPhyiscs(if any).
+**不要忘记：**对物理资产和阴影物理（如果有）执行相同操作。
 
-### Materials
-This part will be different in every game and the used SK, so it's a bit difficult to cover all of them.<br>
-Creating materials - I won't be covering this, as there are plenty of tutorials on YouTube.
+### 材质
+这部分在每个游戏和使用的SK中都会有所不同，所以很难涵盖所有情况。<br>
+关于创建材质 - 我不会详细介绍，因为YouTube上有很多教程。
 
-In terms of modding there are 2 options: plain materials, and replicated Material Instances _(in case "plain" doesn't work)_.
+在模组方面，有两个选择：普通材质和复制的材质实例 _（以防"普通"材质不起作用）_。
 
-Plain means you create an empty Material, drag and drop the used textures and connect it to the Material node, as shown below with a single texture for the BaseColor.<br>
-For better quality materials, you would want to have ORM(Occlusion, Roughness, Metallic) and Normal textures as well.
+普通材质意味着你创建一个空材质，拖放使用的纹理并将其连接到材质节点，如下所示，使用单个纹理作为基本颜色。<br>
+为了获得更高质量的材质，你还需要ORM（遮挡、粗糙度、金属度）和法线贴图。
 
 ![](/Media/SKSwap/ue4.png)
 
-**Note:**
-If plain materials don't work, try to set the same settings as the original/base material.
+**注意：**
+如果普通材质不起作用，尝试设置与原始/基础材质相同的设置。
 
 ![](/Media/SKSwap/ue6.png)
 
-If that doesn't work, then you will have to use a replicated Material Instance.
+如果这仍然不起作用，那么你将不得不使用复制的材质实例。
 
-
-### Pack and test
-Once everything is done, double-check you named the asset correctly, placed the skeleton and PA in the correct location, done with the materials and textures.
-You can name the materials and textures with common naming conventions for easier readability and maintenance (optional but recommended).
+### 打包和测试
+完成所有工作后，再次检查你是否正确命名了资产，将骨架和PA放在正确的位置，完成了材质和纹理的处理。
+你可以使用常见的命名约定命名材质和纹理，以便于阅读和维护（可选但推荐）。
 
 ![](/Media/SKSwap/ue5.png)
 
-Pack it and test it!<br>
+打包并测试！<br>
 
-Only pack the new SK, and the used materials and textures.<br>
-DON'T pack the skeleton, physicsAsset or the ShadowAsset.
+只打包新的SK以及使用的材质和纹理。<br>
+不要打包骨架、物理资产或阴影资产。
 
-UE4 -> using UnrealPak (or chunks, if you want). <br>
-UE5 -> chunk assigning _(unless the game has no IOStore)_.
+UE4 -> 使用UnrealPak（或chunks，如果你想要的话）。<br>
+UE5 -> chunk分配 _（除非游戏没有IOStore）_。
 
-For more information about how to package your mod, view [Cooking Content guide](/IntermediateModding/CookingContent.md).<br>
-(don't forget to name your mod with `_P` in its name)
+有关如何打包模组的更多信息，请查看[Cooking Content指南](/IntermediateModding/CookingContent.md)。<br>
+（不要忘记在模组名称中添加`_P`）
 
-# Results 
+# 结果
 ![](/Media/SKSwap/result.png)

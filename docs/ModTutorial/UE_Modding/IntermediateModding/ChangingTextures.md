@@ -1,31 +1,31 @@
-# Changing Textures
+# 更改纹理
 
-For this example, I will change a sword texture for GR2 (UE4.27) but the same principles apply to any other game and engine version.
+在这个例子中，我将更改GR2（UE4.27）的一个剑的纹理，但相同的原则适用于任何其他游戏和引擎版本。
 
-Once you located the texture you want to replace, export it as PNG and edit it to suit your needs.
+一旦你找到了想要替换的纹理，将其导出为PNG并编辑它以满足你的需求。
 
 ![](/Media/ChangingTexture/changingTex1.png)
 
-Launch UE and create the same folder structure as it's shown in FModel.
+启动UE并创建与FModel中显示的相同的文件夹结构。
 
 ![](/Media/ChangingTexture/changingTex2.png)
 
-Import the texture(s) into its folder and keep the **same exact** name as it's named in FModel.
+将纹理导入到其文件夹中，并保持与FModel中命名的**完全相同**的名称。
 
 ![](/Media/ChangingTexture/changingTex3.png)
 
 
-Notes:<br>
-Try and match any texture settings you override with its original type. <br>
-- If it's a `Normal` map texture, make sure you pick NormalMap in CompressionSettings.
-- If it's an ORM (packed Occlusion|Roughness|Metalic into one), make sure you pick Masks in CompressionSettings. <br>
-You can double-check everything in FModel.
+注意：<br>
+尝试使你覆盖的任何纹理设置与其原始类型匹配。<br>
+- 如果它是一个`法线`贴图纹理，确保在压缩设置中选择NormalMap。
+- 如果它是一个ORM（将遮挡|粗糙度|金属性打包成一个），确保在压缩设置中选择Masks。<br>
+你可以在FModel中再次检查所有内容。
 
 
-Once done, simply pack it and test it in-game.<br>
-For more information about how to package your mod, view [Cooking Content guide](/IntermediateModding/CookingContent.md).<br>
+完成后，只需打包并在游戏中测试。<br>
+有关如何打包你的mod的更多信息，请查看[烘焙内容指南](/IntermediateModding/CookingContent.md)。<br>
 
-(don't forget to name your mod with `_P` in its name)
+（不要忘记在你的mod名称中加入`_P`）
 
 ![](/Media/ChangingTexture/changingTex4.png)
 

@@ -53,7 +53,7 @@ export default withMermaid({
         },
         editLink: {
             text: "在GitHub上编辑此页面",
-            pattern: 'https://github.com/3DMXM/wiki.aoe.top/edit/master/:path'
+            pattern: 'https://github.com/3DMXM/wiki.aoe.top/edit/master/docs/:path'
         },
         lastUpdated: {
             text: '最后更新于',

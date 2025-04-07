@@ -1,74 +1,74 @@
-# Replacing Fonts
-Fonts are easy to replace, and there are 2 methods for it which I will cover in this guide.
+# 替换字体
+替换字体非常简单，本指南将介绍两种方法。
 
-1. Direct FontFace replace - just like a texture swap, but you import your font (`.ttf` or `.otf` file) into the correct folder and name it accordingly.
-2. Font dummy (font family) - dummy the Font asset and set our own fonts for each type.
+1. 直接替换FontFace - 就像替换纹理一样，只需将你的字体文件（`.ttf`或`.otf`）导入到正确的文件夹并相应地命名。
+2. 字体虚拟（字体族）- 创建Font资产的替代并为每种类型设置我们自己的字体。
 
-## Method 1 - Direct Replace
-Direct font replacement is exactly the same as a texture swap, where the modified/new asset is imported into UE, named and placed in the correct folder to match the game files.
+## 方法1 - 直接替换
+直接字体替换与纹理替换完全相同，即将修改/新资产导入UE，命名并放置在正确的文件夹中以匹配游戏文件。
 
-### Identify the Font and/or FontFace
-First, we want to find the Font and the actual FontFace.
-In this instance, the found Font has multiple types, and the one we're particularly interested is `Default`.
+### 识别字体和/或FontFace
+首先，我们需要找到Font和实际的FontFace。
+在这个例子中，发现的Font有多种类型，我们特别关注的是`Default`。
 
 ![](/Media/FontReplace/1.png)
 
-### Import New Asset
-1. Drag the font file into the Content Browser tab inside the UE project.
+### 导入新资产
+1. 将字体文件拖入UE项目中的Content Browser（内容浏览器）标签。
 
 ![](/Media/FontReplace/2.png)
 
-2. A window prompt will appear, press `No All` to avoid generating a Font asset for each imported FontFace.
+2. 会出现一个窗口提示，按下`No All`以避免为每个导入的FontFace生成Font资产。
 
 ![](/Media/FontReplace/3.png)
 
-3. Ensure the folders and asset name(s) match with the game files.
+3. 确保文件夹和资产名称与游戏文件匹配。
 
 ![](/Media/FontReplace/4.png)
 
-### Pack it
-Package the asset and test results.
+### 打包
+打包资产并测试结果。
 
 ![](/Media/FontReplace/5.png)
 
-For more information about how to package your mod, view [Cooking Content guide](/IntermediateModding/CookingContent.md).<br>
+有关如何打包mod的更多信息，请查看[烹饪内容指南](/IntermediateModding/CookingContent.md)。<br>
 
-(don't forget to name your mod with `_P` in its name)
+（别忘了在mod名称中添加`_P`）
 
-## Method 2 - Font Asset
-Each font type has to be contained in a `Font` asset, similarly to Font Family with optional styles like Italic, Bold, and others. <br>And each type is called FontFace (the imported `.ttf` or `.otf`).
+## 方法2 - 字体资产
+每种字体类型都必须包含在一个`Font`资产中，类似于带有可选样式（如斜体、粗体等）的字体族。<br>每种类型称为FontFace（导入的`.ttf`或`.otf`）。
 
-### Font Asset
-1. Right click -> User Interface -> Font
+### 字体资产
+1. 右键单击 -> User Interface（用户界面）-> Font（字体）
 
 ![](/Media/FontReplace/6.png)
 
-2. Name it to match with the game files (look in FModel).
+2. 将其命名为与游戏文件匹配（参考FModel）。
 
 ![](/Media/FontReplace/7.png)
 
-Font assets will contain a handful of FontFace assets with a named style.<br>
-In this instance, it contains different styles like Default, Black, BlackItalic, Bold, and others.
+字体资产将包含一系列具有命名样式的FontFace资产。<br>
+在这个例子中，它包含不同的样式，如Default、Black、BlackItalic、Bold等。
 
-3. Import any corresponding/related fonts that would fit with those styles or names.
+3. 导入与这些样式或名称相适应的任何相关字体。
 
 > [!NOTE]  
-> You decide where each font goes into which style/category.<br>
-> And you can set the same one to all of them if you want.
+> 你可以决定每种字体放入哪种样式/类别。<br>
+> 如果你愿意，也可以将同一个字体设置给所有类别。
 
 ![](/Media/FontReplace/8.png)
 
-4. Open the Font asset and click `Add Font`, name it the same as in FModel and specify your own FontFace to it (could be custom or actual one).
+4. 打开Font资产并单击`Add Font`，将其命名为与FModel中相同的名称，并为其指定你自己的FontFace（可以是自定义的或实际的）。
 
-5. Repeat step 4 until all Font Family items are set.
+5. 重复步骤4，直到设置好所有字体族项目。
 
 ![](/Media/FontReplace/9.png)
 
-### Pack it
-Package the asset and test results.
+### 打包
+打包资产并测试结果。
 
 ![](/Media/FontReplace/10.png)
 
-For more information about how to package your mod, view [Cooking Content guide](/IntermediateModding/CookingContent.md).<br>
+有关如何打包mod的更多信息，请查看[烹饪内容指南](/IntermediateModding/CookingContent.md)。<br>
 
-(don't forget to name your mod with `_P` in its name)
+（别忘了在mod名称中添加`_P`）
