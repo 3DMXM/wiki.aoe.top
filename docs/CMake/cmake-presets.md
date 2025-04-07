@@ -267,7 +267,7 @@ Vcpkg 可以帮助您在 Windows、Linux 和 macOS 上管理 C 和 C++ 库。必
 
 要检查预设文件是否有效，请在项目目录的根目录中从命令行运行“cmake --list-presets”。(需要 CMake 3.20 或更高版本.) 如果任何文件无效，则会看到以下错误：
 
-```DOS
+```
 CMake Error: Could not read presets from
 C:/Users/<user>/source/repos/<project-name>: JSON parse error
 ```
@@ -289,7 +289,7 @@ C:/Users/<user>/source/repos/<project-name>: JSON parse error
 
 可以从存储“CMakePresets.json”文件的目录中运行以下命令：
 
-```DOS
+```
 cmake --list-presets=all .
 cmake --preset <configurePreset-name>
 cmake --build --preset <buildPreset-name>
