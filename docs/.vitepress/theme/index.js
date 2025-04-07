@@ -6,9 +6,9 @@ import '@documate/vue/dist/style.css'
 
 export default {
     ...DefaultTheme,
-    Layout: h(DefaultTheme.Layout, null, {
-        'nav-bar-content-before': () => h(Documate, {
-            endpoint: 'https://es1fryngs7.us.aircode.run/ask',
-        }),
-    }),
+    // Layout: h(DefaultTheme.Layout, null, {
+    //     'nav-bar-content-before': () => h(Documate, {
+    //         endpoint: 'https://es1fryngs7.us.aircode.run/ask',
+    //     }),
+    // }),
 }

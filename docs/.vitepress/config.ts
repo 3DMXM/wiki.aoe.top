@@ -40,6 +40,9 @@ export default withMermaid({
             useTitleFromFileHeading: true,
             collapsed: true,
             documentRootPath: '/docs',
+            sortFolderTo: 'bottom',
+            useFolderTitleFromIndexFile: true,
+            includeFolderIndexFile: true,
         }),
 
         socialLinks: [
