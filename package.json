@@ -14,7 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "@documate/documate": "^0.2.1",
-    "vitepress": "^1.0.0-rc.36"
+    "mermaid": "^11.4.1",
+    "vitepress": "^1.0.0-rc.36",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vitepress-sidebar": "^1.31.1"
   },
   "dependencies": {
     "@documate/vue": "^0.3.1"
