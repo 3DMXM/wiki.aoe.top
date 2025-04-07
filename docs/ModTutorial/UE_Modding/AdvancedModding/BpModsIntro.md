@@ -1,106 +1,106 @@
-# Blueprint Modding
-Blueprint modding in Unreal Engine allows modders to create and customize game features through a visual scripting system, eliminating the need for traditional coding. This powerful tool enables the modification of gameplay mechanics, AI behaviors, and user interfaces, making it accessible for modders to enhance and personalize game experiences quickly and efficiently.
+# 蓝图模组开发
+虚幻引擎中的蓝图模组开发允许模组制作者通过可视化脚本系统创建和定制游戏功能，无需传统编码。这个强大的工具使修改游戏机制、AI行为和用户界面成为可能，让模组制作者能够快速高效地增强和个性化游戏体验。
 
-## Getting Started
-If you're part of a game's Discord, check if there's a modding scene for that game, and ensure there's an already existing BP modloader of some type.
+## 入门指南
+如果你加入了某个游戏的Discord社区，请检查该游戏是否有模组开发社区，并确保已有某种类型的蓝图模组加载器。
 
-**This guide assumes you're using UE4SS, UML, or DML.** <br>
-(if nothing sounds similar, you might need to research and ask around the modding scene of your game)
+**本指南假设你正在使用UE4SS、UML或DML。** <br>
+(如果这些名称都不熟悉，你可能需要在游戏的模组社区中进行研究和询问)
 
-1. Double-check the version of UE the game is using by right-clicking on the exe -> properties -> details tab.
-2. Download the correct UE version and create a new project.<br> 
-For more details read the [Creating a UE4/5 project](./IntermediateModding/CreatingProject.md) guide.
+1. 右键点击游戏exe文件 -> 属性 -> 详细信息选项卡，确认游戏使用的UE版本。
+2. 下载正确版本的UE并创建一个新项目。<br>
+更多详细信息，请阅读[创建UE4/5项目](./IntermediateModding/CreatingProject.md)指南。
 
-## Setting up
-1. In the Content Browser, create a new folder called `Mods`
-2. In the Mods folder, create another new folder and call it whatever you like, like `MyMod`
+## 环境设置
+1. 在内容浏览器中，创建一个名为`Mods`的新文件夹
+2. 在Mods文件夹中，创建另一个新文件夹，并随意命名，例如`MyMod`
 
-## Creating the Blueprint
-Right-click and select the Blueprint Class.
+## 创建蓝图
+右键点击并选择蓝图类。
 
 ![](/Media/BpIntro/1.png)
 
-Choose the Actor class.
+选择Actor类。
 
 ![](/Media/BpIntro/2.png)
 
-Once the BP is created, rename it to `ModActor`.
+创建蓝图后，将其重命名为`ModActor`。
 
 ![](/Media/BpIntro/3.png)
 
-Double-click the BP and switch to the Event Graph tab, where you will be greeted with a few default nodes.<br>
-- EventBeginPlay: executes the code once when the BP is spawned/created.
-- EventActorBeginPlay: we will skip this one.
-- EventTick: executes the code every time the game is updated, every single frame, if not more..
+双击蓝图并切换到事件图表(Event Graph)选项卡，你将看到几个默认节点。<br>
+- EventBeginPlay: 在蓝图生成/创建时执行一次代码。
+- EventActorBeginPlay: 我们将跳过这个。
+- EventTick: 在每次游戏更新时执行代码，即每一帧都会执行，甚至可能更频繁。
 
-We will come back to it, so close the window for now.
+我们稍后会回到这里，现在先关闭窗口。
 
 ![](/Media/BpIntro/4.png)
 
-For this example, we will create a widget, a UI to display that the mod is loaded in-game.
+在本例中，我们将创建一个小部件(widget)，一个UI界面，用于在游戏中显示模组已加载。
 
-## Creating the widget
+## 创建小部件
 
-1. In the Content Browser, right-click->User Interface-> Widget Blueprint.
-2. Name it whatever you want, I named it `WBP_MyWidget`.
-3. Open it.
+1. 在内容浏览器中，右键点击->用户界面(User Interface)->小部件蓝图(Widget Blueprint)。
+2. 随意命名，我将其命名为`WBP_MyWidget`。
+3. 打开它。
 
 ![](/Media/BpIntro/5.png)
 
-Search for `Canvas` in the Palette and drag it onto the root object of the widget.<br>
-Canvas allows us to place other objects wherever we want on the screen.
+在面板(Palette)中搜索`Canvas`，并将其拖到小部件的根对象上。<br>
+Canvas允许我们在屏幕上任意位置放置其他对象。
 
 ![](/Media/BpIntro/6.png)
 
-Seach for `Text` and drag the Text object on the Canvas.
+搜索`Text`并将文本对象拖到Canvas上。
 
 ![](/Media/BpIntro/7.png)
 
-1. Select the text.
-2. Set your text within the Text field, I set it to `Loaded!` as a test.
-3. Save it, close.
+1. 选择文本。
+2. 在Text字段中设置你的文本，我将其设置为`Loaded!`作为测试。
+3. 保存并关闭。
 
 ![](/Media/BpIntro/9.png)
 
-## Coding the Blueprint
+## 编写蓝图代码
 
-1. Open the BP we created earlier.
-2. Pull the EventBeginPlay pin and search for `Create Widget`, and click it.
+1. 打开我们之前创建的蓝图。
+2. 拉出EventBeginPlay引脚，搜索`Create Widget`，并点击它。
 
 ![](/Media/BpIntro/10.png)
 
-A new node will be created and connected.<br>
-Click on the Class dropdown in the node and select your widget by name.
+一个新节点将被创建并连接。<br>
+点击节点中的Class下拉菜单，按名称选择你的小部件。
 
 ![](/Media/BpIntro/11.png)
 
-1. Drag the Return Value pin from the widget creation node.
-2. Look for `Add to viewport` and click it.
+1. 从小部件创建节点拖出Return Value引脚。
+2. 寻找`Add to viewport`并点击它。
 
 ![](/Media/BpIntro/12.png)
 
-You should have the same thing as in the image below.<br>
-The code basically means: <br>
-On begin, create the specified widget, and add it to the screen/viewport.
+你应该能看到与下图相同的内容。<br>
+这段代码的基本含义是：<br>
+在开始时，创建指定的小部件，并将其添加到屏幕/视口。
 
 ![](/Media/BpIntro/13.png)
 
-## Final Mod-Folder Structure
-And the mod folder should look like this:
+## 最终模组文件夹结构
+模组文件夹应该如下所示：
 
 ![](/Media/BpIntro/14.png)
 
 
 
-## Pack it and Test it
-The packaging process will vary based on the UE version. <br>
-UE4 -> using UnrealPak. <br>
-UE5 -> chunk assigning _(unless the game has no IOStore)_.
+## 打包和测试
+打包过程将根据UE版本而有所不同。<br>
+UE4 -> 使用UnrealPak。<br>
+UE5 -> 区块分配(chunk assigning)_(除非游戏没有IOStore)_。
 
-For more info, check [Cooking with UE](/IntermediateModding/CookingContent.md).
+更多信息，请查看[使用UE烹饪内容](/IntermediateModding/CookingContent.md)。
 
-### Loading the mod
-Depending on the modloader, the loading process may vary, so double-check with the used modloader instructions or with the modding community for the game you're modding.
+### 加载模组
+根据不同的模组加载器，加载过程可能会有所不同，所以请查看所使用的模组加载器说明或咨询你正在制作模组的游戏社区。
 
 
 ![](/Media/BpIntro/15.png)

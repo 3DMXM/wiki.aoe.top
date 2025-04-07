@@ -1,94 +1,94 @@
-# Replicating Material Instances
-Mostly used in game that won't accept custom/plain materials or the modder wants to inherit a material behavior without breaking it and adjusting its parameters.
+# 复制材质实例
+主要用于那些不接受自定义/普通材质的游戏，或者模组制作者希望继承材质行为而不破坏它并调整其参数。
 
-__Number of examples to use a MaterialInstance(MI)__
-- When a game won't accept plain materials, like [HighOnLife](https://store.steampowered.com/app/1583230/High_On_Life/). <br>
-For custom materials to work in such a game, you have to find an already existing MI with the same parameters as your target mesh.
-- There's a hologram material that you want to use in your mod but want it to look the same but with your image/text. <br>
-If there's a glitching effect or panning effect, you would like to keep it while having your texture in it.
-- The character is using a special MaterialInstance with specific effects like a built-in outline, so you can set your own texture while keeping the original structure.
+__使用材质实例(MI)的几个例子__
+- 当游戏不接受普通材质时，比如[HighOnLife](https://store.steampowered.com/app/1583230/High_On_Life/)。<br>
+要让自定义材质在这类游戏中工作，你必须找到一个已经存在的、与你目标网格体具有相同参数的MI。
+- 有一个全息图材质，你想在你的模组中使用，但希望它看起来相同，只是使用你自己的图像/文本。<br>
+如果有闪烁效果或平移效果，你希望保留这些效果，同时使用你自己的纹理。
+- 角色使用带有特定效果（如内置轮廓线）的特殊材质实例，因此你可以设置自己的纹理，同时保持原始结构。
 
-## Identify the Base Material
-Using FModel:
-- Find and open the MI you want to replicate, it should be of type `MaterialInstanceConstant`.
-- Look at the Parent material, and click it to navigate to it.
+## 识别基础材质
+使用FModel：
+- 找到并打开你想复制的MI，它应该是`MaterialInstanceConstant`类型。
+- 查看父材质，并点击它以导航至该材质。
 
 ![](/Media/ReplicatingMI/1.png)
 
-Depends on the level of material inheritance, it's not a direct link to the parent so you have to keep going down the inheritance to find the base material.<br>
-In this example, the MI inherits from another MI - go to that parent until you reach the base material.
+取决于材质继承的层级，它可能不是直接链接到父级，所以你必须沿着继承关系向下查找，直到找到基础材质。<br>
+在这个例子中，MI继承自另一个MI - 继续查看该父级，直到到达基础材质。
 
 ![](/Media/ReplicatingMI/2.png)
 
-This is the base material because its type is no longer `MaterialInstanceConstant` but a simple `Material` type.<br>
+这是基础材质，因为它的类型不再是`MaterialInstanceConstant`而是简单的`Material`类型。<br>
 
-1. Open your UE project.
-2. Create the same folder structure in your content browser as it's shown in FModel.
-3. Create a new material and name it to match the base material, in my case it's `M_Master_Computer_Display`.
+1. 打开你的UE项目。
+2. 在内容浏览器中创建与FModel中显示的相同的文件夹结构。
+3. 创建一个新材质并将其命名为匹配基础材质，在我的例子中是`M_Master_Computer_Display`。
 
 ![](/Media/ReplicatingMI/3.png)
 
-## Replicate Material Parameters
-Once the base material is created, we can start replicating all the parameters we need.<br>
-For this example, it's just a single texture parameter, but you can add more parameters that are part of the base material such as values, colors, and textures. <br>
-When you add more parameters - Make sure you connect them to the Material node, it doesn't have to make sense.. just connected.
+## 复制材质参数
+一旦创建了基础材质，我们就可以开始复制所有我们需要的参数。<br>
+对于这个例子，它只是一个单一的纹理参数，但你可以添加更多属于基础材质的参数，如值、颜色和纹理。<br>
+当你添加更多参数时 - 确保将它们连接到材质节点上，它不必有意义..只需连接即可。
 
-In the original MI, the parameter I'm interested in is `Base_TEX`.
-- Open the newly created base material.
-- Create the parameter, name it exactly as in FModel, and connect it to the Material Node.
+在原始MI中，我感兴趣的参数是`Base_TEX`。
+- 打开新创建的基础材质。
+- 创建参数，名称与FModel中完全一致，并将其连接到材质节点。
 
 ![](/Media/ReplicatingMI/4.png)
 
-## Instantiate the Material
-1. Right-click on the newly created base Material.
-2. Create Material Instance.
+## 实例化材质
+1. 右键单击新创建的基础材质。
+2. 创建材质实例。
 
 ![](/Media/ReplicatingMI/5.png)
 
-Move the new MaterialInstance(MI) into the folder of the target MI.<br>
+将新的材质实例(MI)移动到目标MI的文件夹中。<br>
 
 ![](/Media/ReplicatingMI/6.png)
 
-## Using the MI
-Now that we're done with the replication part, let's start using it.
+## 使用MI
+现在我们完成了复制部分，让我们开始使用它。
 
-1. Right-click on the MI and create a **another** MI from it.
+1. 右键单击MI并从中创建**另一个**MI。
 
 ![](/Media/ReplicatingMI/7.png)
 
-2. Move the newly created MI to your mod folder.
-3. Name it whatever you want.
-4. Open the MI.
-5. Check any parameters you would like to overwrite compared to the previous MI in the inheritance.
-6. Set the overwrite values for the parameters such as textures, colors and values _(just a single tex in this example)_.
+2. 将新创建的MI移动到你的模组文件夹。
+3. 随意命名。
+4. 打开MI。
+5. 检查你想要覆盖的任何参数，与继承中的前一个MI相比。
+6. 为参数设置覆盖值，如纹理、颜色和数值_(这个例子中只有单个纹理)_。
 
 ![](/Media/ReplicatingMI/8.png)
 
-You can assign it to your static meshes and skeletal meshes.
+你可以将它分配给你的静态网格体和骨骼网格体。
 
 
 <hr>
 
-# Example of MI Replication with StaticParameters
-There will be some Material Instances that will still fail to render the custom textures, even when doing the MI replication/dummying.<br>
-For such cases, you need to instantiate another MI of the same type, without going down the MI inheritance line as shown above.
+# 带静态参数的MI复制示例
+即使进行MI复制/创建替身，仍有一些材质实例无法渲染自定义纹理。<br>
+对于这种情况，你需要实例化同一类型的另一个MI，而不用按照上面所示的方法沿着MI继承线向下查找。
 
-- It's commonly spotted when both custom plain materials and replicated base materials don't work.
+- 通常在自定义普通材质和复制的基础材质都不起作用时可以发现这种情况。
 
-For example, a character in a game called "Alone in the Dark" (UE4.27) won't accept custom materials.<br>
-1. Using FModel, look at the default material instances used by the SK.
-2. Find a MI that is close to your material needs within the used material instances, like BaseColor, ORM, and/or Normal map.
-3. In this example, the MI I've picked is the MI used for the hat, called `MI_Fleece_GraceHat` which is the most basic and suitable for this need.
-4. In UE editor, create a material with the same name inside the same folder as in FModel.
-5. Create the needed parameters inside that plain material, but keep the name as the original, `MI_Fleece_GraceHat`. <br>
-**Don't pack this material in your mod**
+例如，在一个叫"Alone in the Dark"（UE4.27）的游戏中，角色不接受自定义材质。<br>
+1. 使用FModel，查看SK使用的默认材质实例。
+2. 在使用的材质实例中找到一个接近你材质需求的MI，如基本颜色、ORM和/或法线贴图。
+3. 在这个例子中，我选择的MI是用于帽子的MI，名为`MI_Fleece_GraceHat`，它是最基本的，适合这个需求。
+4. 在UE编辑器中，在与FModel相同的文件夹内创建一个同名材质。
+5. 在该普通材质中创建所需参数，但保持名称与原始的一致，即`MI_Fleece_GraceHat`。<br>
+**不要在你的模组中打包此材质**
 
 ![](/Media/ReplicatingMI/example1.png)
 
-6. Create a MI from that material, and apply your textures in the MI parameters.
+6. 从该材质创建一个MI，并在MI参数中应用你的纹理。
 
-If you're replacing a MI - name and place in the it in place of another MI.<br>
-If you're replacing the skeletal mesh - name it whatever you want, just don't forget to pack it.
+如果你正在替换MI - 命名并放置在另一个MI的位置。<br>
+如果你正在替换骨骼网格体 - 随意命名，只是不要忘记打包它。
 
 ![](/Media/ReplicatingMI/example2.png)
 

@@ -4,13 +4,13 @@
 ## 获取默认值
 首先找到你想要修改的资产，并使用FModel或UModel导出它。
 
-![](../Media/HexEdit/hexedit0.png)
+![](/Media/HexEdit/hexedit0.png)
 
 在这个例子中，我将把《幽灵行者2》中手套的光芒颜色从蓝色改为红色。
 
 使用FModel，我可以获取光芒的精确RGB值，即`0.0, 33.0, 55.0, 1.0`。
 
-![](../Media/HexEdit/hexedit1.png)
+![](/Media/HexEdit/hexedit1.png)
 
 ## 使用十六进制替换值（方法1）
 导出的文件成对出现，包含`.uasset`和`.uexp`。<br>
@@ -21,18 +21,18 @@
 确保类型是`Float`，然后输入原始值和目标值。<br>
 **注意：** 如果你的编辑器没有这个替换功能，请尝试[方法2](#replacing-values-using-hex-method-2)。
 <br><br>
-![](../Media/HexEdit/hexedit2.png)
+![](/Media/HexEdit/hexedit2.png)
 
 然后点击"全部替换"，如果操作正确，将显示成功窗口。
 
-![](../Media/HexEdit/hexedit3.png)
+![](/Media/HexEdit/hexedit3.png)
 
 ## 打包
 完成十六进制值替换后，使用UnrealPak将修改后的`.uexp`文件打包到其pak文件中。
 
 ### 结果
 
-![](../Media/HexEdit/hexedit4.png)
+![](/Media/HexEdit/hexedit4.png)
 
 <br><br><br>
 

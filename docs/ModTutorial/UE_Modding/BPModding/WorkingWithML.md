@@ -1,65 +1,65 @@
-# Working with a ModLoader
-A custom blueprint mod loader allows modder to load custom blueprint logic into the level.
+# 使用模组加载器
+自定义蓝图模组加载器允许模组制作者将自定义蓝图逻辑加载到游戏关卡中。
 
 > [!NOTE]  
-> Each mod loader has its own set of rules and requirements, so make sure you read the readme of the used mod loader.
+> 每种模组加载器都有自己的规则和要求，所以请确保阅读所使用模组加载器的说明文档。
 
-## List of common BP modloaders
-The most popular modloaders are:
+## 常见蓝图模组加载器列表
+最流行的模组加载器有：
 - [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS) (UE4/UE5)
-- [UML](https://github.com/RussellJerome/UnrealModLoader) by [Russell Jerome](https://github.com/RussellJerome) (UE4 only)
-- - Dmgvol's fork: [UML v2.2.1a](https://github.com/Dmgvol/UnrealModLoader) (UE4 only)
+- [UML](https://github.com/RussellJerome/UnrealModLoader) 由 [Russell Jerome](https://github.com/RussellJerome) 开发 (仅UE4)
+- - Dmgvol的分支版本: [UML v2.2.1a](https://github.com/Dmgvol/UnrealModLoader) (仅UE4)
 
-Game specific modloaders:
+游戏特定的模组加载器:
 - DML (DmgModLoader)
-- - For [Ghostrunner 2](https://www.nexusmods.com/ghostrunner2/mods/5)
-- - For [Rooftops&Alleys](https://www.nexusmods.com/rooftopsandalleystheparkourgame/mods/16)
+- - 用于 [Ghostrunner 2](https://www.nexusmods.com/ghostrunner2/mods/5)
+- - 用于 [Rooftops&Alleys](https://www.nexusmods.com/rooftopsandalleystheparkourgame/mods/16)
 
 - NML (Narknon ModLoader)
-- - For [AtomicHeart](https://www.nexusmods.com/atomicheart/mods/11)
-- - For [Hogwarts Legacy](https://www.nexusmods.com/hogwartslegacy/mods/56)
+- - 用于 [AtomicHeart](https://www.nexusmods.com/atomicheart/mods/11)
+- - 用于 [Hogwarts Legacy](https://www.nexusmods.com/hogwartslegacy/mods/56)
 
-_(It's such a few of them, there are more mod loaders)_
+_(这只是其中的几个，还有更多的模组加载器)_
 
 
 ## UML/UE4SS/DML
-These three mod-loaders use the same pattern, where the mod blueprint is named ModActor within its corresponding folder in the Mods folder.
+这三种模组加载器使用相同的模式，即在Mods文件夹中对应的文件夹内命名为ModActor的模组蓝图。
 
-The mod loader spawns a single instance of that blueprint into every persistent level.
+模组加载器会在每个持久关卡中生成该蓝图的单个实例。
 
-UML and UE4SS are done via DLL injections, while DML is a pak-version that doesn't require any third-party software to function.
+UML和UE4SS是通过DLL注入完成的，而DML是pak版本，不需要任何第三方软件即可运行。
 
-### UE Setup
+### 虚幻引擎设置
 ![](/Media/BpIntro/3.png)
 
-- BP mods go into `/Mods` followed by the mod name, for example: `/Mods/MyMod/`.
-- The mod blueprint has to be named `ModActor`.
+- 蓝图模组放在`/Mods`文件夹下，后面跟着模组名称，例如：`/Mods/MyMod/`。
+- 模组蓝图必须命名为`ModActor`。
 
-For UML and UE4SS, 2 additional custom methods have to be persistent within the graph editor; `PreBeginPlay` and `PostBeginPlay`.<br>
-But the default `BeginPlay` also works, which is fired once when the actor is spawned.
+对于UML和UE4SS，图表编辑器中必须存在2个额外的自定义方法；`PreBeginPlay`和`PostBeginPlay`。<br>
+但默认的`BeginPlay`也可以使用，它在角色生成时触发一次。
 
 ![](/Media/ModLoaders/UmlLayout.png)
 
 > [!NOTE]
-> For a detailed explanation, watch this video: [UML ModActor tutorial](https://www.youtube.com/watch?v=fB3yT85XhVA)
+> 详细解释，请观看此视频：[UML ModActor教程](https://www.youtube.com/watch?v=fB3yT85XhVA)
 
 
 > [!IMPORTANT]  
-> The packed/compiled pak file name must match with the mod folder within the editor.
+> 打包/编译后的pak文件名必须与编辑器中的mod文件夹名称匹配。
 
 
 ## NML
-Narknon's Modloader uses a different approach for loading mods, where it loads custom levels by name.<br>
-Each custom mod level has "level bp" where the main logic is executed for the corresponding mod.
+Narknon的模组加载器使用不同的方法加载模组，它通过名称加载自定义关卡。<br>
+每个自定义模组关卡都有"关卡蓝图"，其中包含对应模组的主要逻辑。
 
-## UE Setup
-The setup for NML or any other mod loader with map names as "entry", level assets must be created within a specific folder like `CustomContent`.
+## 虚幻引擎设置
+对于NML或任何其他以"入口"地图名称加载的模组加载器，必须在特定文件夹（如`CustomContent`）中创建关卡资产。
 
 ![](/Media/ModLoaders/NmlLayout.png)
 
-The level name is the name of your mod, which will be entered into the mod loader in-game.
+关卡名称就是您的模组名称，将在游戏中输入到模组加载器中。
 
 > [!IMPORTANT]  
-> The name of the mod is the name of the level asset.
+> 模组的名称就是关卡资产的名称。
 
 
