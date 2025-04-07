@@ -1,56 +1,56 @@
-# Custom Mod Game Saves
+# 自定义模组游戏存档
 
-When you want to save state across levels or game sessions, you can create your own game saves in your blueprint mod.
+当你想要在关卡或游戏会话之间保存状态时，你可以在你的蓝图模组中创建自己的游戏存档。
 
 > [!TIP]
-> Saves are stored in the `Saved/SaveGames` folder in the game's directory, which is usually located in the `AppData` folder. This directory can be changed by the game, so the saves will be placed in the same area as where the game's saves are located.
+> 存档文件存储在游戏目录的`Saved/SaveGames`文件夹中，该文件夹通常位于`AppData`目录下。这个目录可以被游戏更改，因此存档将被放置在与游戏存档相同的位置。
 
-## Creating a save game object
+## 创建存档游戏对象
 
-First, create a new blueprint actor that inherits from the `SaveGame` class.
+首先，创建一个继承自`SaveGame`类的新蓝图角色。
 
 ![](/Media/GameSaves/gamesaves1.png)
 
-Next, add the variables you want to save to the blueprint. Set the variables to public to be able to access them from your mod blueprints.
+接下来，向蓝图添加你想要保存的变量。将变量设置为公共，以便在你的模组蓝图中访问它们。
 
 ![](/Media/GameSaves/gamesaves2.png)
 
-Back in our mod, make a variable that is an object reference to the blueprint you just created. In this example, my blueprint is named `SaveData`.
+回到我们的模组中，创建一个指向你刚刚创建的蓝图的对象引用变量。在本例中，我的蓝图名为`SaveData`。
 
 ![](/Media/GameSaves/gamesaves3.png)
 
-## Saving data to the save game object
+## 将数据保存到存档游戏对象
 
-First you need to create the save game object reference and set it to the object reference variable. 
-
-> [!TIP]
-> To avoid creating the reference multiple times, you can create the reference on the `BeginPlay` event.
-
-Then you can set the variables in the save game object to the variables you want to save.
-
-Finally, call the `SaveGameToSlot` function to save the data to the slot. The slot name can be whatever you like, however to keep the game's save folder orderly, I suggest a name like `Mods/[your mod name]/[your save name]`. 
+首先，你需要创建存档游戏对象引用并将其设置为对象引用变量。
 
 > [!TIP]
-> Make a string variable called `SaveName` and set it to the slot name. This way you can easily change the slot name in one place.
+> 为了避免多次创建引用，你可以在`BeginPlay`事件上创建引用。
+
+然后，你可以将存档游戏对象中的变量设置为你想要保存的变量。
+
+最后，调用`SaveGameToSlot`函数将数据保存到插槽中。插槽名称可以是任何你喜欢的名称，但为了保持游戏的存档文件夹有序，我建议使用类似`Mods/[你的模组名称]/[你的存档名称]`的名称。
+
+> [!TIP]
+> 创建一个名为`SaveName`的字符串变量并将其设置为插槽名称。这样，你可以在一个位置轻松更改插槽名称。
 
 ![](/Media/GameSaves/gamesaves4.png)
 
-## Loading data from the save game object
+## 从存档游戏对象加载数据
 
-First you need to check if the save game exists. If it does, you can load the game from the slot. Then we need to cast the returned value to our save game object.
+首先，你需要检查存档游戏是否存在。如果存在，你可以从插槽加载游戏。然后我们需要将返回的值转换为我们的存档游戏对象。
 
 ![](/Media/GameSaves/gamesaves5.png)
 
-You can set the variables in the save game object to the variables you want to load.
+你可以将存档游戏对象中的变量设置为你想要加载的变量。
 
 ![](/Media/GameSaves/gamesaves6.png)
 
-## Putting it together
+## 组合起来
 
-Here is a simplified example of saving and loading data. It is recommended to use functions to keep your code clean and organized. You can add functions within your save game blueprint to handle this, or just do it within your mod blueprint.
+这里是一个保存和加载数据的简化示例。建议使用函数来保持代码的整洁和有条理。你可以在你的存档游戏蓝图中添加函数来处理这些，或者只在你的模组蓝图中完成。
 
 ![](/Media/GameSaves/gamesaves7.png)
 
-Here is the resulting save file in the game's folder.
+这里是游戏文件夹中的结果存档文件。
 
 ![](/Media/GameSaves/gamesaves8.png)

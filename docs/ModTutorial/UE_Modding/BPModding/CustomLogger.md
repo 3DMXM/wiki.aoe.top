@@ -1,83 +1,83 @@
-# Example - Custom Logger
-As an example, we will create a custom widget to print different messages for both debugging and notification purposes.
+# 示例 - 自定义日志器
+作为一个示例，我们将创建一个自定义控件来打印不同的消息，既用于调试也用于通知目的。
 
 > [!IMPORTANT]  
-> This guide assumes you've gone through the previous bp modding guides and you know how to create blueprints, widgets, methods, variables.
+> 本指南假设您已经阅读了之前的蓝图修改指南，并且您知道如何创建蓝图、控件、方法和变量。
 
-We will need to create 3 assets;
-- ModActor: The main logic for our mods.
-- WBP_Logger: The widget holding the notifications.
-- WBP_Notification: The actual notification containing the message.
+我们需要创建3个资产：
+- ModActor：我们mod的主要逻辑。
+- WBP_Logger：持有通知的控件。
+- WBP_Notification：包含消息的实际通知。
 
-## Create Widget Layout
-This widget will hold a vertical list of notifications.
+## 创建控件布局
+这个控件将持有一个通知的垂直列表。
 
-- Create a new widget, named `WBP_Logger`.
-- Add a canvas panel.
-- Add a scroll box anchored.
-- Anchor it to the left side, stretched vertically.
-- Tick "size to content".
-- Set "Is Variable" and name it accordingly.
+- 创建一个新控件，命名为`WBP_Logger`。
+- 添加一个画布面板。
+- 添加一个锚定的滚动框。
+- 将其锚定到左侧，垂直拉伸。
+- 勾选"根据内容调整大小"。
+- 设置为"是变量"并相应地命名它。
 
 > [!NOTE]  
-> Feel free to design it as you wish, I've created a simple vertical box so the notification stack underneath eachother when added.
+> 随意按照您的喜好设计，我创建了一个简单的垂直框，这样添加通知时会在下方堆叠。
 
 ![](/Media/BpLogger/1.png)
 
 > [!NOTE]  
-> We will come back to it to implement the logic once we have the notification widget.
+> 我们将在有了通知控件后再回来实现逻辑。
 
-## Create Notification widget
-This widget is the actual visual notification that will be added to the list.
+## 创建通知控件
+这个控件是将被添加到列表中的实际可视化通知。
 
-- Create another widget, named `WBP_Notification`.
-- Add a Canvas Panel.
-- Add a Text component.
-- - Name it and set it as `Is Variable`.
-- - Check `Size to Content`.
-- - Add Margin `10, 0, 10, 10`.
+- 创建另一个控件，命名为`WBP_Notification`。
+- 添加一个画布面板。
+- 添加一个文本组件。
+- - 命名它并设置为`是变量`。
+- - 勾选`根据内容调整大小`。
+- - 添加边距`10, 0, 10, 10`。
 
 ![](/Media/BpLogger/2.png)
 
-### Timed notification
-Navigate to the event graph of the widget and create the following logic.
+### 定时通知
+导航到控件的事件图表并创建以下逻辑。
 
 ![](/Media/BpLogger/3.png)
 
-This will create a timer that will call the DestroyNofitication method after X seconds.
+这将创建一个计时器，在X秒后调用DestroyNofitication方法。
 
 > [!TIP]
-> Create a float variable for the notification time, and set its display value.
+> 为通知时间创建一个浮点变量，并设置其显示值。
 
 
-## Creating notifications
-Navigate back to the `WBP_Logger`, the widget that holds the notifications in a scroll box, and create the following logic.
+## 创建通知
+返回到`WBP_Logger`控件（在滚动框中保存通知的控件），并创建以下逻辑。
 
 ![](/Media/BpLogger/4.png)
 
-- Create a custom method, named `PushNotification` with a String input.
-- Add a `Create Widget` node and provide the notification widget class in the Class field.
-- Get the text component from the widget and set its text.
-- Add the newly created widget as a child into the scroll box component.
+- 创建一个自定义方法，命名为`PushNotification`，带有一个字符串输入。
+- 添加一个`Create Widget`节点，并在Class字段中提供通知控件类。
+- 从控件中获取文本组件并设置其文本。
+- 将新创建的控件作为子项添加到滚动框组件中。
 
-## Create ModActor
-Create the main actor BP for your mod, named `ModActor`.<br>
-Then, create the widget, add it to the viewport and save the reference into a variable.
+## 创建ModActor
+创建您的mod的主角色蓝图，命名为`ModActor`。<br>
+然后，创建控件，将其添加到视口并将引用保存到变量中。
 
 ![](/Media/BpLogger/5.png)
 
 
-## Using the logger
-For this example, a different notification will be pushed based on the pressed keys, but you can use it for debugging or display other useful notifications to the player.
+## 使用日志器
+对于此示例，将根据按下的键推送不同的通知，但您可以将其用于调试或向玩家显示其他有用的通知。
 
 ![](/Media/BpLogger/6.png)
 
 > [!TIP]
-> You can push notifications, as long as you have the reference to the widget instance.
+> 只要您有控件实例的引用，就可以推送通知。
 
 <hr>
 
-# Results
-The notifications stack in the list, and each one disappears after 3 seconds. <br>
+# 结果
+通知在列表中堆叠，每个通知在3秒后消失。<br>
 
 ![](/Media/BpLogger/loggerResult.gif)

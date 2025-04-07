@@ -1,54 +1,54 @@
-# Hotkeys in Blueprint
-For modders, hotkeys in Blueprints provide a way to execute additional logic when specific keys are pressed.<br> 
-This feature allows for the creation of custom in-game actions, shortcuts, and debug commands, enhancing the player's experience and testing efficiency.
+# 蓝图中的热键
+对于模组开发者来说，蓝图中的热键提供了一种在按下特定按键时执行额外逻辑的方式。<br> 
+这个功能允许创建自定义的游戏内动作、快捷键和调试命令，从而增强玩家体验和测试效率。
 
-## Event Graph
-The easiest way to monitor if a specific key is pressed is by using the following logic shown:
+## 事件图表
+监控特定按键是否被按下的最简单方法如下所示：
 
 ![](/Media/HotKeys/1.png)
 
 
-What if we have more keys to monitor? use `Sequence` flow node.
+如果我们需要监控更多按键怎么办？使用`Sequence`流程节点。
 
 ![](/Media/HotKeys/2.png)
 
 > [!TIP]
-> Useful for single use or togglable operations, like toggling a flashlight on and off.
+> 适用于单次使用或可切换的操作，比如开关手电筒。
 
-## Macro
-The more keys you monitor, the messier it gets and to prevent "spaghetti code", it is recommended to use a custom Macro.
+## 宏
+监控的按键越多，代码就越混乱。为了防止"意大利面式代码"，建议使用自定义宏。
 
-1. Left side panel, under the Macros section, press the `+` to create a new Macro and name it `KeyPressed`.
+1. 在左侧面板的Macros部分，点击`+`创建一个新宏并命名为`KeyPressed`。
 
 ![](/Media/HotKeys/3.png)
 
-2. Create the shown inputs and outputs in the Macro.
+2. 在宏中创建如图所示的输入和输出。
 
 ![](/Media/HotKeys/4.png)
 
-3. Create the same logic as we had in the event graph, and connect the nodes as shown in the image.
+3. 创建与事件图表中相同的逻辑，并如图所示连接节点。
 
 ![](/Media/HotKeys/5.png)
 
-4. Now we can use the macro in our event graph.<br>
-It's much cleaner and easier to read and maintain.
+4. 现在我们可以在事件图表中使用这个宏。<br>
+这样更加整洁，易于阅读和维护。
 
 ![](/Media/HotKeys/6.png)
 
 <hr>
 
-### Key press and release
-If you need to monitor whenever a key is being pressed and released, create the following macro:
+### 按键按下和释放
+如果你需要监控按键何时被按下和释放，创建以下宏：
 
 ![](/Media/HotKeys/7.png)
 
 > [!TIP]
-> Useful for toggling actions while holding the key, like using an in-game tool while a key is being pressed.
+> 适用于在按住按键时切换动作的场景，比如在按键被按住时使用游戏内工具。
 
-### Key down time
-If you need to monitor the time a certain key is being held down, create the following macro:
+### 按键持续时间
+如果你需要监控某个按键被按住的时间，创建以下宏：
 
 ![](/Media/HotKeys/8.png)
 
 > [!TIP]
-> Useful for events where the player needs to hold a key for X amount of seconds, like opening a door or quick-action sequences in cinematics.
+> 适用于玩家需要按住按键X秒的事件，比如打开门或电影场景中的快速动作序列。

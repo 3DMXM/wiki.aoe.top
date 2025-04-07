@@ -1,43 +1,43 @@
-# Config Variables
-Config variables allow mod users to configure certain variables of your mod outside of the game without any modding knowledge.
+# 配置变量
+配置变量允许模组用户在游戏外部配置你的模组的特定变量，而无需任何模组制作知识。
 
 > [!NOTE]  
-> Config variables are under-rated in modding, hopefully it gets more popular over time.
+> 配置变量在模组制作中被低估了，希望随着时间的推移它能变得更加流行。
 
-## Enabling a config variable
-Enabling it is straightforward but can be easily missed as it's under the Advanced section of the variable settings.
+## 启用配置变量
+启用配置变量非常简单，但很容易被忽略，因为它位于变量设置的高级部分下。
 
 ![](/Media/ConfigVariables/1.png)
 
 
-## Using and configuring the variable
-All config variables can be set or overwritten by adding the mod's path as a header/section followed by the actual variables and their values.
+## 使用和配置变量
+所有配置变量都可以通过添加模组路径作为标题/部分，然后是实际的变量及其值来设置或覆盖。
 
 > [!TIP]
-> Config variables will be overwritten at runtime with the one set in the config file, so make sure you implement additional logic to ensure the value doesn't go outside of the expected range.
+> 配置变量在运行时会被配置文件中设置的值覆盖，所以确保你实现了额外的逻辑以确保值不会超出预期范围。
 
-Hover over the Config Variable checkbox for more info:
+将鼠标悬停在配置变量复选框上获取更多信息：
 ![](/Media/ConfigVariables/2.png)
 
-1. Navigate to the game's `engine.ini` file which is located in:
+1. 导航到游戏的 `engine.ini` 文件，该文件位于：
 `%localappdata%/<GameName>/saved/Config`
-2. Open the file named `engine.ini` with a text editor and scroll to the bottom of it.
-3. Add the specific pattern as is shown when hovering over the config variable checkbox.
+2. 使用文本编辑器打开名为 `engine.ini` 的文件并滚动到底部。
+3. 添加悬停在配置变量复选框上时显示的特定模式。
 
 ![](/Media/ConfigVariables/3.png)
 
 
 > [!IMPORTANT]  
-> It's important to mention it for the mod users, so they know about it.
+> 重要的是要向模组用户提及这一点，以便他们了解这一功能。
 
 <hr>
 
-## User cases for config variables
-One of the most useful cases for it, which I constantly use is configurable hotkeys.<br>
-Allowing mod users to freely change and customize the keys to suit their keyboard layouts.
+## 配置变量的使用场景
+我经常使用的一个最有用的场景是可配置的热键。<br>
+允许模组用户自由更改和定制按键以适应他们的键盘布局。
 
-Other useful uses for config variables, but not limited to:
-- Enabling certain features.
-- Different decimal values like maxHealth.
-- Widget related like togglable data to be displayed.
-- Functionality limitation.
+配置变量的其他有用用途，但不限于：
+- 启用特定功能。
+- 不同的小数值，如最大生命值。
+- 与界面相关的设置，如可切换显示的数据。
+- 功能限制。
