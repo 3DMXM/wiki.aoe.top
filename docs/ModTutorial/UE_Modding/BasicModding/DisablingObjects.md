@@ -1,40 +1,40 @@
-# Disabling/Removing Objects
-It's an easy trick I've learned which I think can come in handy for some modders. <br>
-If you want to remove objects such as textures or even blueprints, you can literally erase uasset content, and pack an empty file back into pak file.
+# 禁用/移除对象
+这是我学到的一个简单技巧，我认为对一些模组制作者可能会很有用。<br>
+如果你想移除诸如纹理甚至蓝图等对象，你可以直接清空uasset内容，然后将空文件打包回pak文件。
 
-It works on models, VFX, textures, sounds, and even blueprints.
+这种方法适用于模型、VFX、纹理、声音，甚至蓝图。
 
-## Locating Game Files
-For this example, I will be removing one of the enemies in Ghostrunner, the spiders.
+## 定位游戏文件
+在这个例子中，我将移除《幽灵行者》(Ghostrunner)中的一个敌人，蜘蛛。
 
-First, I will locate the character blueprint using FModel.
+首先，我将使用FModel定位角色蓝图。
 <br>
-Which in this case is `/Content/ArtificialIntelligence/Characters/BP_EnemySpider`.
+在这个例子中是 `/Content/ArtificialIntelligence/Characters/BP_EnemySpider`。
 
 ![](/Media/RemovingObjects/spider1.png)
 
-## Create Mod Folder
-Create a mod folder with the same folder structure as it is found in FModel.
+## 创建模组文件夹
+创建一个与FModel中发现的文件夹结构相同的模组文件夹。
 
-Every mod folder follows the pattern:<br>
+每个模组文件夹都遵循以下模式：<br>
 `ModName_P/<Game>/Content/...`<br>
-And for this example that will be:
-`NoSpiders_P/Ghostrunner/Content/...` followed the full path.
+对于这个例子，将是：
+`NoSpiders_P/Ghostrunner/Content/...` 后接完整路径。
 
-Which is:<br>
+即：<br>
 `/NoSpiders_P/Ghostrunner/Content/ArtificialIntelligence/Characters`
 
 
 ![](/Media/RemovingObjects/spider3.png)
 
-## Empty UAssets
-1. Create 2 text files, and rename them to match the object/asset we want to remove.
-2. Change the extension from `.txt` to `.uasset` and `.uexp`.
+## 制作空的UAsset文件
+1. 创建2个文本文件，并将它们重命名为与我们要移除的对象/资产匹配的名称。
+2. 将扩展名从`.txt`更改为`.uasset`和`.uexp`。
 
 ![](/Media/RemovingObjects/spider4.png)
 
-## Pack and Test
-Package the mod folder using UnrealPak (Guide: [How to Pak](/BasicModding/UnrealPak.md)).
+## 打包和测试
+使用UnrealPak打包模组文件夹（教程：[如何打包](/BasicModding/UnrealPak.md)）。
 
 
-This mod is available to download here: [No More Spiders for GR1](https://www.nexusmods.com/ghostrunner/mods/28)
+这个模组可以在这里下载：[No More Spiders for GR1](https://www.nexusmods.com/ghostrunner/mods/28)

@@ -1,40 +1,40 @@
-# IoStore Packing
+# IoStore 打包
 
 > [!IMPORTANT]
-> This guide only applies when there are `.ucas`, `.utoc` & `.pak` files inside `Content/Paks` folder.
+> 此指南仅适用于当`Content/Paks`文件夹内存在`.ucas`、`.utoc`和`.pak`文件时。
 
-There are three scenarios when you need to pack IoStore assets, and the methods differ depending on them:
-1. You have hex edited cooked assets extracted from [ZenTools](../TheBasics/ExtractingIoStore.md) with [UAssetGUI](UAssetGUI.md) or similar
-2. You have a UE project and have created assets within it
-3. You have extracted IoStore Zen assets from [FModel](../TheBasics/ExportingFModel.md) and wish to repack them
+打包IoStore资产时有三种情况，方法因情况而异：
+1. 你使用[UAssetGUI](UAssetGUI.md)或类似工具对从[ZenTools](../TheBasics/ExtractingIoStore.md)提取的烘焙资产进行了十六进制编辑
+2. 你有一个UE项目并在其中创建了资产
+3. 你已从[FModel](../TheBasics/ExportingFModel.md)提取了IoStore Zen资产并希望重新打包它们
 
-## Scenario 1: Packing cooked assets
+## 情况1：打包烘焙资产
 
-### For UE5
+### 对于UE5
 
-Download this tool called [IoStorePackager](https://github.com/Buckminsterfullerene02/UE-Modding-Tools/raw/main/Loose%20Files/IOStorePackagev2.zip). It is a very simple GUI commandlet where you input file paths following the examples, and it calls UnrealPak from the Unreal Engine version you have installed with all the right arguments. 
+下载这个名为[IoStorePackager](https://github.com/Buckminsterfullerene02/UE-Modding-Tools/raw/main/Loose%20Files/IOStorePackagev2.zip)的工具。这是一个非常简单的GUI命令行工具，你只需按照示例输入文件路径，它会调用你已安装的Unreal Engine版本中的UnrealPak，并使用所有正确的参数。
 
-You can watch [this video](https://www.youtube.com/watch?v=89s0akNvpU4) that guides you how to use `IoStorePackager`:
+你可以观看[这个视频](https://www.youtube.com/watch?v=89s0akNvpU4)，它指导你如何使用`IoStorePackager`：
 
-[![UE modding (5.4 w/ IoStore) ](https://img.youtube.com/vi/89s0akNvpU4/0.jpg)](https://www.youtube.com/watch?v=89s0akNvpU4 "UE modding (5.4 w/ IoStore) ")
+[![UE模组制作 (5.4 w/ IoStore) ](https://img.youtube.com/vi/89s0akNvpU4/0.jpg)](https://www.youtube.com/watch?v=89s0akNvpU4 "UE模组制作 (5.4 w/ IoStore) ")
 
-### For UE4
+### 对于UE4
 
-Use this [IoStorePackager-UE4](https://gist.github.com/Buckminsterfullerene02/0f7233d5dda97c82039ba932c2bc8fb7). Similar to above, but you also need a C++ template project for the game, as `ZenTools-UE4` does not output the same manifest files as `ZenTools` that UE needs to create the container files.
+使用[IoStorePackager-UE4](https://gist.github.com/Buckminsterfullerene02/0f7233d5dda97c82039ba932c2bc8fb7)。与上述类似，但你还需要游戏的C++模板项目，因为`ZenTools-UE4`输出的清单文件与UE创建容器文件所需的`ZenTools`输出不同。
 
-Video guide coming soon hopefully.
+视频教程希望不久后推出。
 
-## Scenario 2: UE project packing
+## 情况2：UE项目打包
 
-If you have made mod content inside of the editor, you'll need to cook and pack it through the editor. Luckily, this is really simple. 
+如果你在编辑器中制作了模组内容，你需要通过编辑器烘焙和打包它。幸运的是，这真的很简单。
 
-Inside the editor, go to `Edit -> Project settings -> Packaging`, then make sure `Use Io Store` at the top of the packaging settings is checked.
+在编辑器中，转到`编辑 -> 项目设置 -> 打包`，然后确保打包设置顶部的`使用Io Store`已勾选。
 
-Then, follow the [cooking content](../IntermediateModding/CookingContent.md) guide as normal.
+然后，按照正常的[内容烘焙](../IntermediateModding/CookingContent.md)指南进行操作。
 
-## Scenario 3: Packing FModel Zen .uassets
+## 情况3：打包FModel Zen .uassets
 
-Use the tool [UnrealReZen](https://github.com/rm-NoobInCoding/UnrealReZen). The instructions are quite straight-forward, but be warned, that there is no alternative tool to UnrealReZen for packing FModel Zen `.uassets`.
+使用工具[UnrealReZen](https://github.com/rm-NoobInCoding/UnrealReZen)。说明相当直接，但请注意，没有其他工具可以替代UnrealReZen来打包FModel Zen `.uassets`。
 
 > [!CAUTION]
-> This tool does not support extracting assets from ZenTools extracted files.
+> 此工具不支持从ZenTools提取的文件中提取资产。

@@ -1,34 +1,34 @@
-# Example 1 - Modifying default BP values
-As an example, we will modify the max ammo per clip/magazine for an SMG weapon in a game called Trepang2.
+# 示例 1 - 修改默认蓝图值
+作为示例，我们将修改一个名为Trepang2游戏中SMG武器的每个弹匣/弹夹的最大弹药量。
 
-_(UE5 modders - Not possible if the game has IOStore enabled)_
+_(UE5模组制作者注意 - 如果游戏启用了IOStore，则无法实现)_
 
-### Finding the Asset
-The first thing I do is find the correct blueprint containing that piece of information, which in this case is the `BP_SMG`.
+### 查找资源
+首先要做的是找到包含该信息的正确蓝图，在这个例子中是`BP_SMG`。
 
 ![](/Media/Example-1/example_trepang_modifying1.png)
 
-### Modifying the Asset
-Export the asset, open the asset using UAssetGUI, and navigate to the default values section of the blueprint.<br>
-Default values are in `Export n (Default__<BP_Name>_C)` in every BP, for this it's `Export 7 (Default__BP_SMG_C)`.
+### 修改资源
+导出资源，使用UAssetGUI打开资源，并导航到蓝图的默认值部分。<br>
+每个蓝图中的默认值都在`Export n (Default__<BP_Name>_C)`中，对于这个例子是`Export 7 (Default__BP_SMG_C)`。
 
 ![](/Media/Example-1/example_trepang_modifying2.png)
 
-If we scroll down a bit, we can find the value we were looking for, the `AmmoPerClip`, which I will set to `99`.
+如果我们向下滚动一点，就能找到我们要寻找的值`AmmoPerClip`，我会将其设置为`99`。
 
-### Create the Pak file
-Save the changes and begin with constructing the mod folder.
+### 创建Pak文件
+保存更改并开始构建mod文件夹结构。
 
 ![](/Media/Example-1/example_trepang_modifying3.png)
 
-In this case, the folder structure is:<br>
+在这个例子中，文件夹结构为：<br>
 ```
 MoreAmmoSMG_P\CPPFPS\Content\Weapon\SMG
 ```
 
-Where the last folder in the path, contains the modified assets (`.uasset` and `.uexp`).
+其中路径中的最后一个文件夹包含修改后的资源（`.uasset`和`.uexp`文件）。
 
-### Results
-Package it using UnrealPak, move the created pak file into Paks folder, and test it in-game.
+### 结果
+使用UnrealPak打包，将创建的pak文件移动到Paks文件夹中，然后在游戏中测试效果。
 
 ![](/Media/Example-1/example_trepang_modifying4.png)
