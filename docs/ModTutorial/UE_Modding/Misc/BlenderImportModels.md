@@ -1,42 +1,42 @@
-# Importing Models into Blender
-Quick guide on importing both `.psk` and `.gltf` files into Blender 3 and 4.
+# 将模型导入Blender
+关于将`.psk`和`.gltf`文件导入Blender 3和4的快速指南。
 
 
 > [!TIP]  
->  For skeletal meshes and animations, the `.psk` format is preferred due to its native support in Unreal Engine but requires a plugin for Blender.
+>  对于骨骼网格和动画，`.psk`格式由于在虚幻引擎中的原生支持而被优先选择，但在Blender中需要插件。
 
-We will need Blender, and a Blender PSK-plugin to be able to import the `.psk` files which are exported from FModel/UModel.<br>
-Blender is free and available on [Blender website](https://www.blender.org/) or on [Steam page (Blender)](https://store.steampowered.com/app/365670/Blender/).
+我们需要Blender和一个Blender PSK插件才能导入从FModel/UModel导出的`.psk`文件。<br>
+Blender是免费的，可以从[Blender官网](https://www.blender.org/)或[Steam页面(Blender)](https://store.steampowered.com/app/365670/Blender/)下载。
 
 ## Blender 4
-The plugin link for Blender 4: [io_scene_psk_psa](https://github.com/DarklightGames/io_scene_psk_psa).<br>
-_(download the correct version, and follow the instructions in that repo readme)_
+Blender 4的插件链接：[io_scene_psk_psa](https://github.com/DarklightGames/io_scene_psk_psa)。<br>
+_(下载正确的版本，并按照该仓库readme中的说明进行操作)_
 
-Once installed navigate to File -> Import -> choose PSK or GLTF and provide the file.
+安装完成后，导航到文件 -> 导入 -> 选择PSK或GLTF并提供文件。
 
 ![](/Media/ImportModels/blender4.png)
 
 > [!IMPORTANT]  
-> For PSK files - **always** import unscaled! (scroll down for more info)
+> 对于PSK文件 - **始终**不缩放导入！(向下滚动查看更多信息)
 
 ## Blender 3
-The plugin link for Blender 3: [blender3d_import_psk_psa](https://github.com/Befzz/blender3d_import_psk_psa).<br>
-_(download the correct version, and follow the instructions in that repo readme)_
+Blender 3的插件链接：[blender3d_import_psk_psa](https://github.com/Befzz/blender3d_import_psk_psa)。<br>
+_(下载正确的版本，并按照该仓库readme中的说明进行操作)_
 
-Once installed navigate to File -> Import -> choose PSK or GLTF and provide the file.
+安装完成后，导航到文件 -> 导入 -> 选择PSK或GLTF并提供文件。
 
 ![](/Media/ImportModels/blender3.png)
 
 > [!IMPORTANT]  
-> For PSK files - **always** import unscaled!
+> 对于PSK文件 - **始终**不缩放导入！
 
 <hr>
 
-## Import unscaled
-When working with skeletal meshes, it's important to import unscaled and export scaled down to `0.01`. <br>
-Why? Because it breaks some skeletal bones on import to UE4/5.
+## 不缩放导入
+处理骨骼网格时，重要的是不缩放导入，并在导出时缩小到`0.01`。<br>
+为什么？因为在导入UE4/5时会破坏一些骨骼骨架。
 
 ![](/Media/ImportModels/ImportUnscaled.png)
 
-It's used for skeletal mesh (character) modding, which is covered in [Changing SkeletalMesh](/IntermediateModding/ChangingSK.md) guide.<br>
-So if you're just importing for non-modding purposes, import however you want.
+这用于骨骼网格（角色）模组制作，在[更改骨骼网格](/IntermediateModding/ChangingSK.md)指南中有所介绍。<br>
+所以如果你只是为了非模组制作目的导入，你可以按任何方式导入。

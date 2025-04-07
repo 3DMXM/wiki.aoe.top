@@ -1,102 +1,102 @@
 > [!CAUTION]
-> **Disclaimer:** This guide is intended for educational and research purposes only. 
-> The authors are not responsible for any unintended consequences, including damage to systems, violations of TOS, or legal issues arising from the use of this information. Use at your own risk.
+> **免责声明：** 本指南仅供教育和研究目的。
+> 作者不对任何意外后果负责，包括系统损坏、违反服务条款或因使用此信息而产生的法律问题。使用风险自负。
 
-# Finding Memory Pointers using UE4SS
-In this guide, we will be using [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS) in order to directly scan for pointers by direct memory address, and use the given offsets to our advantage.
+# 使用UE4SS查找内存指针
+在本指南中，我们将使用[UE4SS](https://github.com/UE4SS-RE/RE-UE4SS)通过直接内存地址扫描指针，并利用给定的偏移量。
 
 > [!NOTE]  
-> You should have [CheatEngine](https://www.cheatengine.org/) installed and know the basics.
+> 您应该已安装[CheatEngine](https://www.cheatengine.org/)并了解基础知识。
 
-### Find the Instanced Object
-Launch the game with UE4SS hooked up, with console unlocker enabled.
+### 查找实例化对象
+启动游戏并连接UE4SS，启用控制台解锁器。
 
-If you're looking for the player blueprint but don't know the name of it,<br>
-then you can get all objects of type `character` which should have the player one at the top, by executing `getall character`.
+如果您正在寻找玩家蓝图但不知道它的名称，<br>
+可以通过执行`getall character`获取所有类型为`character`的对象，玩家对象通常会显示在顶部。
 
 ![](/Media/memoryPointers2/1.png)
 
-For this example, that's `PlayerBP`.
+在本例中，是`PlayerBP`。
 
-Using UE4SS Live view, we can find the instanced object by searching for: <br>
+使用UE4SS实时视图，我们可以通过搜索以下内容找到实例化对象：<br>
 `PersistentLevel.PlayerBP`
 
 ![](/Media/memoryPointers2/2.png)
 
 > [!TIP]  
-> Adding `PersistentLevel.` before the object name will ensure it's the instanced/spawned object within the level.
+> 在对象名称前添加`PersistentLevel.`将确保它是关卡中的实例化/生成对象。
 
-### Scanning for Direct Address
-The tool allows to directly get the memory address of the object.
+### 扫描直接地址
+该工具允许直接获取对象的内存地址。
 
-- Copy the memory address of the object.
+- 复制对象的内存地址。
 
 ![](/Media/memoryPointers2/3.png)
 
-- Launch CE.
-- Hook it up to the game's process.
-- Add the address manually.
+- 启动CE。
+- 连接到游戏进程。
+- 手动添加地址。
 
 ![](/Media/memoryPointers2/4.png)
 
-Next, pointer scan for this address.
+接下来，对此地址进行指针扫描。
 
 ![](/Media/memoryPointers2/5.png)
 
-Make sure you have `0` in `Pointer must end with specific offset`.<br>
+确保在`指针必须以特定偏移结束`中填入`0`。<br>
 
 > [!NOTE]  
-> When an address is pointing into an object, we want `0` in the last offset.
+> 当地址指向一个对象时，我们希望最后的偏移为`0`。
 
 ![](/Media/memoryPointers2/6.png)
 
-Once the results are in, we need to rescan to narrow down the results.
+结果出来后，我们需要重新扫描以缩小结果范围。
 
 ![](/Media/memoryPointers2/7.png)
 
-Make sure you have:
-- Only filter out invalid pointers.
-- Value `30` in `Must start with offsets`.
-- Value `0` in `Must end with offsets`.
+确保您设置了：
+- 只过滤掉无效指针。
+- 在`必须以偏移开始`中填入值`30`。
+- 在`必须以偏移结束`中填入值`0`。
 
 ![](/Media/memoryPointers2/8.png)
 
-That should improve our results, but they're far from being ready.<br>
+这应该会改善我们的结果，但还远未准备就绪。<br>
 
-- Re-launch the game.
-- Re-attach the game process to CE.
-- Find the instanced object address in UE4SS (as done previously).
-- Rescan pointerlist using the new address.
+- 重新启动游戏。
+- 重新将游戏进程连接到CE。
+- 在UE4SS中找到实例化对象地址（如前所述）。
+- 使用新地址重新扫描指针列表。
 
 ![](/Media/memoryPointers2/9.png)
 
-That should drastically improve the results.<br>
-Try to filter out by offsets in order to get the shortest path.
+这应该会大大改善结果。<br>
+尝试按偏移量过滤，以获取最短路径。
 
-In my case, I got a really good short memory pointer; <br>
+在我的例子中，我得到了一个非常好的短内存指针；<br>
 `"CPPFPS-Win64-Shipping.exe" + 0x4Fe4998 + 0x30 + 0x110 + 0x0`
 
-### Adding Offsets
-Once we have our memory pointer, we can start using the offsets to access different variables/objects of the instanced item.
+### 添加偏移量
+一旦我们有了内存指针，我们就可以开始使用偏移量访问实例化项目的不同变量/对象。
 
-For example, offset `0xFF0` will get the `MaxGrenades`.
+例如，偏移量`0xFF0`将获取`MaxGrenades`。
 
 ![](/Media/memoryPointers2/10.png)
 
-### Accessing Nested Objects 
-It's not only limited to variables, we can go into the nested references<br>
-For example the `CurrentWeapon` is saved as a reference of type `WeaponBase` at offset `0x1008`.<br>
-This will point the memory pointer to the current weapon instance object.
+### 访问嵌套对象
+这不仅限于变量，我们还可以进入嵌套引用<br>
+例如，`CurrentWeapon`作为类型为`WeaponBase`的引用保存在偏移量`0x1008`处。<br>
+这将使内存指针指向当前武器实例对象。
 
 ![](/Media/memoryPointers2/11.png)
 
-If we search for that instanced item, we can access its own variables and objects, for example, the `CurrentAmmoInClip` which is shared across all weapons in this game.
+如果我们搜索该实例化项目，我们可以访问它自己的变量和对象，例如，在这个游戏中所有武器共享的`CurrentAmmoInClip`。
 
-Adding that offset will directly point the memory pointer to that specific variable, every single time regardless of level or game instance.
+添加该偏移量将使内存指针直接指向该特定变量，无论关卡或游戏实例如何，都能每次都正确指向。
 
 ![](/Media/memoryPointers2/12.png)
 
-### Results
-If we compare the end results, we can clearly see our new pointer is much more consistent, shorter path, and will always show the correct value.
+### 结果
+如果我们比较最终结果，我们可以清楚地看到我们的新指针更加一致，路径更短，并且将始终显示正确的值。
 
 ![](/Media/memoryPointers2/13.png)

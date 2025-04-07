@@ -1,70 +1,70 @@
 > [!CAUTION]
-> **Disclaimer:** This guide is intended for educational and research purposes only. 
-> The authors are not responsible for any unintended consequences, including damage to systems, violations of TOS, or legal issues arising from the use of this information. Use at your own risk.
+> **免责声明：** 本指南仅供教育和研究目的使用。
+> 作者对使用此信息可能导致的任何意外后果，包括系统损坏、违反服务条款或法律问题概不负责。使用风险自负。
 
-# Finding Memory Pointers
-This guide will cover the basics of finding consistent memory pointers for UE games, mainly used for speedrunning tools, trainers, and randomizers.
+# 查找内存指针
+本指南将介绍为虚幻引擎游戏查找稳定内存指针的基础知识，主要用于速通工具、修改器和随机化器。
 
 > [!NOTE]  
-> You should have [CheatEngine](https://www.cheatengine.org/) installed and know the basics.
+> 你应该已安装[CheatEngine](https://www.cheatengine.org/)并了解其基本使用方法。
 
 
-### Initial Instance Address
-For a simple example, we will scan for the current weapon's ammo.
+### 初始实例地址
+以一个简单的例子，我们将扫描当前武器的弹药量。
 
-- Scan for the initial value (in my case 4 bytes integer)
-- Change the value in-game.
-- Rescan with updated value.
-- Repeat until you have one or two results.
+- 扫描初始值（在我的例子中是4字节整数）
+- 在游戏中改变该值。
+- 用更新后的值重新扫描。
+- 重复直到只剩一两个结果。
 
 ![](/Media/memoryPointers/1.png)
 
-### Scanning for Pointers
-Add the working result to the list and scan for pointers.
+### 扫描指针
+将有效结果添加到列表并扫描指针。
 
-- Right click on the item -> `Pointer scan for this address`.
+- 右键点击项目 -> `为此地址扫描指针`。
 
 ![](/Media/memoryPointers/2.png)
 
-Use the default values.
+使用默认值。
 
 > [!NOTE]  
-> You can set `Max level` to `5` to reduce scanning time and really long pointers.
+> 你可以将`最大层级`设为`5`以减少扫描时间和过长的指针。
 
 ![](/Media/memoryPointers/3.png)
 
-Once the results are in, we need to rescan to narrow down the number of results.
+一旦有了结果，我们需要重新扫描以减少结果数量。
 
 ![](/Media/memoryPointers/4.png)
 
-Rescan with the following settings:
-- Only filter out invalid pointers
-- Must start with offset `30`
+使用以下设置重新扫描：
+- 仅过滤无效指针
+- 必须以偏移量`30`开头
 
 > [!TIP]
-> Having `30` offset will start with persistent level.
+> 使用`30`偏移量将从持久级别开始。
 
 
 ![](/Media/memoryPointers/5.png)
 
-That should reduce the number of results, but that's not enough or consistent with game instances.
+这应该能减少结果数量，但对于游戏实例来说这还不够或不够稳定。
 
-### Improving the Pointers
-In order to find the correct persistent pointer we need to rescan while changing levels or re-launching the game.
+### 改进指针
+为了找到正确的持久指针，我们需要在更换关卡或重新启动游戏时重新扫描。
 
-- Change the level or re-launch the game.
-- Re-attach to game process.
-- Rescan pointerlist.
+- 更换关卡或重新启动游戏。
+- 重新附加到游戏进程。
+- 重新扫描指针列表。
 
 ![](/Media/memoryPointers/6.png)
 
-That would drastically improve the results. <br>
-If there are multiple results try to sort by offsets in order to get the shortest path.
+这将大幅改善结果。<br>
+如果有多个结果，尝试按偏移量排序以获得最短路径。
 
 ![](/Media/memoryPointers/7.png)
 
-The final memory pointer should look similar, not too many offsets and constantly working regardless of the current level.
+最终的内存指针应该看起来类似，没有太多偏移量，并且无论当前关卡如何都能持续工作。
 
 
 > [!NOTE]
-> We can improve our results by utilizing UE4SS in the next guide.
+> 我们可以在下一个指南中利用UE4SS来改进我们的结果。

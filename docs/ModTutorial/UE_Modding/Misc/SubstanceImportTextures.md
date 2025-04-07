@@ -1,61 +1,61 @@
-# Importing packed textures into Substance Painter
-Substance Painter is a premium industry leading tool for texturing, but there are free alternatives like Quixel Mixer.
+# 将打包纹理导入到Substance Painter
+Substance Painter是一款行业领先的高级纹理创作工具，不过也有免费的替代品如Quixel Mixer。
 
-Import the mesh and textures into Substance Painter and let's begin.
+将模型和纹理导入到Substance Painter中，然后我们开始工作。
 
-### Preparing Shaders
-The first thing is to add Ambient Occlusion and Emissive layers to the shader, which is done by going to `Texture Set Settings` and hitting the plus icon.
+### 准备着色器
+首先需要向着色器添加环境遮蔽和自发光层，这可以通过进入`Texture Set Settings`并点击加号图标完成。
 
 ![](/Media/ImportTexturesSubstance/substance1.png)
 
-### Base Color and Normal maps
-1. Create a Fill Layer in the correct texture set.
-2. Only enable the `color`, `nrm`, and `emiss` material layers
-3. Drag the imported textures into their corresponding layers.
+### 基础颜色和法线贴图
+1. 在正确的纹理集中创建一个填充层。
+2. 只启用`color`、`nrm`和`emiss`材质层。
+3. 将导入的纹理拖拽到相应的层中。
 
 ![](/Media/ImportTexturesSubstance/substance2.png)
 
-### ORM Texture
-ORM textures are combined of ambient occlusion, roughness and metallic which are in the red, green, and blue channels of the texture.
+### ORM纹理
+ORM纹理是环境遮蔽(Ambient Occlusion)、粗糙度(Roughness)和金属度(Metallic)的组合，它们分别位于纹理的红、绿、蓝通道中。
 
 > [!IMPORTANT]  
-> RED -> Ambient Occlusion, GREEN -> Roughness, BLUE -> Metallic.
+> 红色通道 -> 环境遮蔽，绿色通道 -> 粗糙度，蓝色通道 -> 金属度。
 
-1. Create a Generator for the fill layer.
+1. 为填充层创建一个生成器。
 
 ![](/Media/ImportTexturesSubstance/substance3.png)
 
-2. Select the Grayscale Conversion.
+2. 选择灰度转换。
 
 ![](/Media/ImportTexturesSubstance/substance4.png)
 
-3. For Ambient Occlusion, deselect all layers besides `ao`.
-4. Set the Grayscale type to Red Channel.
-5. Specify the ORM/packed texture in the source image.
+3. 对于环境遮蔽，取消选择除`ao`之外的所有层。
+4. 将灰度类型设置为红色通道。
+5. 在源图像中指定ORM/打包纹理。
 
 ![](/Media/ImportTexturesSubstance/substance5.png)
 
-6. Duplicate the generator and do the same but for roughness.
-7. Deselect all layers besides `rough` and set the Grayscale type for Green channel.
+6. 复制生成器，并对粗糙度执行相同操作。
+7. 取消选择除`rough`之外的所有层，并将灰度类型设置为绿色通道。
 
 ![](/Media/ImportTexturesSubstance/substance6.png)
 
-8. Duplicate the generator and do the same but for metallic.
-9. Deselect all layers besides `metal` and set the Grayscale type for Blue channel.
+8. 复制生成器，并对金属度执行相同操作。
+9. 取消选择除`metal`之外的所有层，并将灰度类型设置为蓝色通道。
 
 ![](/Media/ImportTexturesSubstance/substance7.png)
 
-### We're done!
-That's all of it, now we have the base color, normal map, with all the packed textures set correctly including the emissive texture.
+### 完成！
+这就是全部内容了，现在我们有了基础颜色、法线贴图，以及所有正确设置的打包纹理，包括自发光纹理。
 
 ![](/Media/ImportTexturesSubstance/substance8.png)
 
 
 <hr>
 
-### Changing Emissive Color (optional)
-1. Create a Fill Layer.
-2. Deselect all besides `emiss` and pick the color of your choice.
-3. Switch to Emissive Layer and pick the Color mode for the Fill Layer. 
+### 更改自发光颜色（可选）
+1. 创建一个填充层。
+2. 取消选择除`emiss`之外的所有项，并选择您喜欢的颜色。
+3. 切换到自发光层，并为填充层选择颜色模式。
 
 ![](/Media/ImportTexturesSubstance/substance9.png)

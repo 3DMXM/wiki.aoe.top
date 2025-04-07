@@ -69,6 +69,6 @@
 
 ![](/Media/FontReplace/10.png)
 
-有关如何打包mod的更多信息，请查看[烹饪内容指南](/IntermediateModding/CookingContent.md)。<br>
+有关如何打包mod的更多信息，请查看[烹饪内容指南](./CookingContent.md)。<br>
 
 （别忘了在mod名称中添加`_P`）

@@ -1,72 +1,72 @@
-# Importing UE Packed textures into Blender
-The guide will cover the traditional used textures for UE meshes, with base color, ORM, normal and emissive textures for each mesh. <br>
-The industry standard for used textures in Unreal Engine models is having 3 textures: the base color (also called albedo), the ORM, and the normal map.
+# 将UE打包纹理导入Blender
+本指南将介绍UE网格体传统使用的纹理，包括每个网格体的基础颜色、ORM、法线和自发光纹理。<br>
+虚幻引擎模型中使用的行业标准纹理包括3种类型：基础颜色（又称反照率），ORM和法线贴图。
 
-The "ORM" textures combine Occlusion, Roughness, and Metallic into a single texture, using the Red, Green, and Blue channels for efficiency. <br>
-Some have emissive textures as well (the glowing parts of a mesh), but that's easy to handle.
+"ORM"纹理将遮蔽（Occlusion）、粗糙度（Roughness）和金属度（Metallic）合并到单个纹理中，分别使用红、绿、蓝通道以提高效率。<br>
+有些模型还有自发光纹理（网格体的发光部分），但这很容易处理。
 
 > [!NOTE]  
-> Different games may have different sets of textures for each model, so this guide won't cover all of those, just the main general approach of textures in UE4/5.
+> 不同游戏可能为每个模型使用不同的纹理集，因此本指南不会涵盖所有这些内容，只介绍UE4/5中纹理的主要通用方法。
 
 ## Blender
-Let's begin with dragging all the necessary textures into the shading node graph.
+让我们从将所有必要的纹理拖入着色节点图开始。
 
 > [!NOTE]  
-> The guide uses Blender 3 as it's the same process, but Blender 4 differences are shown at the bottom of the guide.
+> 本指南使用Blender 3，因为过程相同，但Blender 4的差异在指南底部显示。
 
-### Preparing the Textures
+### 准备纹理
 
-- Import the mesh.
-- Go to Shading tab and click `Use Nodes`.
-- Drag and drop the textures for this mesh, usually it's color, ORM, Normal and sometimes Emissive texture.
-- For ORM and Normal texture: set the `Color Space` to `Non-Color`.
+- 导入网格体。
+- 进入着色标签并点击`使用节点`。
+- 拖放该网格体的纹理，通常是颜色纹理、ORM纹理、法线纹理，有时还有自发光纹理。
+- 对于ORM和法线纹理：将`颜色空间`设置为`Non-Color`。
 
 ![](/Media/ImportTexturesBlender/blenderTextures1.png)
 
-### Connecting Base Color, Roughness, Metallic and Normal
+### 连接基础颜色、粗糙度、金属度和法线
 
-Connect the nodes as shown below:
-- Base Color: connect the base color texture from Color to Base Color in BSDF.
-- Packed/ORM texture: drag the Color and look for `Seperate Color` node.
-- - Connect the color from the texture to Separate Color node color.
-- - Connect the Green to Roughness, and Blue to Metallic.
-- - We will handle the Red in the next step, leave it for now.
-- Normal map: Drag the color and look for `Normal Map Color` node, and connect the output Normal into Normal in BSDF.
+按下图所示连接节点：
+- 基础颜色：将基础颜色纹理的Color连接到BSDF的Base Color。
+- 打包/ORM纹理：拖动Color并查找`Seperate Color`节点。
+- - 将纹理的颜色连接到Separate Color节点的color。
+- - 将Green连接到Roughness，Blue连接到Metallic。
+- - 我们将在下一步处理Red通道，暂时保留。
+- 法线贴图：拖动color并查找`Normal Map Color`节点，将输出的Normal连接到BSDF的Normal。
 
 ![](/Media/ImportTexturesBlender/blenderTextures2.png)
 
-### Adding the Ambient Occlusion channel
-Adding the Ambient Occlusion from ORM is done by multiplying the base color by the red channel of the ORM texture.
+### 添加环境光遮蔽通道
+通过将基础颜色乘以ORM纹理的红色通道来添加环境光遮蔽。
 
-- Drag from base color and look for `Multiply Vector Math`.
-- Connect Red from Seperate Color node to the second Vector of the Multiply node.
-- Connect the output Vector to Base Color.
+- 从基础颜色拖动并查找`Multiply Vector Math`。
+- 将Seperate Color节点的Red连接到Multiply节点的第二个Vector。
+- 将输出Vector连接到Base Color。
 
 ![](/Media/ImportTexturesBlender/blenderTextures3.png)
 
-### Adding Emissive texture (optional)
-If your model has an emissive texture, you can add it by using "Add Shader" node as shown below.
+### 添加自发光纹理（可选）
+如果您的模型有自发光纹理，可以通过使用"Add Shader"节点添加，如下图所示。
 
 > [!NOTE]  
-> Blender 4 users - skip this, and scroll to the bottom of the guide, as this part is different.
+> Blender 4用户 - 请跳过此部分，滚动到指南底部，因为这部分有所不同。
 
-- Drag the BSDF and search for `Add Shader` node.
-- Connect the output Shader into Surface in Material Output.
-- Drag the emissive texture Color into the second Shader input.
+- 拖动BSDF并搜索`Add Shader`节点。
+- 将输出Shader连接到Material Output的Surface。
+- 将自发光纹理的Color拖入第二个Shader输入。
 
 ![](/Media/ImportTexturesBlender/blenderTextures4.png)
 
-Some games have their emissive textures as white and adjusted in-game with the proper color code, which can be done in Blender by adjusting the color of the texture as shown below.
+一些游戏的自发光纹理是白色的，并在游戏中使用适当的颜色代码进行调整，这可以在Blender中通过调整纹理颜色来实现，如下所示。
 
-- Drag the emissive Color and search for `Color fac`, and connect as shown.
-- Switch the mode to `Color`.
-- Set the Fac to `1.000`.
-- Adjust Color2 to your color of choice.
-- And connect the output Color into the second Shader in Add Shader.
+- 拖动自发光Color并搜索`Color fac`，按图示连接。
+- 将模式切换为`Color`。
+- 将Fac设置为`1.000`。
+- 将Color2调整为您选择的颜色。
+- 然后将输出Color连接到Add Shader中的第二个Shader。
 
 ![](/Media/ImportTexturesBlender/blenderTextures5.png)
 
-## Blender 4 Differences
-The process in Blender 4 is similar besides the emissive which is connected directly into the BSDF's Emission input, as shown below.
+## Blender 4的差异
+Blender 4中的过程类似，除了自发光直接连接到BSDF的Emission输入，如下图所示。
 
 ![](/Media/ImportTexturesBlender/blender4Textures.png)
