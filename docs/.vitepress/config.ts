@@ -1,7 +1,7 @@
-import { defineConfig } from 'vitepress'
 import { withMermaid } from "vitepress-plugin-mermaid";
-
 import { generateSidebar } from 'vitepress-sidebar';
+import { imagetools } from 'vite-imagetools';
+import viteCompression from 'vite-plugin-compression';
 
 
 // https://vitepress.dev/reference/site-config
@@ -15,7 +15,18 @@ export default withMermaid({
     },
     mermaid: {
         //mermaidConfig !theme here works for ligth mode since dark theme is forced in dark mode
-
+    },
+    vite: {
+        plugins: [
+            imagetools({
+                defaultDirectives: new URLSearchParams({
+                    format: 'webp',
+                    quality: '80',
+                    w: '800',
+                }),
+            }),
+            viteCompression()
+        ],
     },
     themeConfig: {
         logo: 'https://mod.3dmgame.com/static/upload/mod/202307/MOD64a7767d0409f.png@webp',
@@ -42,7 +53,7 @@ export default withMermaid({
             documentRootPath: '/docs',
             sortFolderTo: 'bottom',
             useFolderTitleFromIndexFile: true,
-            includeFolderIndexFile: true,
+            includeFolderIndexFile: false,
         }),
 
         socialLinks: [
