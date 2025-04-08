@@ -2185,6 +2185,11 @@ uuid@^9.0.1:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
 
+viewerjs@^1.11.6:
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/viewerjs/-/viewerjs-1.11.7.tgz#99c39b86c3f1b6debf446747a1f0e25f8be4db74"
+  integrity sha512-0JuVqOmL5v1jmEAlG5EBDR3XquxY8DWFQbFMprOXgaBB0F7Q/X9xWdEaQc59D8xzwkdUgXEMSSknTpriq95igg==
+
 vite-imagetools@^7.0.5:
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/vite-imagetools/-/vite-imagetools-7.0.5.tgz#6fb4393445ab941daa39cf0cb70ec591bce639c4"
@@ -2213,6 +2218,13 @@ vite@^5.0.11:
     rollup "^4.2.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+vitepress-plugin-image-viewer@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/vitepress-plugin-image-viewer/-/vitepress-plugin-image-viewer-1.1.6.tgz#b8318d918e9ea7d093f6fb80c4fe7b1e2d746241"
+  integrity sha512-ZfYy1s/bXju6vGVsE/5gPXT449+KaXZ6ZIPAvcmPM07VmC7Bv57bCvFar2II7C2EjexxfPQsxUh70vSBbe14kQ==
+  dependencies:
+    viewerjs "^1.11.6"
 
 vitepress-plugin-mermaid@^2.0.17:
   version "2.0.17"

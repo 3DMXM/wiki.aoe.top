@@ -16,6 +16,7 @@
     "vite-imagetools": "^7.0.5",
     "vite-plugin-compression": "^0.5.1",
     "vitepress": "^1.0.0-rc.36",
+    "vitepress-plugin-image-viewer": "^1.1.6",
     "vitepress-plugin-mermaid": "^2.0.17",
     "vitepress-sidebar": "^1.31.1"
   },
