@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Guides</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGVycnkxMzE0MyIsImEiOiJjbThpbDdudTAwZGdyMmlvZ29oeXpqM2xiIn0.gZ4RJWcQlp9uTBRmOcD-ag';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            projection: 'globe', // 将地图显示为地球仪，因为 satellite-v9 默认为墨卡托投影
+            zoom: 1,
+            center: [30, 15]
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+        map.scrollZoom.disable();
+
+        map.on('style.load', () => {
+            map.setFog({}); // 设置默认大气样式
+        });
+
+        // 以下值可以更改以控制旋转速度：
+
+        // 在低缩放级别下，每两分钟完成一次旋转。
+        const secondsPerRevolution = 240;
+        // 在缩放级别5以上，不旋转。
+        const maxSpinZoom = 5;
+        // 在缩放级别3和5之间以中间速度旋转。
+        const slowSpinZoom = 3;
+
+        let userInteracting = false;
+        const spinEnabled = true;
+
+        function spinGlobe() {
+            const zoom = map.getZoom();
+            if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
+                let distancePerSecond = 360 / secondsPerRevolution;
+                if (zoom > slowSpinZoom) {
+                    // 在较高缩放级别下减慢旋转速度
+                    const zoomDif =
+                        (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
+                    distancePerSecond *= zoomDif;
+                }
+                const center = map.getCenter();
+                center.lng -= distancePerSecond;
+                // 平滑地在一秒内为地图设置动画。
+                // 当此动画完成时，它会触发一个 'moveend' 事件。
+                map.easeTo({ center, duration: 1000, easing: (n) => n });
+            }
+        }
+
+        // 在交互时暂停旋转
+        map.on('mousedown', () => {
+            userInteracting = true;
+        });
+        map.on('dragstart', () => {
+            userInteracting = true;
+        });
+
+        // 当动画完成且没有正在进行的交互时，开始旋转
+        map.on('moveend', () => {
+            spinGlobe();
+        });
+
+        spinGlobe();
+    </script>
+
+</body>
+
+</html>
