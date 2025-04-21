@@ -1,1126 +1,279 @@
-<table class="table table--fixed table--compact" style="width: 100%; table-layout: fixed;">
-    <colgroup>
-        <col width="28%">
-        <col>
-    </colgroup>
-    <thead>
-        <tr class="bg-gray-faint">
-            <th style="border-top-left-radius: 4px;">Name</th>
-            <th style="border-top-right-radius: 4px;">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options">options</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</code>
-                </div>
-            </td>
-            <td><span class="ml3"><span></span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-accesstoken" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-accesstoken">options.accessToken</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If specified, map will use this
-                        <a href="https://docs.mapbox.com/help/glossary/access-token/">token</a>
-                        instead of the one defined in
-                        <code>mapboxgl.accessToken</code>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-antialias" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-antialias">options.antialias</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the gl context will be created with
-                        <a href="https://en.wikipedia.org/wiki/Multisample_anti-aliasing">MSAA antialiasing</a>
-                        . This is
-                        <code>false</code>
-                        by default as a performance optimization.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-attributioncontrol" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-attributioncontrol">options.attributionControl</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , an
-                        <a href="/mapbox-gl-js/api/markers/#attributioncontrol">AttributionControl</a>
-                        will be added to the map.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-bearing" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-bearing">options.bearing</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>0</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial
-                        <a href="https://docs.mapbox.com/help/glossary/camera#bearing">bearing</a>
-                        (rotation) of the map, measured in degrees counter-clockwise from north. If
-                        <code>bearing</code>
-                        is not specified in the constructor options, Mapbox GL JS will look for it in the map's style
-                        object. If it is not specified in the style, either, it will default to
-                        <code>0</code>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-bearingsnap" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-bearingsnap">options.bearingSnap</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>7</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The threshold, measured in degrees, that determines when the map's
-                        bearing will snap to north. For example, with a
-                        <code>bearingSnap</code>
-                        of 7, if the user rotates
-                        the map within 7 degrees of north, the map will automatically snap to exact north.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-bounds" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-bounds">options.bounds</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="/mapbox-gl-js/api/geography/#lnglatboundslike">LngLatBoundsLike</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial bounds of the map. If
-                        <code>bounds</code>
-                        is specified, it overrides
-                        <code>center</code>
-                        and
-                        <code>zoom</code>
-                        constructor options.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-boxzoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-boxzoom">options.boxZoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "box zoom" interaction is enabled (see
-                        <a href="/mapbox-gl-js/api/handlers/#boxzoomhandler">BoxZoomHandler</a>
-                        ).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-center" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-center">options.center</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="/mapbox-gl-js/api/geography/#lnglatlike">LngLatLike</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>[0,0]</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial geographical
-                        <a href="https://docs.mapbox.com/help/glossary/camera#center">centerpoint</a>
-                        of the map. If
-                        <code>center</code>
-                        is not specified in the constructor options, Mapbox GL JS will look for it in the map's style
-                        object. If it is not specified in the style, either, it will default to
-                        <code>[0, 0]</code>
-                        Note: Mapbox GL uses longitude, latitude coordinate order (as opposed to latitude, longitude) to
-                        match GeoJSON.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-clicktolerance" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-clicktolerance">options.clickTolerance</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>3</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The max number of pixels a user can shift the mouse pointer during a click for
-                        it to be considered a valid click (as opposed to a mouse drag).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-collectresourcetiming" class="unprose txt-ms anchor txt-s">
-                            <a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-collectresourcetiming">options.collectResourceTiming</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , Resource Timing API information will be collected for requests made by GeoJSON and Vector Tile
-                        web workers (this information is normally inaccessible from the main Javascript thread).
-                        Information will be returned in a
-                        <code>resourceTiming</code>
-                        property of relevant
-                        <code>data</code>
-                        events.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-config" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-config">options.config</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial configuration options for the style fragments. Each key in the
-                        object is a fragment ID (e.g.,
-                        <code>basemap</code>
-                        ) and each value is a configuration object.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-container" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-container">options.container</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/HTML/Element">HTMLElement</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</span>)</code>
-                </div>
-            </td>
-            <td><span class="ml3"><span>The HTML element in which Mapbox GL JS will render the map, or the element's
-                        string
-                        <code>id</code>
-                        . The specified element must have no children.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-cooperativegestures" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-cooperativegestures">options.cooperativeGestures</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</span>)</code>
-                </div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , scroll zoom will require pressing the ctrl or ⌘ key while scrolling to zoom map, and touch pan
-                        will require using two fingers while panning to move the map. Touch pitch will require three
-                        fingers to activate if enabled.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-crosssourcecollisions" class="unprose txt-ms anchor txt-s">
-                            <a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-crosssourcecollisions">options.crossSourceCollisions</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , symbols from multiple sources can collide with each other during collision detection. If
-                        <code>false</code>
-                        , collision detection is run separately for the symbols in each source.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-customattribution" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-customattribution">options.customAttribution</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>&gt;)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>String or strings to show in an
-                        <a href="/mapbox-gl-js/api/markers/#attributioncontrol">AttributionControl</a>
-                        . Only applicable if
-                        <code>options.attributionControl</code>
-                        is
-                        <code>true</code>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-doubleclickzoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-doubleclickzoom">options.doubleClickZoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "double click to zoom" interaction is enabled (see
-                        <a href="/mapbox-gl-js/api/handlers/#doubleclickzoomhandler">DoubleClickZoomHandler</a>
-                        ).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-dragpan" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-dragpan">options.dragPan</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "drag to pan" interaction is enabled. An
-                        <code>Object</code>
-                        value is passed as options to
-                        <a href="/mapbox-gl-js/api/handlers/#dragpanhandler#enable">DragPanHandler#enable</a>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-dragrotate" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-dragrotate">options.dragRotate</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "drag to rotate" interaction is enabled (see
-                        <a href="/mapbox-gl-js/api/handlers/#dragrotatehandler">DragRotateHandler</a>
-                        ).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-fadeduration" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-fadeduration">options.fadeDuration</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>300</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Controls the duration of the fade-in/fade-out animation for label collisions, in
-                        milliseconds. This setting affects all symbol layers. This setting does not affect the duration
-                        of runtime styling transitions or raster tile cross-fading.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-failifmajorperformancecaveat"
-                            class="unprose txt-ms anchor txt-s"><a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-failifmajorperformancecaveat">options.failIfMajorPerformanceCaveat</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , map creation will fail if the performance of Mapbox GL JS would be dramatically worse than
-                        expected (a software renderer would be used).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-fitboundsoptions" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-fitboundsoptions">options.fitBoundsOptions</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>A
-                        <a href="/mapbox-gl-js/api/map/#map#fitbounds">Map#fitBounds</a>
-                        options object to use
-                        <em>only</em>
-                        when fitting the initial
-                        <code>bounds</code>
-                        provided above.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-hash" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-hash">options.hash</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the map's
-                        <a href="https://docs.mapbox.com/help/glossary/camera">position</a>
-                        (zoom, center latitude, center longitude, bearing, and pitch) will be synced with the hash
-                        fragment of the page's URL.
-                        For example,
-                        <code>http://path/to/my/page.html#2.59/39.26/53.07/-24.1/60</code>
-                        .
-                        An additional string may optionally be provided to indicate a parameter-styled hash,
-                        for example
-                        <a
-                            href="http://path/to/my/page.html#map=2.59/39.26/53.07/-24.1/60&amp;foo=bar">http://path/to/my/page.html#map=2.59/39.26/53.07/-24.1/60&amp;foo=bar</a>
-                        , where
-                        <code>foo</code>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-renderworldcopies" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-renderworldcopies">options.renderWorldCopies</a>
+                </h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>
+                <font _mstmutation="1">If
 
-                        is a custom parameter and
-                        <code>bar</code>
-                        is an arbitrary hash distinct from the map hash.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-interactive" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-interactive">options.interactive</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>false</code>
-                        , no mouse, touch, or keyboard listeners will be attached to the map, so it will not respond to
-                        interaction.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-keyboard" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-keyboard">options.keyboard</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , keyboard shortcuts are enabled (see
-                        <a href="/mapbox-gl-js/api/handlers/#keyboardhandler">KeyboardHandler</a>
-                        ).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-language" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-language">options.language</a></h4>
-                    </span><code class="color-gray">(<span>(<code>"auto"</code> | <a
-                        href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-                    | <a
-                        href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a
-                        href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>&gt;)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>A string with a BCP 47 language tag, or an array of such strings representing
-                        the desired languages used for the map's labels and UI components. Languages can only be set on
-                        Mapbox vector tile sources.
-                        By default, GL JS will not set a language so that the language of Mapbox tiles will be
-                        determined by the vector tile source's TileJSON.
-                        Valid language strings must be a
-                        <a href="https://en.wikipedia.org/wiki/IETF_language_tag#List_of_subtags">BCP-47 language
-                            code</a>
-                        . Unsupported BCP-47 codes will not include any translations. Invalid codes will result in an
-                        recoverable error.
-                        If a label has no translation for the selected language, it will display in the label's local
-                        language.
-                        If option is set to
-                        <code>auto</code>
-                        , GL JS will select a user's preferred language as determined by the browser's
-                        <a
-                            href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language"><code>window.navigator.language</code></a>
-                        property.
-                        If the
-                        <code>locale</code>
-                        property is not set separately, this language will also be used to localize the UI for supported
-                        languages.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-locale" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-locale">options.locale</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>A patch to apply to the default localization table for UI strings such as
-                        control tooltips. The
-                        <code>locale</code>
-                        object maps namespaced UI string IDs to translated strings in the target language;
-                        see
-                        <a
-                            href="https://github.com/mapbox/mapbox-gl-js/blob/main/src/ui/default_locale.js"><code>src/ui/default_locale.js</code></a>
-                        for an example with all supported string IDs. The object may specify all UI strings (thereby
-                        adding support for a new translation) or only a subset of strings (thereby patching the default
-                        translation table).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-localfontfamily" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-localfontfamily">options.localFontFamily</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Defines a CSS
-                        font-family for locally overriding generation of all glyphs. Font settings from the map's style
-                        will be ignored, except for font-weight keywords (light/regular/medium/bold).
-                        If set, this option overrides the setting in localIdeographFontFamily.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-localideographfontfamily"
-                            class="unprose txt-ms anchor txt-s"><a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-localideographfontfamily">options.localIdeographFontFamily</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>'sans-serif'</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Defines a CSS font-family for locally overriding generation of glyphs in the
-                        'CJK Unified Ideographs', 'Hiragana', 'Katakana', 'Hangul Syllables' and 'CJK Symbols and
-                        Punctuation' ranges.
-                        In these ranges, font settings from the map's style will be ignored, except for font-weight
-                        keywords (light/regular/medium/bold).
-                        Set to
-                        <code>false</code>
-                        , to enable font settings from the map's style for these glyph ranges. Note that
-                        <a href="https://studio.mapbox.com/">Mapbox Studio</a>
-                        sets this value to
-                        <code>false</code>
-                        by default.
-                        The purpose of this option is to avoid bandwidth-intensive glyph server requests. For an example
-                        of this option in use, see
-                        <a href="https://www.mapbox.com/mapbox-gl-js/example/local-ideographs">Use locally generated
-                            ideographs</a>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-logoposition" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-logoposition">options.logoPosition</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>'bottom-left'</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>A string representing the position of the Mapbox wordmark on the map. Valid
-                        options are
-                        <code>top-left</code>
-                        ,
-                        <code>top-right</code>
-                        ,
-                        <code>bottom-left</code>
-                        ,
-                        <code>bottom-right</code>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-maxbounds" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-maxbounds">options.maxBounds</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="/mapbox-gl-js/api/geography/#lnglatboundslike">LngLatBoundsLike</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If set, the map will be constrained to the given bounds.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-maxpitch" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-maxpitch">options.maxPitch</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>85</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The maximum pitch of the map (0-85).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-maxtilecachesize" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-maxtilecachesize">options.maxTileCacheSize</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The maximum number of tiles stored in the tile cache for a given source. If
-                        omitted, the cache will be dynamically sized based on the current viewport.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-maxzoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-maxzoom">options.maxZoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>22</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The maximum zoom level of the map (0-24).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-minpitch" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-minpitch">options.minPitch</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>0</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The minimum pitch of the map (0-85).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-mintilecachesize" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-mintilecachesize">options.minTileCacheSize</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The minimum number of tiles stored in the tile cache for a given source. Larger
-                        viewports use more tiles and need larger caches. Larger viewports are more likely to be found on
-                        devices with more memory and on pages where the map is more important. If omitted, the cache
-                        will be dynamically sized based on the current viewport.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-minzoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-minzoom">options.minZoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>0</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The minimum zoom level of the map (0-24).
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-performancemetricscollection"
-                            class="unprose txt-ms anchor txt-s"><a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-performancemetricscollection">options.performanceMetricsCollection</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , mapbox-gl will collect and send performance metrics.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-pitch" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-pitch">options.pitch</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>0</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial
-                        <a href="https://docs.mapbox.com/help/glossary/camera#pitch">pitch</a>
-                        (tilt) of the map, measured in degrees away from the plane of the screen (0-85). If
-                        <code>pitch</code>
-                        is not specified in the constructor options, Mapbox GL JS will look for it in the map's style
-                        object. If it is not specified in the style, either, it will default to
-                        <code>0</code>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-pitchrotatekey" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-pitchrotatekey">options.pitchRotateKey</a></h4>
-                    </span><code class="color-gray">(<span>(<code>"Control"</code> | <code>"Alt"</code> |
-                    <code>"Shift"</code> | <code>"Meta"</code>)</span>)</code><span>(<font _mstmutation="1">default
-                        </font><code>'Control'</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Allows overriding the keyboard modifier key used for pitch/rotate interactions
-                        from
-                        <code>Control</code>
-                        to another modifier key.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-pitchwithrotate" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-pitchwithrotate">options.pitchWithRotate</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>false</code>
-                        , the map's pitch (tilt) control with "drag to rotate" interaction will be disabled.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-preservedrawingbuffer" class="unprose txt-ms anchor txt-s">
-                            <a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-preservedrawingbuffer">options.preserveDrawingBuffer</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the map's canvas can be exported to a PNG using
-                        <code>map.getCanvas().toDataURL()</code>
-                        . This is
-                        <code>false</code>
-                        by default as a performance optimization.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-projection" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-projection">options.projection</a></h4>
-                    </span><code class="color-gray">(<span>ProjectionSpecification</span>)</code><span>(<font
-                            _mstmutation="1">default </font><code>'mercator'</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>
-                        <font _mstmutation="1">The
-                            <a href="https://docs.mapbox.com/mapbox-gl-js/style-spec/projection/"
-                                _mstmutation="1">projection</a>
-                            the map should be rendered in.
-                            Supported projections are:
-                        </font>
-                        <ul>
-                            <li>
-                                <font _mstmutation="1"><a href="https://en.wikipedia.org/wiki/Albers_projection"
-                                        _mstmutation="1">Albers</a> equal-area conic projection as </font>
-                                <code>albers</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a href="https://en.wikipedia.org/wiki/Equal_Earth_projection"
-                                        _mstmutation="1">Equal Earth</a> equal-area pseudocylindrical projection as
-                                </font><code>equalEarth</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a
-                                        href="https://en.wikipedia.org/wiki/Equirectangular_projection"
-                                        _mstmutation="1">Equirectangular</a> (Plate Carrée/WGS84) as </font>
-                                <code>equirectangular</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1">3d Globe as </font><code>globe</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a
-                                        href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection"
-                                        _mstmutation="1">Lambert Conformal Conic</a> as </font>
-                                <code>lambertConformalConic</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a href="https://en.wikipedia.org/wiki/Mercator_projection"
-                                        _mstmutation="1">Mercator</a> cylindrical map projection as </font>
-                                <code>mercator</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a href="https://en.wikipedia.org/wiki/Natural_Earth_projection"
-                                        _mstmutation="1">Natural Earth</a> pseudocylindrical map projection as </font>
-                                <code>naturalEarth</code>
-                            </li>
-                            <li>
-                                <font _mstmutation="1"><a href="https://en.wikipedia.org/wiki/Winkel_tripel_projection"
-                                        _mstmutation="1">Winkel Tripel</a> azimuthal map projection as
-                                    Conic projections such as Albers and Lambert have configurable and properties that
-                                    allow developers to define the region in which the projection has minimal
-                                    distortion; see the example for how to configure these properties.</font>
-                                <code>winkelTripel</code><code>center</code><code>parallels</code>
-                            </li>
-                        </ul>
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-refreshexpiredtiles" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-refreshexpiredtiles">options.refreshExpiredTiles</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>false</code>
-                        , the map won't attempt to re-request tiles once they expire per their HTTP
-                        <code>cacheControl</code>
-                        /
-                        <code>expires</code>
-                        headers.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-renderworldcopies" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-renderworldcopies">options.renderWorldCopies</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>
-                        <font _mstmutation="1">If
+                    , multiple copies of the world will be rendered side by side beyond -180 and 180 degrees
+                    longitude. If set to
 
-                            , multiple copies of the world will be rendered side by side beyond -180 and 180 degrees
-                            longitude. If set to
-
-                            :
-                        </font><code>true</code><code>false</code>
-                        <ul>
-                            <li>When the map is zoomed out far enough that a single representation of the world does not
-                                fill the map's entire
-                                container, there will be blank space beyond 180 and -180 degrees longitude.</li>
-                            <li>Features that cross 180 and -180 degrees longitude will be cut in two (with one portion
-                                on the right edge of the
-                                map and the other on the left edge of the map) at every zoom level.</li>
-                        </ul>
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-respectprefersreducedmotion"
-                            class="unprose txt-ms anchor txt-s"><a class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-respectprefersreducedmotion">options.respectPrefersReducedMotion</a>
-                        </h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If set to
-                        <code>true</code>
-                        , the map will respect the user's
-                        <code>prefers-reduced-motion</code>
-                        browser setting and apply a reduced motion mode, minimizing animations and transitions. When set
-                        to
-                        <code>false</code>
-                        , the map will always ignore the
-                        <code>prefers-reduced-motion</code>
-                        settings, regardless of the user's preference, making all animations essential.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-scrollzoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-scrollzoom">options.scrollZoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "scroll to zoom" interaction is enabled. An
-                        <code>Object</code>
-                        value is passed as options to
-                        <a href="/mapbox-gl-js/api/handlers/#scrollzoomhandler#enable">ScrollZoomHandler#enable</a>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-spriteformat" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-spriteformat">options.spriteFormat</a></h4>
-                    </span><code class="color-gray">(<span>(<code>"raster"</code> | <code>"icon_set"</code> |
-                    <code>"auto"</code>)</span>)</code><span>(<font _mstmutation="1">default </font>
-                        <code>'auto'</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The format of the image sprite to use. If set to
-                        <code>'auto'</code>
-                        , vector iconset will be used for all mapbox-hosted sprites and raster sprite for all custom
-                        URLs.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-style" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-style">options.style</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>'mapbox://styles/mapbox/standard'</code>)</span>
-                </div>
-            </td>
-            <td><span class="ml3"><span>
-                        <font _mstmutation="1">The map's Mapbox style. This must be an a JSON object conforming to
-                            the schema described in the
-                            <a href="https://mapbox.com/mapbox-gl-style-spec/" _mstmutation="1">Mapbox Style
-                                Specification</a>
-                            , or a URL
-                            to such JSON. Can accept a null value to allow adding a style manually.
-                        </font>
-                        <p>
-                            <font _mstmutation="1">To load a style from the Mapbox API, you can use a URL of the form ,
-                                where is your Mapbox account name and is the style ID. You can also use a
-                                <a href="https://docs.mapbox.com/api/maps/styles/#mapbox-styles"
-                                    _mstmutation="1">Mapbox-owned style</a>:
-                            </font><code>mapbox://styles/:owner/:style</code><code>:owner</code><code>:style</code>
-                        </p>
-                        <ul>
-                            <li><code>mapbox://styles/mapbox/standard</code></li>
-                            <li><code>mapbox://styles/mapbox/streets-v12</code></li>
-                            <li><code>mapbox://styles/mapbox/outdoors-v12</code></li>
-                            <li><code>mapbox://styles/mapbox/light-v11</code></li>
-                            <li><code>mapbox://styles/mapbox/dark-v11</code></li>
-                            <li><code>mapbox://styles/mapbox/satellite-v9</code></li>
-                            <li><code>mapbox://styles/mapbox/satellite-streets-v12</code></li>
-                            <li><code>mapbox://styles/mapbox/navigation-day-v1</code></li>
-                            <li><code>mapbox://styles/mapbox/navigation-night-v1</code>
-                                <font _mstmutation="1">.</font>
-                            </li>
-                        </ul>
-                        <p>
-                            <font _mstmutation="1">Tilesets hosted with Mapbox can be style-optimized if you append to
-                                the end of your style URL, like .
-                                Learn more about style-optimized vector tiles in our <a
-                                    href="https://www.mapbox.com/api-documentation/maps/#retrieve-tiles"
-                                    _mstmutation="1">API documentation</a>.</font>
-                            <code>?optimize=true</code><code>mapbox://styles/mapbox/streets-v11?optimize=true</code>
-                        </p>
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-testmode" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-testmode">options.testMode</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>false</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Silences errors and warnings generated due to an invalid accessToken, useful
-                        when using the library to write unit tests.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-touchpitch" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-touchpitch">options.touchPitch</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "drag to pitch" interaction is enabled. An
-                        <code>Object</code>
-                        value is passed as options to
-                        <a href="/mapbox-gl-js/api/handlers/#touchpitchhandler">TouchPitchHandler</a>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-touchzoomrotate" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-touchzoomrotate">options.touchZoomRotate</a></h4>
-                    </span><code
-                        class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the "pinch to rotate and zoom" interaction is enabled. An
-                        <code>Object</code>
-                        value is passed as options to
-                        <a
-                            href="/mapbox-gl-js/api/handlers/#touchzoomrotatehandler#enable">TouchZoomRotateHandler#enable</a>
-                        .
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-trackresize" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-trackresize">options.trackResize</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>true</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>If
-                        <code>true</code>
-                        , the map will automatically resize when the browser window resizes.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-transformrequest" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-transformrequest">options.transformRequest</a></h4>
-                    </span><code class="color-gray">(<span>RequestTransformFunction</span>)</code><span>(<font
-                            _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>A callback run before the Map makes a request for an external URL. The callback
-                        can be used to modify the url, set headers, or set the credentials property for cross-origin
-                        requests.
-                        Expected to return a
-                        <a href="/mapbox-gl-js/api/properties/#requestparameters">RequestParameters</a>
-                        object with a
-                        <code>url</code>
-                        property and optionally
-                        <code>headers</code>
-                        and
-                        <code>credentials</code>
-                        properties.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-worldview" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-worldview">options.worldview</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>null</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>Sets the map's worldview. A worldview determines the way that certain disputed
-                        boundaries
-                        are rendered. By default, GL JS will not set a worldview so that the worldview of Mapbox tiles
-                        will be determined by the vector tile source's TileJSON.
-                        Valid worldview strings must be an
-                        <a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">ISO alpha-2 country code</a>
-                        . Unsupported
-                        ISO alpha-2 codes will fall back to the TileJSON's default worldview. Invalid codes will result
-                        in a recoverable error.
-                    </span></span></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
-                        <h4 id="map-class-parameters-options-zoom" class="unprose txt-ms anchor txt-s"><a
-                                class="unprose block color-blue-on-hover txt-bold"
-                                href="#map-class-parameters-options-zoom">options.zoom</a></h4>
-                    </span><code
-                        class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
-                        <font _mstmutation="1">default </font><code>0</code>)</span></div>
-            </td>
-            <td><span class="ml3"><span>The initial
-                        <a href="https://docs.mapbox.com/help/glossary/camera#zoom">zoom</a>
-                        level of the map. If
-                        <code>zoom</code>
-                        is not specified in the constructor options, Mapbox GL JS will look for it in the map's style
-                        object. If it is not specified in the style, either, it will default to
-                        <code>0</code>
-                        .
-                    </span></span></td>
-        </tr>
-    </tbody>
-</table>
+                    :
+                </font><code>true</code><code>false</code>
+                <ul>
+                    <li>When the map is zoomed out far enough that a single representation of the world does not
+                        fill the map's entire
+                        container, there will be blank space beyond 180 and -180 degrees longitude.</li>
+                    <li>Features that cross 180 and -180 degrees longitude will be cut in two (with one portion
+                        on the right edge of the
+                        map and the other on the left edge of the map) at every zoom level.</li>
+                </ul>
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-respectprefersreducedmotion"
+                    class="unprose txt-ms anchor txt-s"><a class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-respectprefersreducedmotion">options.respectPrefersReducedMotion</a>
+                </h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>If set to
+                <code>true</code>
+                , the map will respect the user's
+                <code>prefers-reduced-motion</code>
+                browser setting and apply a reduced motion mode, minimizing animations and transitions. When set
+                to
+                <code>false</code>
+                , the map will always ignore the
+                <code>prefers-reduced-motion</code>
+                settings, regardless of the user's preference, making all animations essential.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-scrollzoom" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-scrollzoom">options.scrollZoom</a></h4>
+            </span><code
+                class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>If
+                <code>true</code>
+                , the "scroll to zoom" interaction is enabled. An
+                <code>Object</code>
+                value is passed as options to
+                <a href="/mapbox-gl-js/api/handlers/#scrollzoomhandler#enable">ScrollZoomHandler#enable</a>
+                .
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-spriteformat" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-spriteformat">options.spriteFormat</a></h4>
+            </span><code class="color-gray">(<span>(<code>"raster"</code> | <code>"icon_set"</code> |
+            <code>"auto"</code>)</span>)</code><span>(<font _mstmutation="1">default </font>
+                <code>'auto'</code>)</span>
+        </div>
+    </td>
+    <td><span class="ml3"><span>The format of the image sprite to use. If set to
+                <code>'auto'</code>
+                , vector iconset will be used for all mapbox-hosted sprites and raster sprite for all custom
+                URLs.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-style" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-style">options.style</a></h4>
+            </span><code
+                class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</span>)</code><span>(
+                <font _mstmutation="1">default </font><code>'mapbox://styles/mapbox/standard'</code>)
+            </span>
+        </div>
+    </td>
+    <td><span class="ml3"><span>
+                <font _mstmutation="1">The map's Mapbox style. This must be an a JSON object conforming to
+                    the schema described in the
+                    <a href="https://mapbox.com/mapbox-gl-style-spec/" _mstmutation="1">Mapbox Style
+                        Specification</a>
+                    , or a URL
+                    to such JSON. Can accept a null value to allow adding a style manually.
+                </font>
+                <p>
+                    <font _mstmutation="1">To load a style from the Mapbox API, you can use a URL of the form ,
+                        where is your Mapbox account name and is the style ID. You can also use a
+                        <a href="https://docs.mapbox.com/api/maps/styles/#mapbox-styles"
+                            _mstmutation="1">Mapbox-owned style</a>:
+                    </font><code>mapbox://styles/:owner/:style</code><code>:owner</code><code>:style</code>
+                </p>
+                <ul>
+                    <li><code>mapbox://styles/mapbox/standard</code></li>
+                    <li><code>mapbox://styles/mapbox/streets-v12</code></li>
+                    <li><code>mapbox://styles/mapbox/outdoors-v12</code></li>
+                    <li><code>mapbox://styles/mapbox/light-v11</code></li>
+                    <li><code>mapbox://styles/mapbox/dark-v11</code></li>
+                    <li><code>mapbox://styles/mapbox/satellite-v9</code></li>
+                    <li><code>mapbox://styles/mapbox/satellite-streets-v12</code></li>
+                    <li><code>mapbox://styles/mapbox/navigation-day-v1</code></li>
+                    <li><code>mapbox://styles/mapbox/navigation-night-v1</code>
+                        <font _mstmutation="1">.</font>
+                    </li>
+                </ul>
+                <p>
+                    <font _mstmutation="1">Tilesets hosted with Mapbox can be style-optimized if you append to
+                        the end of your style URL, like .
+                        Learn more about style-optimized vector tiles in our <a
+                            href="https://www.mapbox.com/api-documentation/maps/#retrieve-tiles"
+                            _mstmutation="1">API documentation</a>.</font>
+                    <code>?optimize=true</code><code>mapbox://styles/mapbox/streets-v11?optimize=true</code>
+                </p>
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-testmode" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-testmode">options.testMode</a></h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>false</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>Silences errors and warnings generated due to an invalid accessToken, useful
+                when using the library to write unit tests.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-touchpitch" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-touchpitch">options.touchPitch</a></h4>
+            </span><code
+                class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>If
+                <code>true</code>
+                , the "drag to pitch" interaction is enabled. An
+                <code>Object</code>
+                value is passed as options to
+                <a href="/mapbox-gl-js/api/handlers/#touchpitchhandler">TouchPitchHandler</a>
+                .
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-touchzoomrotate" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-touchzoomrotate">options.touchZoomRotate</a></h4>
+            </span><code
+                class="color-gray">(<span>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>If
+                <code>true</code>
+                , the "pinch to rotate and zoom" interaction is enabled. An
+                <code>Object</code>
+                value is passed as options to
+                <a
+                    href="/mapbox-gl-js/api/handlers/#touchzoomrotatehandler#enable">TouchZoomRotateHandler#enable</a>
+                .
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-trackresize" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-trackresize">options.trackResize</a></h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>true</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>If
+                <code>true</code>
+                , the map will automatically resize when the browser window resizes.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-transformrequest" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-transformrequest">options.transformRequest</a></h4>
+            </span><code class="color-gray">(<span>RequestTransformFunction</span>)</code><span>(<font
+                    _mstmutation="1">default </font><code>null</code>)</span></div>
+    </td>
+    <td><span class="ml3"><span>A callback run before the Map makes a request for an external URL. The callback
+                can be used to modify the url, set headers, or set the credentials property for cross-origin
+                requests.
+                Expected to return a
+                <a href="/mapbox-gl-js/api/properties/#requestparameters">RequestParameters</a>
+                object with a
+                <code>url</code>
+                property and optionally
+                <code>headers</code>
+                and
+                <code>credentials</code>
+                properties.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-worldview" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-worldview">options.worldview</a></h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>null</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>Sets the map's worldview. A worldview determines the way that certain disputed
+                boundaries
+                are rendered. By default, GL JS will not set a worldview so that the worldview of Mapbox tiles
+                will be determined by the vector tile source's TileJSON.
+                Valid worldview strings must be an
+                <a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">ISO alpha-2 country code</a>
+                . Unsupported
+                ISO alpha-2 codes will fall back to the TileJSON's default worldview. Invalid codes will result
+                in a recoverable error.
+            </span></span></td>
+</tr>
+<tr>
+    <td>
+        <div class="flex flex--wrap flex--center-cross" style="gap: 4px;"><span class="txt-mono txt-bold">
+                <h4 id="map-class-parameters-options-zoom" class="unprose txt-ms anchor txt-s"><a
+                        class="unprose block color-blue-on-hover txt-bold"
+                        href="#map-class-parameters-options-zoom">options.zoom</a></h4>
+            </span><code
+                class="color-gray">(<span><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</code><span>(
+                <font _mstmutation="1">default </font><code>0</code>)
+            </span></div>
+    </td>
+    <td><span class="ml3"><span>The initial
+                <a href="https://docs.mapbox.com/help/glossary/camera#zoom">zoom</a>
+                level of the map. If
+                <code>zoom</code>
+                is not specified in the constructor options, Mapbox GL JS will look for it in the map's style
+                object. If it is not specified in the style, either, it will default to
+                <code>0</code>
+                .
+            </span></span></td>
+</tr>
