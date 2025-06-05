@@ -10,7 +10,7 @@ hero:
     
     - theme: brand
       text: BepInEx
-      link: /ModTutorial/BepInEx/README.md
+      link: /ModTutorial/BepInEx/1.README.md
     - theme: alt
       text: UE 4/5 Mod教程
       link: /ModTutorial/UE_Modding/README.md
