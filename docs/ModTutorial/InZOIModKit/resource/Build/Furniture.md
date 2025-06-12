@@ -1,0 +1,54 @@
+# 家具列表
+
+**目录路径:** `/All/Game/Characters`
+
+| 编号 | 图标                                                                                                               | 名称                  | 资产ID                |
+| ---- | ------------------------------------------------------------------------------------------------------------------ | --------------------- | --------------------- |
+| 1    | ![Bath01_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Bath01_v01.PNG)                       | Bath01_v01            | Bath01_v01            |
+| 2    | ![Bed01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Bed01.PNG)                                 | Bed01                 | Bed01                 |
+| 3    | ![Bed02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Bed02.PNG)                                 | Bed02                 | Bed02                 |
+| 4    | ![Blind04_v03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Blind04_v03.PNG)                     | Blind04_v03           | Blind04_v03           |
+| 5    | ![Chair01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Chair01.PNG)                             | Chair01               | Chair01               |
+| 6    | ![Chair02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Chair02.PNG)                             | Chair02               | Chair02               |
+| 7    | ![Chair03_v03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Chair03_v03.PNG)                     | Chair03_v03           | Chair03_v03           |
+| 8    | ![Clock01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Clock01.PNG)                             | Clock01               | Clock01               |
+| 9    | ![Computer01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Computer01.PNG)                       | Computer01            | Computer01            |
+| 10   | ![Cushion01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Cushion01.PNG)                         | Cushion01             | Cushion01             |
+| 11   | ![D_CornerSink01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/D_CornerSink01.PNG)               | D_CornerSink01        | D_CornerSink01        |
+| 12   | ![D_Sink01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/D_Sink01.PNG)                           | D_Sink01              | D_Sink01              |
+| 13   | ![DecoFloorShelf01_v03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/DecoFloorShelf01_v03.PNG)   | DecoFloorShelf01_v03  | DecoFloorShelf01_v03  |
+| 14   | ![DressShopShelf01_v02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/DressShopShelf01_v02.PNG)   | DressShopShelf01_v02  | DressShopShelf01_v02  |
+| 15   | ![FloorMirror01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/FloorMirror01.PNG)                 | FloorMirror01         | FloorMirror01         |
+| 16   | ![Frame01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Frame01.PNG)                             | Frame01               | Frame01               |
+| 17   | ![Fridge01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Fridge01.PNG)                           | Fridge01              | Fridge01              |
+| 18   | ![KidBed02_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/KidBed02_v01.PNG)                   | KidBed02_v01          | KidBed02_v01          |
+| 19   | ![KitchenRange01_v03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/KitchenRange01_v03.PNG)       | KitchenRange01_v03    | KitchenRange01_v03    |
+| 20   | ![Lighting01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Lighting01.PNG)                       | Lighting01            | Lighting01            |
+| 21   | ![Lighting02_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Lighting02_v01.PNG)               | Lighting02_v01        | Lighting02_v01        |
+| 22   | ![Lighting02_v17](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Lighting02_v17.PNG)               | Lighting02_v17        | Lighting02_v17        |
+| 23   | ![Lighting03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Lighting03.PNG)                       | Lighting03            | Lighting03            |
+| 24   | ![Lighting04](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Lighting04.PNG)                       | Lighting04            | Lighting04            |
+| 25   | ![LowTable02_v03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/LowTable02_v03.PNG)               | LowTable02_v03        | LowTable02_v03        |
+| 26   | ![Microwave01_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Microwave01_v01.PNG)             | Microwave01_v01       | Microwave01_v01       |
+| 27   | ![Mirror01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Mirror01.PNG)                           | Mirror01              | Mirror01              |
+| 28   | ![Mirror04_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Mirror04_v01.PNG)                   | Mirror04_v01          | Mirror04_v01          |
+| 29   | ![Pot02_v07](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Pot02_v07.PNG)                         | Pot02_v07             | Pot02_v07             |
+| 30   | ![RoundTable01_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/RoundTable01_v01.PNG)           | RoundTable01_v01      | RoundTable01_v01      |
+| 31   | ![Rug01_v04](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Rug01_v04.PNG)                         | Rug01_v04             | Rug01_v04             |
+| 32   | ![Sedan01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Sedan01.PNG)                             | Sedan01               | Sedan01               |
+| 33   | ![Shadow_Lighting02_v17](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Shadow_Lighting02_v17.PNG) | Shadow_Lighting02_v17 | Shadow_Lighting02_v17 |
+| 34   | ![Shower01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Shower01.PNG)                           | Shower01              | Shower01              |
+| 35   | ![SinkBowl01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/SinkBowl01.PNG)                       | SinkBowl01            | SinkBowl01            |
+| 36   | ![Sofa01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Sofa01.PNG)                               | Sofa01                | Sofa01                |
+| 37   | ![SquareTable01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/SquareTable01.PNG)                 | SquareTable01         | SquareTable01         |
+| 38   | ![Table02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Table02.PNG)                             | Table02               | Table02               |
+| 39   | ![Toilet01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Toilet01.PNG)                           | Toilet01              | Toilet01              |
+| 40   | ![TrashCan02_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/TrashCan02_v01.PNG)               | TrashCan02_v01        | TrashCan02_v01        |
+| 41   | ![U_CornerSink01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/U_CornerSink01.PNG)               | U_CornerSink01        | U_CornerSink01        |
+| 42   | ![U_Sink01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/U_Sink01.PNG)                           | U_Sink01              | U_Sink01              |
+| 43   | ![U_Sink02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/U_Sink02.PNG)                           | U_Sink02              | U_Sink02              |
+| 44   | ![U_Sink03](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/U_Sink03.PNG)                           | U_Sink03              | U_Sink03              |
+| 45   | ![VaccumLow01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/VaccumLow01.PNG)                     | VaccumLow01           | VaccumLow01           |
+| 46   | ![WallTv01_v01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/WallTv01_v01.PNG)                   | WallTv01_v01          | WallTv01_v01          |
+| 47   | ![WashingMachine01](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/WashingMachine01.PNG)           | WashingMachine01      | WashingMachine01      |
+| 48   | ![Washstand01_v02](https://p.aoe.top/playinzoiDoc/media/Thumbnail/Build/Furniture/Washstand01_v02.PNG)             | Washstand01_v02       | Washstand01_v02       |

@@ -2,6 +2,6 @@
 dist
 
 .vercel
-cache
+docs/.vitepress/cache
 yarn.lock
 package-lock.json
