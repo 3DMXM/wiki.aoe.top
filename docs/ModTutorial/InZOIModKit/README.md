@@ -4,6 +4,8 @@
 构建您自己的空间、角色和故事，将它们带入游戏，并与其他玩家分享您的体验。  
 本指南是您踏上这段旅程的第一步。
 
+> 官方文档 https://mod-docs.playinzoi.com/index.html
+
 ![ModKit横幅](https://p.aoe.top/playinzoiDoc/media/logo1.png)
 
 ---
@@ -11,15 +13,15 @@
 ## 您想做什么？
 
 ### 创建模组
-- [inZOI编辑器界面指南(Editor)](modkit/project/editor.md)
-- [创建Zoi角色(CAZ)](modkit/project/CAZ/1.SkeletalMesh.md)
-- [创建家具和物体(Build)](modkit/project/Build/Guide.md)
-- [编辑游戏数据(DataAsset)](modkit/project/dataasset.md)
+- [inZOI编辑器界面指南(Editor)](Modkit/project/editor.md)
+- [创建Zoi角色(CAZ)](Modkit/project/CAZ/1.SkeletalMesh.md)
+- [创建家具和物体(Build)](Modkit/project/Build/Guide.md)
+- [编辑游戏数据(DataAsset)](Modkit/project/dataasset.md)
 
 ### 使用工具
-- [使用上下文菜单工具](modkit/utility/context-menu.md)
-- [将模组导出到本地文件夹](modkit/export/local.md)
-- [在CurseForge上分享](modkit/export/curseforge.md)
+- [使用上下文菜单工具](Modkit/utility/context-menu.md)
+- [将模组导出到本地文件夹](Modkit/export/local.md)
+- [在CurseForge上分享](Modkit/export/curseforge.md)
 
 ---
 
