@@ -103,13 +103,6 @@ export default withMermaid({
         ['meta', { name: 'og:type', content: 'website' }],
         ['meta', { name: 'theme-color', content: '#5f67ee' }],
         [
-            'script',
-            {
-                "async": "true",
-                'src': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5978423097771370',
-            }
-        ],
-        [
             'link',
             {
                 "rel": "icon",
