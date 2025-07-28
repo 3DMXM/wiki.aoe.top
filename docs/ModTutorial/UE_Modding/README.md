@@ -22,76 +22,76 @@ UE4（和UE5）Mod制作指南合集。</br>
 ## 基础知识
 我们将从如何浏览和导出游戏文件开始。
 
-- [查找AES密钥(.pak加密)](./TheBasics/AesKey.md)
-- [提取已烘焙资源 - repak](./TheBasics/ExtractingCooked.md) (仅适用于`.pak`)
-- [提取IoStore已烘焙资源 - ZenTools](./TheBasics/ExtractingIoStore.md) (`.pak`/`.utoc`/`.ucas`)
-- [提取映射 - UE4SS](./TheBasics/Extractingusmap.md)
-- [导出 - FModel](./TheBasics/ExportingFModel.md)
-- [导出 - UModel](./TheBasics/ExportingUModel.md)
-- [预览动画 - UModel](./TheBasics/UModelAnimations.md)
-- [浏览UAssets - FModel](./TheBasics/UsingFModel.md)
+- [查找AES密钥(.pak加密)](./0.TheBasics/AesKey.md)
+- [提取已烘焙资源 - repak](./0.TheBasics/ExtractingCooked.md) (仅适用于`.pak`)
+- [提取IoStore已烘焙资源 - ZenTools](./0.TheBasics/ExtractingIoStore.md) (`.pak`/`.utoc`/`.ucas`)
+- [提取映射 - UE4SS](./0.TheBasics/Extractingusmap.md)
+- [导出 - FModel](./0.TheBasics/ExportingFModel.md)
+- [导出 - UModel](./0.TheBasics/ExportingUModel.md)
+- [预览动画 - UModel](./0.TheBasics/UModelAnimations.md)
+- [浏览UAssets - FModel](./0.TheBasics/UsingFModel.md)
 
 ## 初级教程
 让我们开始修改值！</br>
 这对<b>任何</b>值的修改都至关重要。</br>
-- [编辑UAsset值 - UAssetGUI](./BasicModding/UAssetGUI.md)
-- [编辑UAsset值 - Hex](./BasicModding/HexEditing.md) *(当UAssetGUI失效时的手动十六进制编辑)*
-- [编辑UMaps - stove](./BasicModding/EditingUmaps.md) (UE4，仅适用于`.pak`)
-- [禁用/移除对象纹理](./BasicModding/DisablingObjects.md)
-- [创建Pak文件](./BasicModding/UnrealPak.md) (仅适用于`.pak`)
-- [创建Pak文件 - IoStore](./BasicModding/IoStorePacking.md) (`.pak`/`.utoc`/`.ucas`)
-- [模组示例 - 修改蓝图默认值](./BasicModding/example1.md) (UE4)
+- [编辑UAsset值 - UAssetGUI](./1.BasicModding/UAssetGUI.md)
+- [编辑UAsset值 - Hex](./1.BasicModding/HexEditing.md) *(当UAssetGUI失效时的手动十六进制编辑)*
+- [编辑UMaps - stove](./1.BasicModding/EditingUmaps.md) (UE4，仅适用于`.pak`)
+- [禁用/移除对象纹理](./1.BasicModding/DisablingObjects.md)
+- [创建Pak文件](./1.BasicModding/UnrealPak.md) (仅适用于`.pak`)
+- [创建Pak文件 - IoStore](./1.BasicModding/IoStorePacking.md) (`.pak`/`.utoc`/`.ucas`)
+- [模组示例 - 修改蓝图默认值](./1.BasicModding/example1.md) (UE4)
 
 ## 中级教程
 替换资源，如纹理、材质、静态网格和骨骼网格(如角色)。</br>
 
-- [创建UE4/5项目](./IntermediateModding/CreatingProject.md)
-- [在UE4和UE5中烘焙/编译带有区块的内容](./IntermediateModding/CookingContent.md)
-- [替换纹理](./IntermediateModding/ChangingTextures.md)
-- [更改游戏模型](./IntermediateModding/ChangingSM.md)
-- [更改骨骼网格](./IntermediateModding/ChangingSK.md)
-- [合并骨骼网格](./IntermediateModding/MergingSK.md)
-- [替换字体](./IntermediateModding/ReplacingFonts.md)
+- [创建UE4/5项目](./2.IntermediateModding/CreatingProject.md)
+- [在UE4和UE5中烘焙/编译带有区块的内容](./2.IntermediateModding/CookingContent.md)
+- [替换纹理](./2.IntermediateModding/ChangingTextures.md)
+- [更改游戏模型](./2.IntermediateModding/ChangingSM.md)
+- [更改骨骼网格](./2.IntermediateModding/ChangingSK.md)
+- [合并骨骼网格](./2.IntermediateModding/MergingSK.md)
+- [替换字体](./2.IntermediateModding/ReplacingFonts.md)
 
 ## 高级教程
-- [为材质实例创建替代材质](./AdvancedModding/ReplicatingMI.md)
-- [蓝图/逻辑模组介绍](./AdvancedModding/BpModsIntro.md)
-- [蓝图替代/复制介绍](./AdvancedModding/BpReplication.md)
+- [为材质实例创建替代材质](./3.AdvancedModding/ReplicatingMI.md)
+- [蓝图/逻辑模组介绍](./3.AdvancedModding/BpModsIntro.md)
+- [蓝图替代/复制介绍](./3.AdvancedModding/BpReplication.md)
 
 ## 蓝图教程
 我不会详细介绍，因为这需要虚幻引擎4的经验，这里只会介绍最基本的内容。</br>
 <b>注意：</b>如果你是UE4新手 - 多尝试，所有内容都可以在YouTube上找到。
 
-- [与模组加载器配合使用 - UML/UE4SS/DML/NML](./BPModding/WorkingWithML.md)
-- [ModActor结构和生命周期](./BPModding/ModActorLifeCycle.md)
-- [创建界面组件](./BPModding/CreateWidget.md)
-- [蓝图模组的热键](./BPModding/Hotkeys.md) 
-- [配置变量 - 模组配置](./BPModding/ConfigVariables.md)
-- [自定义模组游戏存档](./BPModding/GameSaves.md)
-- [模组示例 - 自定义日志记录器(UserWidget)](./BPModding/CustomLogger.md) 
+- [与模组加载器配合使用 - UML/UE4SS/DML/NML](./4.BPModding/WorkingWithML.md)
+- [ModActor结构和生命周期](./4.BPModding/ModActorLifeCycle.md)
+- [创建界面组件](./4.BPModding/CreateWidget.md)
+- [蓝图模组的热键](./4.BPModding/Hotkeys.md) 
+- [配置变量 - 模组配置](./4.BPModding/ConfigVariables.md)
+- [自定义模组游戏存档](./4.BPModding/GameSaves.md)
+- [模组示例 - 自定义日志记录器(UserWidget)](./4.BPModding/CustomLogger.md) 
 
 ## 专家教程
 在这个阶段，你已经知道如何替换/修改任何UAsset并能熟练使用蓝图，但仍在寻找更高级的内容来尝试。
-- [使用蓝图将自定义界面"注入"游戏菜单](./ExpertModding/GameMenus.md)
-- [使用UE4SS导出C++头文件(UHT)](./ExpertModding/GeneratingUHT.md)
-- [使用UHT替代/复制C++头文件](./ExpertModding/UEClasses.md)
+- [使用蓝图将自定义界面"注入"游戏菜单](./5.ExpertModding/GameMenus.md)
+- [使用UE4SS导出C++头文件(UHT)](./5.ExpertModding/GeneratingUHT.md)
+- [使用UHT替代/复制C++头文件](./5.ExpertModding/UEClasses.md)
 - [模组示例 - 头文件实践，(游戏：Sprawl)]() (即将推出)
 
 
 ## 游戏内存
 对创建速通计时、自定义随机化器甚至修改器都很有用。
-- [查找CE指针](./GameMemory/findingPointers.md)
-- [使用UE4SS查找偏移量](./GameMemory/findingPointers2.md)
+- [查找CE指针](./6.GameMemory/findingPointers.md)
+- [使用UE4SS查找偏移量](./6.GameMemory/findingPointers2.md)
 
 
 ## Blender
-- [导入模型(.psk和.glTF2文件)](./Misc/BlenderImportModels.md)
-- [导入动画(.psa文件)](./Misc/BlenderImportAnimations.md)
+- [导入模型(.psk和.glTF2文件)](./7.Misc/BlenderImportModels.md)
+- [导入动画(.psa文件)](./7.Misc/BlenderImportAnimations.md)
 
 ## 纹理
-- [将打包纹理导入Blender](./Misc/BlenderImportTextures.md)
-- [将打包纹理导入Substance Painter](./Misc/SubstanceImportTextures.md) 
-- [从Substance Painter导出到虚幻引擎](./Misc/SubstanceExport.md) 
+- [将打包纹理导入Blender](./7.Misc/BlenderImportTextures.md)
+- [将打包纹理导入Substance Painter](./7.Misc/SubstanceImportTextures.md) 
+- [从Substance Painter导出到虚幻引擎](./7.Misc/SubstanceExport.md) 
 
 <hr>
 
